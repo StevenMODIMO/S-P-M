@@ -1,11 +1,27 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
+import NavLinks from "./NavLinks";
 
-export default function Navbar() {
+interface NavbarProps {
+  // Define any other props you might have for Navbar
+}
+
+const Navbar: React.FC<NavbarProps> = () => {
+  const [openLinks, setOpenLinks] = useState(false);
   return (
-    <nav className="p-3 flex justify-between">
-      <Image src="/StevenMODIMO.svg" alt="" width={200} height={100} />
-      <RiBarChartHorizontalLine className="text-[#DEC544] text-2xl" />
+    <nav>
+      <header className="p-3 flex justify-between">
+        <Image src="/StevenMODIMO.svg" alt="" width={200} height={100} />
+        <RiBarChartHorizontalLine
+          onClick={() => setOpenLinks(true)}
+          className="text-[#DEC544] text-2xl"
+        />
+      </header>
+      {openLinks && <NavLinks setOpenLinks={setOpenLinks} />}
     </nav>
   );
 }
+
+export default Navbar;
