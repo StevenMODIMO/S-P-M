@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <nav>
       <header className="p-3 flex justify-between">
-        <Image src="/StevenMODIMO.svg" alt="" width={200} height={100} />
+        <Image src="/StevenMODIMO.svg" alt="" width={150} height={100} />
         <RiBarChartHorizontalLine
           onClick={() => setOpenLinks(true)}
           className="text-[#DEC544] text-2xl"
