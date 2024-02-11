@@ -25,7 +25,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ setOpenLinks }) => {
         }}
         className="bg-black/90 absolute top-0 left-0 w-screen h-screen flex flex-col justify-between p-3 md:hidden"
       >
-        <nav className="text-[#DEC544] flex flex-col gap-3 text-4xl">
+        <nav className="text-[#DEC544] flex flex-col gap-3 text-xl">
           <div className="flex justify-end">
             <FaTimes onClick={() => setOpenLinks(false)} />
           </div>
