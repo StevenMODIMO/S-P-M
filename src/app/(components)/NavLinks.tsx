@@ -41,7 +41,9 @@ const NavLinks: React.FC<NavLinksProps> = ({ setOpenLinks }) => {
             href={link.path}
             key={link.id}
           >
-            {link.title}
+            <motion.div initial={{ x: -400 }} animate={{ x: 0 }}>
+              {link.title}
+            </motion.div>
           </Link>
         ))}
       </nav>
