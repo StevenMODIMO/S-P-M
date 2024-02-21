@@ -1,11 +1,74 @@
-import React from "react";
+"use client";
+import {
+  FaGithub,
+  FaFacebook,
+  FaXTwitter,
+  FaLinkedinIn,
+} from "react-icons/fa6";
+import Link from "next/link";
+import { socialLinks } from "../data/data";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      delayChildren: 0.6,
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const item = {
+  hidden: { y: 20, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+  },
+};
 
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <div className="text-[#DEC544] text-center">
-      <p>&copy; Copyright {year}, StevenMODIMO</p>
-    </div>
+    <motion.div
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="text-[#DEC544] text-center p-4"
+    >
+      <section className="flex justify-center gap-6 m-2">
+        {socialLinks.map((sl) => (
+          <Link key={sl.id} href={sl.path} target="_blank" className="text-2xl">
+            <motion.div variants={item}>
+              {sl.name === "Github" ? (
+                <FaGithub />
+              ) : sl.name === "Facebook" ? (
+                <FaFacebook />
+              ) : sl.name === "Twitter" ? (
+                <FaXTwitter />
+              ) : sl.name === "Linkedin" ? (
+                <FaLinkedinIn />
+              ) : (
+                ""
+              )}
+            </motion.div>
+          </Link>
+        ))}
+      </section>
+      <motion.p
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: 10 }}
+        transition={{
+          delay: 2,
+          ease: "easeInOut",
+        }}
+      >
+        &copy; Copyright 2021 - {year}, StevenMODIMO
+      </motion.p>
+    </motion.div>
   );
 };
 

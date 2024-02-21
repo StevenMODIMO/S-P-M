@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
 import NavLinks from "./NavLinks";
-import navlinks from "../data/data";
+import { navlinks } from "../data/data";
 import { AnimatePresence } from "framer-motion";
 
 interface NavbarProps {}
@@ -12,7 +12,7 @@ interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = () => {
   const [openLinks, setOpenLinks] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-5">
+    <nav className="fixed top-0 left-0 w-full">
       <header
         className={
           openLinks
@@ -34,18 +34,14 @@ const Navbar: React.FC<NavbarProps> = () => {
         />
         <section className="hidden md:text-[#DEC544] text-lg md:flex gap-2">
           {navlinks.map((link) => (
-            <Link
-              onClick={() => setOpenLinks(false)}
-              href={link.path}
-              key={link.id}
-            >
+            <Link href={link.path} key={link.id}>
               {link.title}
             </Link>
           ))}
         </section>
       </header>
       <AnimatePresence>
-        {openLinks && <NavLinks setOpenLinks={setOpenLinks} />}
+        {openLinks ? <NavLinks setOpenLinks={setOpenLinks} /> : ""}
       </AnimatePresence>
     </nav>
   );

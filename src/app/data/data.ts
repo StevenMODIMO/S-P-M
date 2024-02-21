@@ -4,7 +4,13 @@ type navlinksType = {
   path: string;
 };
 
-const navlinks: navlinksType[] = [
+type socialType = {
+  id: number;
+  path: string;
+  name: string;
+};
+
+export const navlinks: navlinksType[] = [
   {
     id: 1,
     title: "Home",
@@ -12,24 +18,40 @@ const navlinks: navlinksType[] = [
   },
   {
     id: 2,
-    title: "About",
-    path: "/about",
-  },
-  {
-    id: 3,
     title: "Projects",
     path: "/projects",
   },
   {
-    id: 4,
+    id: 3,
     title: "Blog",
     path: "/blog",
   },
   {
-    id: 5,
+    id: 4,
     title: "Contact",
     path: "/contact",
   },
 ];
 
-export default navlinks;
+export const socialLinks: socialType[] = [
+  {
+    id: 1,
+    path: "https://github.com/StevenMODIMO",
+    name: "Github",
+  },
+  {
+    id: 2,
+    path: "https://web.facebook.com/profile.php?id=100090569018744",
+    name: "Facebook",
+  },
+  {
+    id: 3,
+    path: "https://www.linkedin.com/in/steven-modimo-912521204/",
+    name: "Linkedin",
+  },
+  {
+    id: 4,
+    path: "https://twitter.com/Steve_Modimo",
+    name: "Twitter",
+  },
+];
