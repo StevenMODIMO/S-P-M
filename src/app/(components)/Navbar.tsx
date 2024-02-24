@@ -12,14 +12,8 @@ interface NavbarProps {}
 const Navbar: React.FC<NavbarProps> = () => {
   const [openLinks, setOpenLinks] = useState(false);
   return (
-    <nav className="fixed top-0 left-0 w-full">
-      <header
-        className={
-          openLinks
-            ? "p-3 flex justify-between items-center m-1 opacity-5"
-            : "p-3 flex justify-between items-center m-1"
-        }
-      >
+    <nav className="fixed top-0 left-0 w-full p-3">
+      <header className="p-3 flex justify-between items-center m-1">
         <Link href="/">
           <Image
             src="/StevenMODIMO.svg"

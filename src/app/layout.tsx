@@ -17,9 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + "w-fit h-fit bg-black/95"}>
+      <body
+        className={inter.className + "w-fit h-fit bg-[url('/blob-haikei.svg')]"}
+      >
         <Navbar />
-        <div className="mt-20">{children}</div>
+        <div className="mt-20 md:mt-28">{children}</div>
       </body>
     </html>
   );

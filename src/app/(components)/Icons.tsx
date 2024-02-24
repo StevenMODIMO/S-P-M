@@ -30,7 +30,7 @@ const Icons = () => {
       variants={container}
       initial="hidden"
       animate="visible"
-      className="text-[#DEC544] flex text-2xl gap-5 p-3 w-60"
+      className="text-[#DEC544] flex text-2xl gap-5 p-3 w-60 sm:w-96 md:w-[500px] sm:text-black lg:w-[700px] lg:text-4xl"
     >
       <motion.div variants={item}>
         <FaCode />
