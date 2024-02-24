@@ -32,16 +32,16 @@ const Icons = () => {
       animate="visible"
       className="text-[#DEC544] flex text-2xl gap-5 p-3 w-60 sm:w-96 md:w-[500px] sm:text-black lg:w-[700px] lg:text-4xl"
     >
-      <motion.div variants={item}>
+      <motion.div variants={item} whileHover={{ scale: 1.5}}>
         <FaCode />
       </motion.div>
-      <motion.div variants={item}>
+      <motion.div variants={item} whileHover={{ scale: 1.5}}>
         <FaCodeBranch />
       </motion.div>
-      <motion.div variants={item}>
+      <motion.div variants={item} whileHover={{ scale: 1.5}}>
         <FaLaptopCode />
       </motion.div>
-      <motion.div variants={item}>
+      <motion.div variants={item} whileHover={{ scale: 1.5}}>
         <PiBracketsCurlyBold />
       </motion.div>
     </motion.div>

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
@@ -11,9 +11,31 @@ interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
   const [openLinks, setOpenLinks] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 w-full p-3">
-      <header className="p-3 flex justify-between items-center m-1">
+    <nav
+      className={`fixed top-0 left-0 w-full p-3 transition-all duration-75 ease-in-out ${
+        isScrolled ? "bg-black/95" : ""
+      }`}
+    >
+      <header className="p-3 flex justify-between items-center m-1 md:mr-20 lg:mr-32">
         <Link href="/">
           <Image
             src="/StevenMODIMO.svg"
@@ -26,9 +48,13 @@ const Navbar: React.FC<NavbarProps> = () => {
           onClick={() => setOpenLinks(true)}
           className="text-[#DEC544] text-2xl md:hidden"
         />
-        <section className="hidden md:text-[#DEC544] text-lg md:flex gap-2">
+        <section className="hidden md:text-[#DEC544] text-lg md:flex gap-5">
           {navlinks.map((link) => (
-            <Link href={link.path} key={link.id}>
+            <Link
+              href={link.path}
+              key={link.id}
+              className="hover:text-white transition-all duration-75 ease-in-out"
+            >
               {link.title}
             </Link>
           ))}
