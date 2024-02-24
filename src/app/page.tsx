@@ -1,17 +1,38 @@
-import { Russo_One } from "next/font/google";
-import Image from "next/image";
+import { Russo_One, Fredoka } from "next/font/google";
+import Icons from "./(components)/Icons";
 
-const russoOne = Russo_One({ subsets: ["cyrillic"], weight: "400" });
+const russoOne = Russo_One({
+  subsets: ["cyrillic", "latin", "latin-ext"],
+  weight: "400",
+});
+
+const fredoka = Fredoka({
+  subsets: ["hebrew", "latin", "latin-ext"],
+  weight: "300",
+});
 
 export default function Home() {
   return (
-    <main>
-      
+    <main className="text-white">
+      <section className="flex flex-col gap-16">
+        <div className="flex flex-col items-center gap-4">
+          <p className="text-4xl text-start w-60">
+            Unlocking Possibilities through{" "}
+            <span className="text-[#DEC544]">code</span>.
+          </p>
+          <Icons />
+        </div>
+        <p className="w-60 mx-auto text-xl">
+          Welcome to my digital realm, where creativity meets functionality.
+          Join me on a journey of Innovation and Problem Solving.
+        </p>
+      </section>
     </main>
   );
 }
 
-{/* <div
+{
+  /* <div
         className={`max-w-4xl mx-auto px-4 flex flex-col justify-center items-center gap-8`}
       >
         <h1 className={`text-4xl sm:text-6xl font-bold text-center`}>
@@ -66,4 +87,5 @@ export default function Home() {
             <li className="text-center p-4">Database Administration</li>
           </ul>
         </section>
-      </div> */}
+      </div> */
+}

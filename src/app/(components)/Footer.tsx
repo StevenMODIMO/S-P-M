@@ -36,7 +36,6 @@ const Footer = () => {
       variants={container}
       initial="hidden"
       animate="visible"
-      exit="exit"
       className="text-[#DEC544] text-center p-4"
     >
       <section className="flex justify-center gap-6 m-2">
