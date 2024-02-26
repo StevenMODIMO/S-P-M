@@ -41,7 +41,7 @@ const Footer = () => {
       <section className="flex justify-center gap-6 m-2">
         {socialLinks.map((sl) => (
           <Link key={sl.id} href={sl.path} target="_blank" className="text-2xl">
-            <motion.div variants={item}>
+            <motion.div variants={item} className="sm:text-white">
               {sl.name === "Github" ? (
                 <FaGithub />
               ) : sl.name === "Facebook" ? (

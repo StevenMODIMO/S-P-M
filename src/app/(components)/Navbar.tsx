@@ -5,13 +5,15 @@ import Image from "next/image";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
 import NavLinks from "./NavLinks";
 import { navlinks } from "../data/data";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
   const [openLinks, setOpenLinks] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,8 +34,8 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full p-3 transition-all duration-75 ease-in-out ${
-        isScrolled ? "bg-black/95" : ""
-      }`}
+        isScrolled ? "bg-[#302f2a]" : ""
+      } ${pathname === "/about" ? "bg-black" : ""}`}
     >
       <header className="p-3 flex justify-between items-center m-1 md:mr-20 lg:mr-32">
         <Link href="/">
@@ -53,8 +55,14 @@ const Navbar: React.FC<NavbarProps> = () => {
             <Link
               href={link.path}
               key={link.id}
-              className="hover:text-white transition-all duration-75 ease-in-out"
+              className="relative hover:text-white transition-all duration-75 ease-in-out"
             >
+              {link.path === pathname && (
+                <motion.span
+                  layoutId="underline"
+                  className="absolute left-0 top-full block h-[2px] w-full bg-[#DEC544]"
+                />
+              )}
               {link.title}
             </Link>
           ))}

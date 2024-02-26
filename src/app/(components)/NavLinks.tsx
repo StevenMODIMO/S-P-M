@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import Footer from "./Footer";
 import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 import { navlinks } from "../data/data";
@@ -76,7 +75,6 @@ const NavLinks: React.FC<NavLinksProps> = ({ setOpenLinks }) => {
           </section>
         </div>
       </nav>
-      <Footer />
     </motion.main>
   );
 };
