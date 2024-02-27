@@ -13,13 +13,13 @@ export default function About() {
           height={250}
           className="rounded-full mx-auto sm:p-4"
         />
-        <p className="mt-12 sm:text-2xl sm:mt-10">
+        <p className="mt-12 sm:text-2xl sm:mt-10 lg:mt-14">
           Hello, I'm Steven <span className="text-white">Modimo</span>, a
           passionate full stack web developer. I thrive on turning ideas into
           interactive experiences that leave a lasting impact.
         </p>
       </section>
-      <section className="p-6 mt-4 md:mt-8">
+      <section className="p-6 mt-4 md:mt-8 lg:mt-24">
         <header>
           <h1 className="text-center font-bold text-white text-2xl ">
             / My Expertise

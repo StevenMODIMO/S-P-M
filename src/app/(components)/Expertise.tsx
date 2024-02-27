@@ -11,14 +11,36 @@ import { BsDatabaseFillAdd, BsGlobe } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { myexpertise } from "../data/data";
 
+const container = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      ease: "easeInOut",
+      delayChildren: 0.3,
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const children = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: { opacity: 1, scale: 1, whileHover: { scale: 1.1 } },
+};
+
 export default function Expertise() {
   return (
     <main className="text-[#DEC544]">
-      <div className="sm:grid grid-cols-2 lg:grid-cols-4">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        className="sm:grid grid-cols-2 lg:grid-cols-4"
+      >
         {myexpertise.map((expert) => {
           return (
             <motion.main
-              whileHover={{ scale: 1.1 }}
+              variants={children}
               key={expert.id}
               className="m-3 rounded-t-lg p-2 my-12 bg-[#302f2a]"
             >
@@ -52,7 +74,7 @@ export default function Expertise() {
             </motion.main>
           );
         })}
-      </div>
+      </motion.div>
     </main>
   );
 }
