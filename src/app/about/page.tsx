@@ -5,7 +5,7 @@ import PageWrapper from "../(components)/PageWrapper";
 
 export default function About() {
   return (
-    <PageWrapper className="overflow-hidden">
+    <PageWrapper>
       <main className="bg-black -mt-8">
         <section className="text-start text-xl mt-28 w-60 mx-auto text-[#DEC544] sm:text-white sm:w-80 md:w-96 md:text-2xl">
           <Image

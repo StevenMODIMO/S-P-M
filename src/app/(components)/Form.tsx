@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Form() {
   const [name, setName] = useState("");
@@ -39,33 +40,63 @@ export default function Form() {
         Shoot me an email.
       </h1>
       <div>
-        <form onSubmit={sendEmail}>
+        <form
+          onSubmit={sendEmail}
+          className="grid grid-cols-1 items-center w-72 mx-auto gap-3 sm:w-80"
+        >
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Name"
+            className={
+              name
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544]"
+                : "p-2 rounded-sm outline-none bg-[#302f2a]"
+            }
           />
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email"
+            className={
+              email
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544]"
+                : "p-2 rounded-sm outline-none bg-[#302f2a]"
+            }
           />
           <input
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             placeholder="Subject"
+            className={
+              subject
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544]"
+                : "p-2 rounded-sm outline-none bg-[#302f2a]"
+            }
           />
-          <input
+          <textarea
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            placeholder="Message"
-          />
-          <button className="disabled:opacity-50" disabled={!isFormValid}>
-            Submit
-          </button>
+            placeholder="Your Message"
+            className={
+              message
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] h-40"
+                : "p-2 rounded-sm outline-none bg-[#302f2a] h-40"
+            }
+          ></textarea>
+          {isFormValid && (
+            <motion.button
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 0, scale: 1 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+              className="bg-[#DEC544] text-white w-fit p-1 rounded-sm mx-auto"
+            >
+              Submit
+            </motion.button>
+          )}
         </form>
       </div>
     </main>
   );
 }
-
