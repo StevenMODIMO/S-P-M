@@ -36,7 +36,7 @@ export default function Github() {
     getUserInfo();
   }, []);
   return (
-    <main className="text-white p-2 bg-gray-900/90 rounded-sm">
+    <main className="text-white p-2 bg-gray-900/90 rounded-sm lg:rounded-lg">
       <section className="flex justify-between p-1">
         <section className="flex flex-col">
           <div className="flex gap-1 items-center">

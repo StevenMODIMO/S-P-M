@@ -2,6 +2,7 @@
 import React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { IoCallSharp } from "react-icons/io5";
 
 export default function Form() {
   const [name, setName] = useState("");
@@ -38,11 +39,17 @@ export default function Form() {
 
   return (
     <main>
-      <div>
+      <div className="h-[450px] mt-5 lg:mt-0 lg:ml-10">
+        <header className="flex items-center text-white">
+          <h1 className="font-bold text-center p-3 text-xl lg:text-2xl">
+            Contact Me.
+          </h1>
+          <IoCallSharp className="text-lg" />
+        </header>
         <form
           onSubmit={sendEmail}
           onFocus={() => setError(null)}
-          className="grid grid-cols-1 items-center gap-3 sm:w-96"
+          className="grid grid-cols-1 items-center gap-3 sm:w-96 lg:w-[400px]"
         >
           <input
             value={name}
@@ -50,8 +57,8 @@ export default function Form() {
             placeholder="Name"
             className={
               name
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white"
-                : "p-2 rounded-sm outline-none bg-[#302f2a]"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white lg:p-3 lg:text-xl"
+                : "p-2 rounded-sm outline-none bg-[#302f2a] lg:p-3 lg:text-xl"
             }
           />
           <input
@@ -60,8 +67,8 @@ export default function Form() {
             placeholder="Email"
             className={
               email
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white"
-                : "p-2 rounded-sm outline-none bg-[#302f2a]"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white lg:p-3 lg:text-xl"
+                : "p-2 rounded-sm outline-none bg-[#302f2a] lg:p-3 lg:text-xl"
             }
           />
           <input
@@ -70,8 +77,8 @@ export default function Form() {
             placeholder="Subject"
             className={
               subject
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white"
-                : "p-2 rounded-sm outline-none bg-[#302f2a]"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white lg:p-3 lg:text-xl"
+                : "p-2 rounded-sm outline-none bg-[#302f2a] lg:p-3 lg:text-xl"
             }
           />
           <textarea
@@ -80,8 +87,8 @@ export default function Form() {
             placeholder="Your Message"
             className={
               message
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] h-40 text-white"
-                : "p-2 rounded-sm outline-none bg-[#302f2a] h-40"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] h-40 text-white lg:p-3 lg:text-xl"
+                : "p-2 rounded-sm outline-none bg-[#302f2a] h-40 lg:p-3 lg:text-xl"
             }
           ></textarea>
           <AnimatePresence>

@@ -2,6 +2,12 @@ import Expertise from "../(components)/Expertise";
 import Testimony from "../(components)/Testimony";
 import Image from "next/image";
 import PageWrapper from "../(components)/PageWrapper";
+import Tools from "../(components)/Tools";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'About'
+}
 
 export default function About() {
   return (
@@ -27,6 +33,14 @@ export default function About() {
               / My Expertise
             </h1>
             <Expertise />
+          </header>
+        </section>
+        <section className="p-6 mt-4 md:mt-8 lg:mt-24">
+          <header>
+            <h1 className="text-center font-bold text-white text-2xl ">
+              / My Toolbox
+            </h1>
+            <Tools />
           </header>
         </section>
         <section className="p-6 mt-4 md:mt-8">

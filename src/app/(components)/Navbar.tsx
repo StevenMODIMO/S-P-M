@@ -44,6 +44,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             alt="steven-modimo-logo"
             width={150}
             height={100}
+            priority={false} 
           />
         </Link>
         <RiBarChartHorizontalLine

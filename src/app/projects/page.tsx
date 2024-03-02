@@ -1,4 +1,9 @@
 import PageWrapper from "../(components)/PageWrapper";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "My Projects",
+};
 
 export default function Projects() {
   return (

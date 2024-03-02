@@ -16,6 +16,102 @@ type expertise = {
   description: string;
 };
 
+type tools = {
+  id: number;
+  name: string;
+};
+
+export const mytools: tools[] = [
+  {
+    id: 1,
+    name: "HTML",
+  },
+  {
+    id: 2,
+    name: "CSS",
+  },
+  {
+    id: 3,
+    name: "JavaScript",
+  },
+  {
+    id: 4,
+    name: "TypeScript",
+  },
+  {
+    id: 5,
+    name: "React",
+  },
+  {
+    id: 6,
+    name: "Graphql",
+  },
+  {
+    id: 7,
+    name: "NodeJS",
+  },
+  {
+    id: 8,
+    name: "NextJS",
+  },
+  {
+    id: 9,
+    name: "SQL",
+  },
+  {
+    id: 10,
+    name: "Firebase",
+  },
+  {
+    id: 11,
+    name: "TailwindCSS",
+  },
+  {
+    id: 12,
+    name: "Python",
+  },
+  {
+    id: 13,
+    name: "Django",
+  },
+  {
+    id: 14,
+    name: "Express",
+  },
+  {
+    id: 15,
+    name: "Git",
+  },
+  {
+    id: 16,
+    name: "Jest",
+  },
+  {
+    id: 17,
+    name: "MongoDB",
+  },
+  {
+    id: 18,
+    name: "MySql",
+  },
+  {
+    id: 19,
+    name: "Postgres",
+  },
+  {
+    id: 20,
+    name: "Redis",
+  },
+  {
+    id: 21,
+    name: "VsCode",
+  },
+  {
+    id: 22,
+    name: "Windows",
+  },
+];
+
 export const navlinks: navlinksType[] = [
   {
     id: 1,
