@@ -10,8 +10,8 @@ const russoOne = Russo_One({
 
 export default function Home() {
   return (
-    <PageWrapper className="overflow-hidden">
-      <main className="text-white">
+    <PageWrapper>
+      <main className="text-white h-fit">
         <section className="flex flex-col gap-5">
           <div className="flex flex-col items-center gap-4">
             <p

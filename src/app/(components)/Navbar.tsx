@@ -35,7 +35,7 @@ const Navbar: React.FC<NavbarProps> = () => {
     <nav
       className={`fixed top-0 left-0 w-full p-3 transition-all duration-75 ease-in-out ${
         isScrolled ? "bg-[#302f2a]" : ""
-      } ${pathname === "/about" ? "bg-black" : ""}`}
+      } ${pathname !== "/" ? "bg-black" : ""}`}
     >
       <header className="p-3 flex justify-between items-center m-1 md:mr-20 lg:mr-32">
         <Link href="/">

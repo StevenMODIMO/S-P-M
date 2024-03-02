@@ -1,4 +1,15 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+        port: "", // Remove the port
+        pathname: "/u/**", // Match any user ID and query parameters
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

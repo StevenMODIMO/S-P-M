@@ -1,13 +1,15 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const isFormValid = name && email && subject && message;
 
@@ -25,7 +27,7 @@ export default function Form() {
     const json = await response.json();
 
     if (json.error) {
-      console.log(json.error);
+      setError(json.error);
     } else {
       setName("");
       setEmail("");
@@ -36,13 +38,11 @@ export default function Form() {
 
   return (
     <main>
-      <h1 className="text-center text-xl p-3 font-bold text-[#DEC544]">
-        Shoot me an email.
-      </h1>
       <div>
         <form
           onSubmit={sendEmail}
-          className="grid grid-cols-1 items-center w-72 mx-auto gap-3 sm:w-80"
+          onFocus={() => setError(null)}
+          className="grid grid-cols-1 items-center gap-3 sm:w-96"
         >
           <input
             value={name}
@@ -50,7 +50,7 @@ export default function Form() {
             placeholder="Name"
             className={
               name
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544]"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white"
                 : "p-2 rounded-sm outline-none bg-[#302f2a]"
             }
           />
@@ -60,7 +60,7 @@ export default function Form() {
             placeholder="Email"
             className={
               email
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544]"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white"
                 : "p-2 rounded-sm outline-none bg-[#302f2a]"
             }
           />
@@ -70,7 +70,7 @@ export default function Form() {
             placeholder="Subject"
             className={
               subject
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544]"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white"
                 : "p-2 rounded-sm outline-none bg-[#302f2a]"
             }
           />
@@ -80,21 +80,37 @@ export default function Form() {
             placeholder="Your Message"
             className={
               message
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] h-40"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] h-40 text-white"
                 : "p-2 rounded-sm outline-none bg-[#302f2a] h-40"
             }
           ></textarea>
-          {isFormValid && (
-            <motion.button
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 0, scale: 1 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.8 }}
-              className="bg-[#DEC544] text-white w-fit p-1 rounded-sm mx-auto"
-            >
-              Submit
-            </motion.button>
-          )}
+          <AnimatePresence>
+            {isFormValid && (
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.8 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                className="bg-[#DEC544] text-black w-fit p-1 rounded-sm mx-auto text-lg font-bold"
+              >
+                Send
+              </motion.button>
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence>
+            {error && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 1 }}
+                className="text-center p-1 rounded-sm bg-red-400 text-white w-fit mx-auto"
+              >
+                {error}
+              </motion.div>
+            )}
+          </AnimatePresence>
         </form>
       </div>
     </main>
