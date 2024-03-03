@@ -64,7 +64,7 @@ export const mytools: tools[] = [
   },
   {
     id: 11,
-    name: "TailwindCSS",
+    name: "Tailwind",
   },
   {
     id: 12,

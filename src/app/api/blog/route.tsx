@@ -5,6 +5,24 @@ interface BlogTypes {
   content: string;
 }
 
-export async function handler(req: Request) {}
+async function handler(req: Request) {
+  const { method } = req;
 
-export { handler as POST, handler as GET, handler as DELETE };
+  switch (method) {
+    case "GET":
+      return NextResponse.json({
+        message: "Message Returned From Modimo's Server",
+      });
+      break;
+    case "POST":
+      return NextResponse.json({ message: "You perfomed a post request." });
+      break;
+    case "DELETE":
+      return NextResponse.json({ message: "You performed a delete request." });
+      break;
+    default:
+      return NextResponse.json({ info: "Unknown Operation. 404" });
+  }
+}
+
+export { handler as GET, handler as POST, handler as DELETE };

@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: 'Modimo\'s Dashboard',
+  description: 'Dashboard page where I monitor my private stuffs.'
+}
+
 export default function Dashboard() {
   return (
     <main>
