@@ -7,6 +7,12 @@ import NavLinks from "./NavLinks";
 import { navlinks } from "../data/data";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { Russo_One } from "next/font/google";
+
+const russoOne = Russo_One({
+  subsets: ["cyrillic", "latin", "latin-ext"],
+  weight: "400",
+});
 
 interface NavbarProps {}
 
@@ -56,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             <Link
               href={link.path}
               key={link.id}
-              className="relative hover:text-white transition-all duration-75 ease-in-out"
+              className={`${russoOne.className} relative hover:text-white transition-all duration-75 ease-in-out md:text-xl`}
             >
               {link.path === pathname && (
                 <motion.span

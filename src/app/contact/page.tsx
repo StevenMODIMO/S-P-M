@@ -1,5 +1,4 @@
 import Form from "../(components)/Form";
-import PageWrapper from "../(components)/PageWrapper";
 import Social from "../(components)/Social";
 import { Metadata } from "next";
 
@@ -9,7 +8,6 @@ export const metadata: Metadata = {
 
 export default function Contact() {
   return (
-    <PageWrapper>
       <main className="bg-black -mt-8 py-4">
         <section className="bg-black w-72 mx-auto h-full py-4 lg:mx-0 lg:flex lg:w-full lg:gap-10 lg:h-[90vh]">
           <Form />
@@ -21,6 +19,5 @@ export default function Contact() {
           <Social />
         </section>
       </main>
-    </PageWrapper>
   );
 }

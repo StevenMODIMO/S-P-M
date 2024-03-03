@@ -25,7 +25,7 @@ const container = {
 
 const children = {
   hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, whileHover: { scale: 1.1 } },
+  visible: { opacity: 1, scale: 1 },
 };
 
 export default function Expertise() {

@@ -12,9 +12,6 @@ export const metadata: Metadata = {
     template: "%s - Steven Modimo",
   },
   description: "Portfolio",
-  twitter: {
-    description: "summary_large_image",
-  },
 };
 
 export default function RootLayout({

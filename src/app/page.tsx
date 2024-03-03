@@ -1,7 +1,6 @@
 import { Russo_One } from "next/font/google";
 import Icons from "./(components)/Icons";
 import Footer from "./(components)/Footer";
-import PageWrapper from "./(components)/PageWrapper";
 
 const russoOne = Russo_One({
   subsets: ["cyrillic", "latin", "latin-ext"],
@@ -10,7 +9,6 @@ const russoOne = Russo_One({
 
 export default function Home() {
   return (
-    <PageWrapper>
       <main className="text-white h-fit">
         <section className="flex flex-col gap-5">
           <div className="flex flex-col items-center gap-4">
@@ -29,6 +27,5 @@ export default function Home() {
         </section>
         <Footer />
       </main>
-    </PageWrapper>
   );
 }
