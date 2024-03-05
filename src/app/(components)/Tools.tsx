@@ -43,9 +43,6 @@ const container = {
 const children = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: { opacity: 1, scale: 1 },
-  hover: {
-    scale: 1.1,
-  },
 };
 
 export default function Tools() {
@@ -61,11 +58,8 @@ export default function Tools() {
           return (
             <motion.main
               variants={children}
-              initial="hidden"
-              whileInView="visible"
-              whileHover="hover"
               key={tool.id}
-              className="flex items-center gap-1 bg-[#302f2a] w-fit p-1 rounded-lg mx-1 cursor-pointer sm:p-2"
+              className="flex items-center gap-1 bg-[#302f2a] w-20 p-1 rounded-lg cursor-pointer sm:rounded-none sm:p-2 sm:w-[100px] md:w-28"
             >
               <div className="text-lg sm:text-2xl md:text-3xl">
                 {tool.name === "HTML" ? (

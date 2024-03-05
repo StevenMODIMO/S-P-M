@@ -6,10 +6,17 @@ import {
   FaArrowRightLong,
 } from "react-icons/fa6";
 import { SiNextdotjs } from "react-icons/si";
-import { AiFillDatabase, AiOutlineApi } from "react-icons/ai";
+import { AiOutlineApi } from "react-icons/ai";
 import { BsDatabaseFillAdd, BsGlobe } from "react-icons/bs";
 import { motion } from "framer-motion";
 import { myexpertise } from "../data/data";
+
+import { Russo_One } from "next/font/google";
+
+const russoOne = Russo_One({
+  subsets: ["cyrillic", "latin", "latin-ext"],
+  weight: "400",
+});
 
 export default function Expertise() {
   return (
@@ -17,16 +24,18 @@ export default function Expertise() {
       <motion.div
         initial={{ y: -40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        className="sm:grid grid-cols-2 lg:grid-cols-4 lg:items-center"
+        className="sm:grid grid-cols-2 lg:w-[700px] lg:mx-auto"
       >
         {myexpertise.map((expert) => {
           return (
             <motion.main
               whileHover={{ scale: 1.1 }}
               key={expert.id}
-              className="m-3 rounded-lg p-2 my-12 bg-[#302f2a] cursor-pointer"
+              className="m-3 p-2 my-12 bg-[#20201d] cursor-pointer"
             >
-              <h1 className="text-center text-xl text-white sm:p-3 md:p-2">
+              <h1
+                className={`${russoOne.className} text-center text-xl text-white sm:p-3 md:p-2`}
+              >
                 {expert.role}
               </h1>
               <p className="text-center p-2">{expert.description}</p>

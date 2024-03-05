@@ -69,8 +69,8 @@ export default function Form() {
             placeholder="Name"
             className={
               name
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
-                : "p-2 rounded-sm outline-none bg-[#302f2a] lg:p-3 lg:text-xl"
+                ? "p-2 rounded-sm outline-none bg-[#1d1c19] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
+                : "p-2 rounded-sm outline-none bg-[#1d1c19] lg:p-3 lg:text-xl"
             }
           />
           <input
@@ -79,8 +79,8 @@ export default function Form() {
             placeholder="Email"
             className={
               email
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
-                : "p-2 rounded-sm outline-none bg-[#302f2a] lg:p-3 lg:text-xl"
+                ? "p-2 rounded-sm outline-none bg-[#1d1c19] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
+                : "p-2 rounded-sm outline-none bg-[#1d1c19] lg:p-3 lg:text-xl"
             }
           />
           <input
@@ -89,8 +89,8 @@ export default function Form() {
             placeholder="Subject"
             className={
               subject
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
-                : "p-2 rounded-sm outline-none bg-[#302f2a] lg:p-3 lg:text-xl"
+                ? "p-2 rounded-sm outline-none bg-[#1d1c19] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
+                : "p-2 rounded-sm outline-none bg-[#1d1c19] lg:p-3 lg:text-xl"
             }
           />
           <textarea
@@ -99,8 +99,8 @@ export default function Form() {
             placeholder="Your Message"
             className={
               message
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] sm:text-lg h-40 text-white lg:p-3 lg:text-xl"
-                : "p-2 rounded-sm outline-none bg-[#302f2a] h-40 lg:p-3 lg:text-xl"
+                ? "p-2 rounded-sm outline-none bg-[#1d1c19] border-b-2 border-[#DEC544] sm:text-lg h-40 text-white lg:p-3 lg:text-xl"
+                : "p-2 rounded-sm outline-none bg-[#1d1c19] h-40 lg:p-3 lg:text-xl"
             }
           ></textarea>
           <AnimatePresence>

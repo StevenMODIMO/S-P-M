@@ -65,7 +65,7 @@ const Footer = () => {
           ease: "easeInOut",
         }}
       >
-        &copy; Copyright 2021 - {year}, StevenMODIMO
+        &copy; Copyright {year}, StevenMODIMO
       </motion.p>
     </motion.div>
   );

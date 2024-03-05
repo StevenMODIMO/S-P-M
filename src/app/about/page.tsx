@@ -1,6 +1,8 @@
 import Expertise from "../(components)/Expertise";
 import Image from "next/image";
 import Tools from "../(components)/Tools";
+import Form from "../(components)/Form";
+import Footer from "../(components)/Footer";
 import { Metadata } from "next";
 import { Russo_One } from "next/font/google";
 
@@ -35,7 +37,9 @@ export default function About() {
       </section>
       <section className="p-6 mt-4 md:mt-8 lg:mt-10">
         <header>
-          <h1 className="text-center font-bold text-white text-2xl ">
+          <h1
+            className={`${russoOne.className} text-center font-bold text-white text-2xl`}
+          >
             / My Expertise
           </h1>
           <Expertise />
@@ -43,11 +47,26 @@ export default function About() {
       </section>
       <section className="p-6 mt-4 md:mt-8 lg:mt-2">
         <header>
-          <h1 className="text-center font-bold text-white text-2xl ">
+          <h1
+            className={`${russoOne.className} text-center font-bold text-white text-2xl`}
+          >
             / My Toolbox
           </h1>
           <Tools />
         </header>
+      </section>
+      <section className="p-6 mt-4 md:mt-8 lg:mt-2">
+        <header>
+          <h1
+            className={`${russoOne.className} text-center font-bold text-white text-2xl`}
+          >
+            / Let's Connect
+          </h1>
+          <Form />
+        </header>
+      </section>
+      <section className="p-6 mt-4 md:mt-8 lg:mt-2">
+        <Footer />
       </section>
     </main>
   );

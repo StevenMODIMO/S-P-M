@@ -58,7 +58,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ setOpenLinks }) => {
                 onClick={() => setOpenLinks(false)}
                 href={link.path}
                 key={link.id}
-                className="text-2xl p-2"
+                className="text-xl p-2 sm:text-2xl"
               >
                 <motion.div
                   variants={item}

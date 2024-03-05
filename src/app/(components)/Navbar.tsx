@@ -68,7 +68,7 @@ const Navbar: React.FC<NavbarProps> = () => {
             <Link
               href={link.path}
               key={link.id}
-              className={`${russoOne.className} relative hover:text-white transition-all duration-75 ease-in-out md:text-xl`}
+              className={`${russoOne.className} relative hover:text-white transition-all duration-75 ease-in-out md:text-lg`}
             >
               {link.path === pathname && (
                 <motion.span
