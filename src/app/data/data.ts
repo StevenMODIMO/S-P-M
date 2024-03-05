@@ -21,6 +21,25 @@ type tools = {
   name: string;
 };
 
+type dashboard = {
+  id: number;
+  title: string;
+  path: string;
+};
+
+export const dashboardLinks: dashboard[] = [
+  {
+    id: 1,
+    title: "Overview",
+    path: "/dashboard",
+  },
+  {
+    id: 2,
+    title: "Blog",
+    path: "/dashboard//blog",
+  },
+];
+
 export const mytools: tools[] = [
   {
     id: 1,

@@ -39,12 +39,24 @@ export default function Form() {
 
   return (
     <main>
-      <div className="h-[450px] mt-5 lg:mt-0 lg:ml-10">
+      <AnimatePresence>
+        {error && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1 }}
+            className="text-center p-1 rounded-sm bg-red-400 text-whitew w-96 mx-auto"
+          >
+            {error}
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <div className="h-[450px] mt-5">
         <header className="flex items-center text-white">
-          <h1 className="font-bold text-center p-3 text-xl lg:text-2xl">
+          <h1 className="font-bold text-center p-3 text-xl sm:text-2xl">
             Contact Me.
           </h1>
-          <IoCallSharp className="text-lg" />
+          <IoCallSharp className="text-lg text-[#dec544] sm:text-xl" />
         </header>
         <form
           onSubmit={sendEmail}
@@ -57,7 +69,7 @@ export default function Form() {
             placeholder="Name"
             className={
               name
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white lg:p-3 lg:text-xl"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
                 : "p-2 rounded-sm outline-none bg-[#302f2a] lg:p-3 lg:text-xl"
             }
           />
@@ -67,7 +79,7 @@ export default function Form() {
             placeholder="Email"
             className={
               email
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white lg:p-3 lg:text-xl"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
                 : "p-2 rounded-sm outline-none bg-[#302f2a] lg:p-3 lg:text-xl"
             }
           />
@@ -77,7 +89,7 @@ export default function Form() {
             placeholder="Subject"
             className={
               subject
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] text-white lg:p-3 lg:text-xl"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
                 : "p-2 rounded-sm outline-none bg-[#302f2a] lg:p-3 lg:text-xl"
             }
           />
@@ -87,7 +99,7 @@ export default function Form() {
             placeholder="Your Message"
             className={
               message
-                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] h-40 text-white lg:p-3 lg:text-xl"
+                ? "p-2 rounded-sm outline-none bg-[#302f2a] border-b-2 border-[#DEC544] sm:text-lg h-40 text-white lg:p-3 lg:text-xl"
                 : "p-2 rounded-sm outline-none bg-[#302f2a] h-40 lg:p-3 lg:text-xl"
             }
           ></textarea>
@@ -103,19 +115,6 @@ export default function Form() {
               >
                 Send
               </motion.button>
-            )}
-          </AnimatePresence>
-
-          <AnimatePresence>
-            {error && (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1 }}
-                className="text-center p-1 rounded-sm bg-red-400 text-white w-fit mx-auto"
-              >
-                {error}
-              </motion.div>
             )}
           </AnimatePresence>
         </form>

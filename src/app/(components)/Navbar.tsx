@@ -50,14 +50,20 @@ const Navbar: React.FC<NavbarProps> = () => {
             alt="steven-modimo-logo"
             width={150}
             height={100}
-            priority={false} 
+            priority={false}
           />
         </Link>
         <RiBarChartHorizontalLine
           onClick={() => setOpenLinks(true)}
           className="text-[#DEC544] text-2xl md:hidden"
         />
-        <section className="hidden md:text-[#DEC544] text-lg md:flex gap-5">
+        <section
+          className={`${
+            pathname === "/dashboard"
+              ? "hidden"
+              : "hidden md:text-[#DEC544] text-lg md:flex gap-5"
+          }`}
+        >
           {navlinks.map((link) => (
             <Link
               href={link.path}
