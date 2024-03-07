@@ -12,6 +12,7 @@ export const metadata: Metadata = {
     template: "%s - Steven Modimo",
   },
   description: "Portfolio",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
