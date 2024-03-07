@@ -64,6 +64,7 @@ const Footer = () => {
           delay: 2,
           ease: "easeInOut",
         }}
+        className="text-white"
       >
         &copy; Copyright {year}, StevenMODIMO
       </motion.p>
