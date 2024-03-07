@@ -8,7 +8,6 @@ import {
 import { SiNextdotjs } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
 import { BsDatabaseFillAdd, BsGlobe } from "react-icons/bs";
-import { motion } from "framer-motion";
 import { myexpertise } from "../data/data";
 
 import { Russo_One } from "next/font/google";
@@ -21,17 +20,12 @@ const russoOne = Russo_One({
 export default function Expertise() {
   return (
     <main className="text-[#DEC544]">
-      <motion.div
-        initial={{ y: -40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        className="sm:grid grid-cols-2 lg:w-[700px] lg:mx-auto"
-      >
+      <div className="sm:grid grid-cols-2 lg:w-[700px] lg:mx-auto">
         {myexpertise.map((expert) => {
           return (
-            <motion.main
-              whileHover={{ scale: 1.1 }}
+            <main
               key={expert.id}
-              className="m-3 p-2 my-12 bg-[#20201d] cursor-pointer"
+              className="m-3 p-2 my-12 bg-[#1a1a1a] cursor-pointer"
             >
               <h1
                 className={`${russoOne.className} text-center text-xl text-white sm:p-3 md:p-2`}
@@ -62,10 +56,10 @@ export default function Expertise() {
               ) : (
                 ""
               )}
-            </motion.main>
+            </main>
           );
         })}
-      </motion.div>
+      </div>
     </main>
   );
 }

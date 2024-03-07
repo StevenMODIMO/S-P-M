@@ -32,13 +32,13 @@ export default function Tools() {
   return (
     <main className="text-white p-6">
       <div
-        className="grid grid-cols-3 gap-8 sm:grid-cols-5 sm:gap-5 md:gap-3 lg:grid-cols-"
+        className="grid grid-cols-3 gap-8 sm:grid-cols-5 sm:gap-5 md:gap-3 lg:grid-cols-11"
       >
         {mytools.map((tool) => {
           return (
             <main
               key={tool.id}
-              className="flex items-center gap-1 bg-[#302f2a] w-20 p-1 rounded-lg cursor-pointer sm:rounded-none sm:p-2 sm:w-[100px] md:w-28"
+              className="flex items-center gap-1 bg-[#1a1a1a] w-20 p-1 rounded-lg cursor-pointer sm:rounded-none sm:p-2 sm:w-[100px] md:w-28"
             >
               <div className="text-lg sm:text-2xl md:text-3xl">
                 {tool.name === "HTML" ? (

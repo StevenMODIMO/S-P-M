@@ -7,12 +7,11 @@ import { IoCallSharp } from "react-icons/io5";
 export default function Form() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const isFormValid = name && email && subject && message;
+  const isFormValid = name && email && message;
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,7 +21,7 @@ export default function Form() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ name, email, subject, message }),
+      body: JSON.stringify({ name, email, message }),
     });
 
     const json = await response.json();
@@ -32,77 +31,56 @@ export default function Form() {
     } else {
       setName("");
       setEmail("");
-      setSubject("");
       setMessage("");
     }
   };
 
   return (
     <main>
-      <AnimatePresence>
-        {error && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1 }}
-            className="text-center p-1 rounded-sm bg-red-400 text-whitew w-96 mx-auto"
-          >
-            {error}
-          </motion.div>
-        )}
-      </AnimatePresence>
-      <div className="h-[450px] mt-5">
-        <header className="flex items-center text-white">
-          <h1 className="font-bold text-center p-3 text-xl sm:text-2xl">
-            Contact Me.
-          </h1>
-          <IoCallSharp className="text-lg text-[#dec544] sm:text-xl" />
-        </header>
+      <div>
         <form
           onSubmit={sendEmail}
           onFocus={() => setError(null)}
-          className="grid grid-cols-1 items-center gap-3 sm:w-96 lg:w-[400px]"
+          className="flex flex-col items-center gap-6 mt-6 text-white lg:items-start lg:w-fit lg:mx-auto"
         >
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="Name"
-            className={
-              name
-                ? "p-2 rounded-sm outline-none bg-[#1d1c19] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
-                : "p-2 rounded-sm outline-none bg-[#1d1c19] lg:p-3 lg:text-xl"
-            }
-          />
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            className={
-              email
-                ? "p-2 rounded-sm outline-none bg-[#1d1c19] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
-                : "p-2 rounded-sm outline-none bg-[#1d1c19] lg:p-3 lg:text-xl"
-            }
-          />
-          <input
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-            placeholder="Subject"
-            className={
-              subject
-                ? "p-2 rounded-sm outline-none bg-[#1d1c19] border-b-2 border-[#DEC544] sm:text-lg text-white lg:p-3 lg:text-xl"
-                : "p-2 rounded-sm outline-none bg-[#1d1c19] lg:p-3 lg:text-xl"
-            }
-          />
-          <textarea
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Your Message"
-            className={
-              message
-                ? "p-2 rounded-sm outline-none bg-[#1d1c19] border-b-2 border-[#DEC544] sm:text-lg h-40 text-white lg:p-3 lg:text-xl"
-                : "p-2 rounded-sm outline-none bg-[#1d1c19] h-40 lg:p-3 lg:text-xl"
-            }
-          ></textarea>
+          <section className="flex flex-col items-center gap-6 lg:flex-row">
+            <div className="flex flex-col items-start gap-2 m-2">
+              <label htmlFor="name" className="text-sm">
+                Name
+              </label>
+              <input
+                id="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="John Doe"
+                className="w-72 border-b border-[#dec544] outline-none bg-black sm:w-80 md:w-96"
+              />
+            </div>
+            <div className="flex flex-col items-start gap-2 m-2">
+              <label htmlFor="email" className="text-sm">
+                Email
+              </label>
+              <input
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="johndoe@email.com"
+                className="w-72 border-b border-[#dec544] outline-none bg-black sm:w-80 md:w-96"
+              />
+            </div>
+          </section>
+          <div className="flex flex-col items-start gap-2 m-2">
+            <label htmlFor="message" className="text-sm">
+              Message
+            </label>
+            <textarea
+              id="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="Hi Steven, I would like to invite you for an interview........"
+              className="w-72 h-32 border-b border-[#dec544] outline-none bg-black sm:w-80 md:w-96 lg:w-[820px]"
+            ></textarea>
+          </div>
           <AnimatePresence>
             {isFormValid && (
               <motion.button
@@ -111,7 +89,7 @@ export default function Form() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.8 }}
                 exit={{ opacity: 0, scale: 0.8 }}
-                className="bg-[#DEC544] text-black w-fit p-1 rounded-sm mx-auto text-lg font-bold"
+                className="bg-[#1a1a1a] text-white w-fit p-1 rounded-sm mx-auto text-lg font-bold"
               >
                 Send
               </motion.button>
@@ -121,4 +99,19 @@ export default function Form() {
       </div>
     </main>
   );
+}
+
+{
+  /* <AnimatePresence>
+{error && (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.8 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 1 }}
+    className="text-center p-1 rounded-sm bg-red-400 text-whitew w-96 mx-auto"
+  >
+    {error}
+  </motion.div>
+)}
+</AnimatePresence> */
 }

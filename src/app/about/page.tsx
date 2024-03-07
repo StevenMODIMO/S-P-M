@@ -1,7 +1,6 @@
 import Expertise from "../(components)/Expertise";
 import Image from "next/image";
 import Tools from "../(components)/Tools";
-import Testimony from "../(components)/Testimony"
 import Form from "../(components)/Form";
 import Footer from "../(components)/Footer";
 import { Metadata } from "next";
@@ -46,7 +45,7 @@ export default function About() {
           <Expertise />
         </header>
       </section>
-      <section className="p-6 mt-4 md:mt-8 lg:mt-2">
+      <section className="p-6 mt-4 md:mt-8 lg:my-20">
         <header>
           <h1
             className={`${russoOne.className} text-center font-bold text-white text-2xl`}
@@ -56,23 +55,16 @@ export default function About() {
           <Tools />
         </header>
       </section>
-      <section className="p-6 mt-4 md:mt-8 lg:mt-2">
+      <section className="p-6 mt-4 md:mt-8 lg:mt-12">
         <header>
           <h1
             className={`${russoOne.className} text-center font-bold text-white text-2xl`}
           >
-            / Testimony
+            / Send me a message!
           </h1>
-          <Testimony />
-        </header>
-      </section>
-      <section className="p-6 mt-4 md:mt-8 lg:mt-2">
-        <header>
-          <h1
-            className={`${russoOne.className} text-center font-bold text-white text-2xl`}
-          >
-            / Let's Connect
-          </h1>
+          <p className="text-sm text-center text-white">
+            Got a question or proposal, or just want to say hello? Go ahead.
+          </p>
           <Form />
         </header>
       </section>

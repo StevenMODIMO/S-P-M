@@ -13,7 +13,6 @@ export async function POST(req: Request) {
   const body = await req.json();
   const name = body.name;
   const email = body.email;
-  const subject = body.subject;
   const message = body.message;
 
   if (!validator.isEmail(email)) {
@@ -30,7 +29,7 @@ export async function POST(req: Request) {
     const mail: MessageTypes = {
       from: email,
       to: process.env.EMAIL,
-      subject: subject,
+      subject: `New email from: ${name}`,
       html: `
         <h1>New Email From: ${email}</h1>
         <p><strong>Name:</strong> ${name}</p>
