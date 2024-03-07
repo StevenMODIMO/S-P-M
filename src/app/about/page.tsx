@@ -1,6 +1,7 @@
 import Expertise from "../(components)/Expertise";
 import Image from "next/image";
 import Tools from "../(components)/Tools";
+import Testimony from "../(components)/Testimony"
 import Form from "../(components)/Form";
 import Footer from "../(components)/Footer";
 import { Metadata } from "next";
@@ -53,6 +54,16 @@ export default function About() {
             / My Toolbox
           </h1>
           <Tools />
+        </header>
+      </section>
+      <section className="p-6 mt-4 md:mt-8 lg:mt-2">
+        <header>
+          <h1
+            className={`${russoOne.className} text-center font-bold text-white text-2xl`}
+          >
+            / Testimony
+          </h1>
+          <Testimony />
         </header>
       </section>
       <section className="p-6 mt-4 md:mt-8 lg:mt-2">
