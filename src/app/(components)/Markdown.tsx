@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import { Lato } from "next/font/google";
-import Markdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
+import rehypeHighlight from "rehype-highlight";
+import remarkGfm from "remark-gfm";
+import rehypeSlug from "rehype-slug";
 
 const lato = Lato({
   subsets: ["latin", "latin-ext"],
@@ -10,28 +13,28 @@ const lato = Lato({
 });
 
 export default function MarkdownEditor() {
-  const [markdownContent, setMarkdownContent] = useState("");
+  const [markdown, setMarkdown] = useState("# Start Here..");
 
   return (
-    <main className={`${lato.className}`}>
-      <header className="text-xl text-center">
-        <h1>Markdown Editor</h1>
+    <main className={`${lato.className} text-white`}>
+      <header className="text-center">
+        <h1>Welcome to your markdown editor</h1>
       </header>
-      <div>
-        <div className="w-1/2">
-          <textarea
-            className="border border-gray-300  p-2 w-full h-48 outline-none"
-            value={markdownContent}
-            onChange={(e) => setMarkdownContent(e.target.value)}
-            placeholder="Write your markdown here..."
-          />
-        </div>
-        <div className="w-1/2 ml-4">
-          <div className="border border-gray-300 text-white p-2 h-48 overflow-y-auto">
-            <Markdown>{markdownContent}</Markdown>
-          </div>
-        </div>
-      </div>
+      <section className="flex gap-2">
+        <textarea
+          value={markdown}
+          onChange={(e) => setMarkdown(e.target.value)}
+          placeholder="Start markdowning here."
+          className="w-[50%] h-[500px] outline-none bg-[#1a1a1a] text-white"
+        ></textarea>
+        <ReactMarkdown
+          className="w-[50%] h-[500px] bg-[#1a1a1a] text-white p-3 overflow-auto"
+          rehypePlugins={[rehypeHighlight, rehypeSlug]}
+          remarkPlugins={[remarkGfm]}
+        >
+          {markdown}
+        </ReactMarkdown>
+      </section>
     </main>
   );
 }

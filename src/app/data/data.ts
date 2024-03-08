@@ -24,19 +24,24 @@ type tools = {
 type dashboard = {
   id: number;
   title: string;
-  path: string;
 };
 
 export const dashboardLinks: dashboard[] = [
   {
-    id: 1,
+    id: 0,
     title: "Overview",
-    path: "/dashboard",
+  },
+  {
+    id: 1,
+    title: "Markdown",
   },
   {
     id: 2,
-    title: "Blog",
-    path: "/dashboard//blog",
+    title: "Analytics",
+  },
+  {
+    id: 3,
+    title: "Manager",
   },
 ];
 
