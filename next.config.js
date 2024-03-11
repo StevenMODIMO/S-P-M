@@ -2,8 +2,6 @@
 //   dest: "public",
 // });
 
-const withMDX = require("@next/mdx")();
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
@@ -12,11 +10,11 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "avatars.githubusercontent.com",
-        port: "", // Remove the port
-        pathname: "/u/**", // Match any user ID and query parameters
+        port: "",
+        pathname: "/u/**",
       },
     ],
   },
 };
 
-module.exports = withMDX(nextConfig);
+module.exports = nextConfig

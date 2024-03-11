@@ -1,7 +1,7 @@
 "use client";
 import { Russo_One } from "next/font/google";
 import DashNav from "../(components)/DashNav";
-import Markdown from "../(components)/Markdown";
+import MarkdownEditor from "../(components)/Markdown";
 import { useState } from "react";
 
 const russoOne = Russo_One({
@@ -18,7 +18,7 @@ const Dashboard: React.FC<DashProps> = () => {
     <main className="h-full bg-black text-white -mt-28">
       <DashNav setTab={setTab} />
       {tab === 1 ? (
-        <Markdown />
+        <MarkdownEditor />
       ) : tab === 2 ? (
         <div>Analytics</div>
       ) : tab === 3 ? (
