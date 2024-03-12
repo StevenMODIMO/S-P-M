@@ -15,7 +15,7 @@ const Dashboard: React.FC<DashProps> = () => {
   const [tab, setTab] = useState(1);
 
   return (
-    <main className="h-full bg-black text-white -mt-28">
+    <main className="h-fit -mt-28">
       <DashNav setTab={setTab} />
       {tab === 1 ? (
         <MarkdownEditor />
