@@ -1,7 +1,7 @@
 "use client";
 import { Russo_One } from "next/font/google";
 import DashNav from "../(components)/DashNav";
-import MarkdownEditor from "../(components)/Markdown";
+import MarkdownEditor from "../(components)/Markdown.jsx";
 import { useState } from "react";
 
 const russoOne = Russo_One({
