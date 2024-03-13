@@ -21,7 +21,7 @@ interface DashNavProps {
 const DashNav: React.FC<DashNavProps> = ({ setTab }) => {
   return (
     <main>
-      <nav className="bg-[#1a1a1a] p-4 mt-8">
+      <nav className="bg-[#1a1a1a] p-2 h-[5vh]">
         <header className="flex gap-3 items-center">
           <Link href="/">
             <Image
