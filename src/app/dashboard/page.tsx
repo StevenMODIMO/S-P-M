@@ -54,6 +54,7 @@ const Dashboard: React.FC<DashProps> = () => {
           {blogs.map((blog) => {
             return (
               <main key={blog.id}>
+                <img src={blog.imageUrl} alt={blog.title} />
                 <h1 className={`${russoOne.className} text-lg font-bold`}>
                   {blog.title}
                 </h1>

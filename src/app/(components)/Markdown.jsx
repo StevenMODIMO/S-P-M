@@ -14,6 +14,7 @@ import Image from "next/image";
 // Firebase Imports
 import { db } from "@/lib/firebase";
 import { collection, addDoc } from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,21 +28,29 @@ export default function MarkdownEditor() {
   const [markdown, setMarkdown] = useState("## Start Editing!!");
   const [tab, setTab] = useState(0);
   const [file, setFile] = useState("");
+  const [fileUrl, setFileUrl] = useState("")
 
-  const handleChange = (e) => {
-    setFile(URL.createObjectURL(e.target.files[0]));
-  };
+  // const handleChange = (e) => {
+  //   setFile(URL.createObjectURL(e.target.files[0]));
+  // };
 
   const publishBlog = async (e) => {
     e.preventDefault();
 
+    const storage = getStorage();
+    const storageRef = ref(storage, `images/${file.name}`);
     const docRef = collection(db, "Blogs");
+    await uploadBytes(storageRef, file);
+
+    const imageUrl = await getDownloadURL(storageRef);
+
     await addDoc(docRef, {
       title,
       markdown,
+      imageUrl,
     });
     setTitle("");
-    setMarkdown(markdown);
+    setMarkdown("## Start Editing");
   };
 
   return (
@@ -71,8 +80,12 @@ export default function MarkdownEditor() {
                 <input
                   type="file"
                   accept="image/*"
-                  value={undefined}
-                  onChange={handleChange}
+                  onChange={(e) => {
+                    setFile(e.target.files[0])
+                    setFileUrl(URL.createObjectURL(e.target.files[0]))
+                  }
+                    
+                  }
                   className="hidden"
                 />
                 <h1 className="p-1 text-black bg-[#dec544] w-fit text-sm">
@@ -86,7 +99,7 @@ export default function MarkdownEditor() {
                 placeholder="Blog title....."
               />
               <textarea
-                className={`${inter.className} rounded-b border-t border-[#dec544] bg-[#1a1a1a] outline-none text-white w-[100%] h-[60vh] p-8`}
+                className={`${inter.className} rounded-b border-t border-[#dec544] bg-[#1a1a1a] outline-none text-white w-[100%] h-[50vh] p-8`}
                 value={markdown}
                 onChange={(e) => setMarkdown(e.target.value)}
               ></textarea>
@@ -97,7 +110,7 @@ export default function MarkdownEditor() {
           </main>
         ) : (
           <div>
-            {file && <img src={file} alt={title} className="w-fit h-fit" />}
+            {fileUrl && <img src={fileUrl} alt={title} className="w-fit h-fit" />}
             <div className={`${russoOne.className} p-3 text-5xl text-white`}>
               {title}
             </div>
