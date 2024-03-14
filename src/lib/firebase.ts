@@ -1,15 +1,17 @@
 import { initializeApp } from "firebase/app";
-import{ getFirestore } from "firebase/firestore"
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_AUTHDOMAIN,
-  authDomain: process.env.FIREBASE_AUTHDOMAIN,
-  projectId: process.env.FIREBASE_PROJECTID,
-  storageBucket: process.env.FIREBASE_STORAGEBUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGINGSENDERID,
-  appId: process.env.FIREBASE_APPID,
-  measurementId: process.env.FIREBASE_MEASUREMENTID,
+  apiKey: "AIzaSyClQV9V10Ilajdo_A5UvQ6LNdOekEM7zBw",
+  authDomain: "modimo-s-portfolio.firebaseapp.com",
+  projectId:"modimo-s-portfolio",
+  storageBucket: "modimo-s-portfolio.appspot.com",
+  messagingSenderId: "54153846047",
+  appId: "1:54153846047:web:5449259d3495a3126fa42a",
+  measurementId: "G-WQ8M7N58LH",
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app)
+const db = getFirestore(app);
+
+export { app, db };

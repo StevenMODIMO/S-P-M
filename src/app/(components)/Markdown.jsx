@@ -11,6 +11,10 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import Image from "next/image";
 
+// Firebase Imports
+import { db } from "@/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
+
 const inter = Inter({ subsets: ["latin"] });
 
 const russoOne = Russo_One({
@@ -20,12 +24,24 @@ const russoOne = Russo_One({
 
 export default function MarkdownEditor() {
   const [title, setTitle] = useState("");
-  const [markdown, setMarkdown] = useState("# Start Editing!!");
+  const [markdown, setMarkdown] = useState("## Start Editing!!");
   const [tab, setTab] = useState(0);
   const [file, setFile] = useState("");
 
   const handleChange = (e) => {
     setFile(URL.createObjectURL(e.target.files[0]));
+  };
+
+  const publishBlog = async (e) => {
+    e.preventDefault();
+
+    const docRef = collection(db, "Blogs");
+    await addDoc(docRef, {
+      title,
+      markdown,
+    });
+    setTitle("");
+    setMarkdown(markdown);
   };
 
   return (
@@ -47,7 +63,10 @@ export default function MarkdownEditor() {
       <section className="w-[80%] mx-auto">
         {tab === 0 ? (
           <main>
-            <form className="flex flex-col bg-[#1a1a1a] p-2 w-[70%] rounded">
+            <form
+              onSubmit={publishBlog}
+              className="flex flex-col bg-[#1a1a1a] p-2 w-[70%] rounded"
+            >
               <label className="m-1 w-fit rounded">
                 <input
                   type="file"
