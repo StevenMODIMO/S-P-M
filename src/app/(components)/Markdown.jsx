@@ -30,10 +30,6 @@ export default function MarkdownEditor() {
   const [file, setFile] = useState("");
   const [fileUrl, setFileUrl] = useState("")
 
-  // const handleChange = (e) => {
-  //   setFile(URL.createObjectURL(e.target.files[0]));
-  // };
-
   const publishBlog = async (e) => {
     e.preventDefault();
 
@@ -115,7 +111,7 @@ export default function MarkdownEditor() {
               {title}
             </div>
             <Markdown
-              className={`${inter.className} prose`}
+              className={`${inter.className} prose overflow-auto h-[70vh] w-screen`}
               remarkPlugins={[remarkGfm, remarkToc]}
               rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
               components={{
@@ -157,7 +153,7 @@ export default function MarkdownEditor() {
                 h1(props) {
                   const { node, ...rest } = props;
                   return (
-                    <h1 className="text-[#dec544] text-center" {...rest} />
+                    <h1 className="text-[#dec544]" {...rest} />
                   );
                 },
                 h2(props) {

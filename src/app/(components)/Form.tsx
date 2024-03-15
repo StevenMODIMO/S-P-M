@@ -77,7 +77,7 @@ export default function Form() {
               id="message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              placeholder="Hi Steven, I would like to invite you for an interview........"
+              placeholder="Hi Steven, .... ..... .... .... ...."
               className="w-72 h-32 border-b border-[#dec544] outline-none bg-black sm:w-80 md:w-96 lg:w-[820px]"
             ></textarea>
           </div>
