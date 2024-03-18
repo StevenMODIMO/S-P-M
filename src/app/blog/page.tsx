@@ -35,7 +35,7 @@ export default async function Blog() {
     });
   });
   return (
-    <main className="bg-black -mt-8 h-screen">
+    <main className="bg-black -mt- h-screen p-4">
       {myBlogs.map((blog) => {
         return (
           <main key={blog.id}>
