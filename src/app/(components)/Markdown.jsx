@@ -111,7 +111,7 @@ export default function MarkdownEditor() {
               {title}
             </div>
             <Markdown
-              className={`${inter.className} prose overflow-auto h-[70vh] w-screen`}
+              className={`${inter.className} prose overflow-auto h-[70vh] w-screen max-w-full`}
               remarkPlugins={[remarkGfm, remarkToc]}
               rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
               components={{

@@ -6,6 +6,7 @@
 const nextConfig = {
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   images: {
+    dangerouslyAllowSVG: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -13,8 +14,14 @@ const nextConfig = {
         port: "",
         pathname: "/u/**",
       },
+      {
+        protocol: "https",
+        hostname: "firebasestorage.googleapis.com",
+        port: "",
+        pathname: "/v0/b/modimo-s-portfolio.appspot.com/o/images%2F**",
+      },
     ],
   },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;

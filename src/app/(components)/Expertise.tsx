@@ -20,7 +20,7 @@ const russoOne = Russo_One({
 export default function Expertise() {
   return (
     <main className="text-[#DEC544]">
-      <div className="sm:grid grid-cols-2 lg:w-[700px] lg:mx-auto">
+      <div className="sm:grid grid-cols-2 lg:mx-auto lg:grid-cols-4 lg:w-full">
         {myexpertise.map((expert) => {
           return (
             <main
