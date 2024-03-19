@@ -16,7 +16,7 @@ export default function MarkdownPreview({ markdown }) {
   return (
     <main>
       <Markdown
-        className={`${inter.className} prose overflow-auto h-[70vh] max-w-full`}
+        className={`${inter.className} prose overflow-auto max-w-full p-2 sm:max-w-[90%] sm:mx-auto md:max-w-[70%]`}
         remarkPlugins={[remarkGfm, remarkToc]}
         rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
         components={{
@@ -25,23 +25,17 @@ export default function MarkdownPreview({ markdown }) {
             const match = /language-(\w+)/.exec(className || "");
             return match ? (
               <div>
-                <div>
-                  <SyntaxHighlighter
-                    {...rest}
-                    PreTag="div"
-                    children={String(children).replace(/\n$/, "")}
-                    language={match[1]}
-                    style={atomOneDark}
-                    showInlineLineNumbers={true}
-                    wrapLongLines={true}
-                  />
-                </div>
+                <SyntaxHighlighter
+                  {...rest}
+                  PreTag="div"
+                  children={String(children).replace(/\n$/, "")}
+                  language={match[1]}
+                  style={atomOneDark}
+                  wrapLongLines={true}
+                />
               </div>
             ) : (
-              <code
-                {...rest}
-                className="bg-[#1a1a1a] p-1 rounded text-yellow-200"
-              >
+              <code {...rest} className="bg-[#1a1a1a] p-1 text-[#dec544]">
                 {children}
               </code>
             );
@@ -57,7 +51,7 @@ export default function MarkdownPreview({ markdown }) {
           },
           h1(props) {
             const { node, ...rest } = props;
-            return <h1 className="text-[#dec544]" {...rest} />;
+            return <h1 className="text-[#dec544] text-xl" {...rest} />;
           },
           h2(props) {
             const { node, ...rest } = props;

@@ -27,15 +27,15 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 export default async function ReadBlog({ params }: { params: { id: string } }) {
   const blog = (await getDoc(doc(db, "Blogs", params.id))).data();
   return (
-    <main className="h-screen bg-[#1a1a1a] -mt-8">
-      <header className="relative flex flex-col">
+    <main className="h-fit bg-black md:-mt-8 flex flex-col gap-6">
+      <header className="flex flex-col">
         <Image
           src={blog?.imageUrl}
           alt={blog?.title}
-          fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          width={300}
+          height={300}
+          className="w-full md:w-[70%] md:h-64 lg:h-64"
         />
-        <h1 className={`${russoOne.className} text-white`}>{blog?.title}</h1>
       </header>
       <section>
         <MarkdownPreview markdown={blog?.markdown} />

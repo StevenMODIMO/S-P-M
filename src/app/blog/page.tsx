@@ -35,17 +35,22 @@ export default async function Blog() {
     });
   });
   return (
-    <main className="bg-black -mt- h-screen p-4">
+    <main className="bg-black h-fit p-4 flex flex-col gap-4 sm:grid grid-cols-2 sm:gap-4 md:-mt-8">
       {myBlogs.map((blog) => {
         return (
           <main key={blog.id}>
             <Link href={`/blog/${blog.id}`}>
-            <Image
-              src={blog.imageUrl}
-              alt={blog.title}
-              width={300}
-              height={300}
-            /></Link>
+              <Image
+                src={blog.imageUrl}
+                alt={blog.title}
+                width={300}
+                height={300}
+                className="w-[500px] sm:w-[300px]"
+              />
+            </Link>
+            <div className={`${russoOne.className} text-xl text-white`}>
+              {blog.title}
+            </div>
           </main>
         );
       })}
