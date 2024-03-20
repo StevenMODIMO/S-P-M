@@ -38,7 +38,7 @@ const Dashboard: React.FC<DashProps> = () => {
   }, []);
 
   return (
-    <main className="h-[95vh] bg-[#1a1a1a] -mt-28">
+    <main className="h-screen bg-[#1a1a1a] -mt-28">
       <DashNav setTab={setTab} />
       {tab === 1 ? (
         <MarkdownEditor />

@@ -21,21 +21,20 @@ export default function MarkdownPreview({ markdown }) {
         rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
         components={{
           code(props) {
-            const { children, className, node, ...rest } = props;
+            const { children, className } = props;
             const match = /language-(\w+)/.exec(className || "");
             return match ? (
               <div>
                 <SyntaxHighlighter
-                  {...rest}
                   PreTag="div"
-                  children={String(children).replace(/\n$/, "")}
+                  children={children}
                   language={match[1]}
                   style={atomOneDark}
                   wrapLongLines={true}
                 />
               </div>
             ) : (
-              <code {...rest} className="bg-[#1a1a1a] p-1 text-[#dec544]">
+              <code className="bg-[#1a1a1a] p-1 text-[#dec544]">
                 {children}
               </code>
             );

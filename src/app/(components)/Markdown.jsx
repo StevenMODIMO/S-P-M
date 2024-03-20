@@ -28,7 +28,7 @@ export default function MarkdownEditor() {
   const [markdown, setMarkdown] = useState("## Start Editing!!");
   const [tab, setTab] = useState(0);
   const [file, setFile] = useState("");
-  const [fileUrl, setFileUrl] = useState("")
+  const [fileUrl, setFileUrl] = useState("");
 
   const publishBlog = async (e) => {
     e.preventDefault();
@@ -50,7 +50,7 @@ export default function MarkdownEditor() {
   };
 
   return (
-    <main className="bg-black h-[95vh]">
+    <main className="bg-black h-fit">
       <header className="flex gap-1 mx-auto w-[80vw] justify-end p-3 cursor-pointer">
         <div
           className={`${inter.className} rounded-l text-white text- bg-[#1a1a1a] p-1`}
@@ -65,7 +65,7 @@ export default function MarkdownEditor() {
           Preview
         </div>
       </header>
-      <section className="w-[80%] mx-auto">
+      <section className="w-[100%]">
         {tab === 0 ? (
           <main>
             <form
@@ -77,11 +77,9 @@ export default function MarkdownEditor() {
                   type="file"
                   accept="image/*"
                   onChange={(e) => {
-                    setFile(e.target.files[0])
-                    setFileUrl(URL.createObjectURL(e.target.files[0]))
-                  }
-                    
-                  }
+                    setFile(e.target.files[0]);
+                    setFileUrl(URL.createObjectURL(e.target.files[0]));
+                  }}
                   className="hidden"
                 />
                 <h1 className="p-1 text-black bg-[#dec544] w-fit text-sm">
@@ -106,12 +104,14 @@ export default function MarkdownEditor() {
           </main>
         ) : (
           <div>
-            {fileUrl && <img src={fileUrl} alt={title} className="w-fit h-fit" />}
+            {fileUrl && (
+              <img src={fileUrl} alt={title} className="w-fit h-fit" />
+            )}
             <div className={`${russoOne.className} p-3 text-5xl text-white`}>
               {title}
             </div>
             <Markdown
-              className={`${inter.className} prose overflow-auto h-[70vh] max-w-full`}
+              className={`${inter.className} overflow-auto p-6 sm:max-w-[90%] sm:mx-auto md:max-w-[70%]`}
               remarkPlugins={[remarkGfm, remarkToc]}
               rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
               components={{
@@ -119,23 +119,24 @@ export default function MarkdownEditor() {
                   const { children, className, node, ...rest } = props;
                   const match = /language-(\w+)/.exec(className || "");
                   return match ? (
-                    <div>
-                      <div>
-                        <SyntaxHighlighter
-                          {...rest}
-                          PreTag="div"
-                          children={String(children).replace(/\n$/, "")}
-                          language={match[1]}
-                          style={atomOneDark}
-                          showInlineLineNumbers={true}
-                          wrapLongLines={true}
-                        />
+                    <div className="w-full">
+                      <div className="bg-[#1a1a1a]">
+                        <p className="text-white p-1">Example Code</p>
                       </div>
+                      <SyntaxHighlighter
+                        {...rest}
+                        PreTag="div"
+                        children={String(children).replace(/\n$/, "")}
+                        language={match[1]}
+                        style={atomOneDark}
+                        showInlineLineNumbers={true}
+                        wrapLongLines={true}
+                      />
                     </div>
                   ) : (
                     <code
                       {...rest}
-                      className="bg-[#1a1a1a] p-1 rounded text-yellow-200"
+                      className="bg-[#1a1a1a] p-1 text-sm text-yellow-200"
                     >
                       {children}
                     </code>
@@ -152,13 +153,11 @@ export default function MarkdownEditor() {
                 },
                 h1(props) {
                   const { node, ...rest } = props;
-                  return (
-                    <h1 className="text-[#dec544]" {...rest} />
-                  );
+                  return <h1 className="text-white text-start text-3xl font-bold p-2" {...rest} />;
                 },
                 h2(props) {
                   const { node, ...rest } = props;
-                  return <h3 className="text-[#dec544]" {...rest} />;
+                  return <h2 className="text-[#dec544] text-start text-xl p-2 font-bold" {...rest} />;
                 },
                 h3(props) {
                   const { node, ...rest } = props;
@@ -170,11 +169,11 @@ export default function MarkdownEditor() {
                 },
                 p(props) {
                   const { node, ...rest } = props;
-                  return <p className="text-white" {...rest} />;
+                  return <p className="text-gray-200 text-sm p-2" {...rest} />;
                 },
                 ul(props) {
                   const { node, ...rest } = props;
-                  return <ul className="text-white" {...rest} />;
+                  return <ul className="text-white text-s flex flex-col gap-2 p-4" {...rest} />;
                 },
                 strong(props) {
                   const { node, ...rest } = props;
