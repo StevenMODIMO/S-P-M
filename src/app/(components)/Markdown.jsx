@@ -107,11 +107,8 @@ export default function MarkdownEditor() {
             {fileUrl && (
               <img src={fileUrl} alt={title} className="w-fit h-fit" />
             )}
-            <div className={`${russoOne.className} p-3 text-5xl text-white`}>
-              {title}
-            </div>
             <Markdown
-              className={`${inter.className} overflow-auto p-6 sm:max-w-[90%] sm:mx-auto md:max-w-[70%]`}
+              className={`${inter.className} overflow-auto bg-[#1a1a1a] p-3 sm:max-w-[90%] sm:mx-auto md:max-w-[70%]`}
               remarkPlugins={[remarkGfm, remarkToc]}
               rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
               components={{
@@ -119,7 +116,7 @@ export default function MarkdownEditor() {
                   const { children, className, node, ...rest } = props;
                   const match = /language-(\w+)/.exec(className || "");
                   return match ? (
-                    <div className="w-full">
+                    <div className="">
                       <div className="bg-[#1a1a1a]">
                         <p className="text-white p-1">Example Code</p>
                       </div>
@@ -136,7 +133,7 @@ export default function MarkdownEditor() {
                   ) : (
                     <code
                       {...rest}
-                      className="bg-[#1a1a1a] p-1 text-sm text-yellow-200"
+                      className="bg-[#2b2a2a] p-3 text-sm text-yellow-200"
                     >
                       {children}
                     </code>
@@ -146,34 +143,56 @@ export default function MarkdownEditor() {
                   const { node, ...rest } = props;
                   return (
                     <a
-                      className="no-underline text-sm text-blue-300 hover:text-yellow-300"
+                      className="no-underline font-bold text-sm text-blue-300 hover:text-yellow-300"
                       {...rest}
                     />
                   );
                 },
                 h1(props) {
                   const { node, ...rest } = props;
-                  return <h1 className="text-white text-start text-3xl font-bold p-2" {...rest} />;
+                  return (
+                    <h1
+                      className="text-white text-start text-3xl font-bold my-3"
+                      {...rest}
+                    />
+                  );
                 },
                 h2(props) {
                   const { node, ...rest } = props;
-                  return <h2 className="text-[#dec544] text-start text-xl p-2 font-bold" {...rest} />;
+                  return (
+                    <h2
+                      className="text-[#dec544] text-start text-lg my-3 font-bold"
+                      {...rest}
+                    />
+                  );
                 },
                 h3(props) {
                   const { node, ...rest } = props;
-                  return <h3 className="text-[#dec544]" {...rest} />;
+                  return (
+                    <h3 className="text-[#dec544] font-bold my-2 text-base" {...rest} />
+                  );
                 },
                 h4(props) {
                   const { node, ...rest } = props;
-                  return <h4 className="text-[#dec544]" {...rest} />;
+                  return (
+                    <h4
+                      className="text-white text-sm p-1 my-6 border-l-4 border-[#dec544]"
+                      {...rest}
+                    />
+                  );
                 },
                 p(props) {
                   const { node, ...rest } = props;
-                  return <p className="text-gray-200 text-sm p-2" {...rest} />;
+                  return <p className="text-gray-200 py-3" {...rest} />;
                 },
                 ul(props) {
                   const { node, ...rest } = props;
-                  return <ul className="text-white text-s flex flex-col gap-2 p-4" {...rest} />;
+                  return (
+                    <ul
+                      className="text-white flex flex-col ml-3"
+                      {...rest}
+                    />
+                  );
                 },
                 strong(props) {
                   const { node, ...rest } = props;
@@ -184,6 +203,10 @@ export default function MarkdownEditor() {
                   return (
                     <blockquote className="text-white font-bold" {...rest} />
                   );
+                },
+                em(props) {
+                  const { node, ...rest } = props;
+                  return <em className="text-[#dec544] font-bold" {...rest} />;
                 },
               }}
             >
