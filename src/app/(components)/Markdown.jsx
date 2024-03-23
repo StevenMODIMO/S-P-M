@@ -108,7 +108,7 @@ export default function MarkdownEditor() {
               <img src={fileUrl} alt={title} className="w-fit h-fit" />
             )}
             <Markdown
-              className={`${inter.className} overflow-auto bg-[#1a1a1a] p-3 sm:max-w-[90%] sm:mx-auto md:max-w-[70%]`}
+              className={`${inter.className} overflow-auto bg-[#1a1a1a] p-3 sm:max-w-[70%] sm:mx-auto md:max-w-[70%]`}
               remarkPlugins={[remarkGfm, remarkToc]}
               rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
               components={{
