@@ -50,169 +50,147 @@ export default function MarkdownEditor() {
   };
 
   return (
-    <main className="bg-black h-fit">
-      <header className="flex gap-1 mx-auto w-[80vw] justify-end p-3 cursor-pointer">
+    <main className="text-white">
+      <header className="flex gap-2 m-1">
         <div
-          className={`${inter.className} rounded-l text-white text- bg-[#1a1a1a] p-1`}
+          className="bg-[#353434] p-1 text-xl cursor-pointer"
           onClick={() => setTab(0)}
         >
           Edit
         </div>
         <div
-          className={`${inter.className} rounded-r text-white text- bg-[#1a1a1a] p-1`}
+          className="bg-[#353434] p-1 text-xl cursor-pointer"
           onClick={() => setTab(1)}
         >
           Preview
         </div>
       </header>
-      <section className="w-[100%]">
+      <section>
         {tab === 0 ? (
-          <main>
-            <form
-              onSubmit={publishBlog}
-              className="flex flex-col bg-[#1a1a1a] p-2 w-[70%] rounded"
-            >
-              <label className="m-1 w-fit rounded">
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={(e) => {
-                    setFile(e.target.files[0]);
-                    setFileUrl(URL.createObjectURL(e.target.files[0]));
-                  }}
-                  className="hidden"
-                />
-                <h1 className="p-1 text-black bg-[#dec544] w-fit text-sm">
-                  Cover Image
-                </h1>
-              </label>
+          <form onSubmit={publishBlog} className="flex flex-col bg-black gap-3">
+            <label className="m-1 w-fit rounded">
               <input
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                className={`${inter.className} rounded-t outline-none p-5 w-[100%] bg-[#1a1a1a] text-3xl text-white`}
-                placeholder="Blog title....."
+                type="file"
+                accept="image/*"
+                onChange={(e) => {
+                  setFile(e.target.files[0]);
+                  setFileUrl(URL.createObjectURL(e.target.files[0]));
+                }}
+                className="hidden"
               />
-              <textarea
-                className={`${inter.className} rounded-b border-t border-[#dec544] bg-[#1a1a1a] outline-none text-white w-[100%] h-[50vh] p-8`}
-                value={markdown}
-                onChange={(e) => setMarkdown(e.target.value)}
-              ></textarea>
-              <button className="bg-[#dec544] p-1 m-1 text-black text-sm w-fit">
-                Publish
-              </button>
-            </form>
-          </main>
+              <h1 className="p-1 text-black bg-[#dec544] w-fit text-sm">
+                Cover Image
+              </h1>
+            </label>
+            <textarea
+              value={markdown}
+              onChange={(e) => setMarkdown(e.target.value)}
+              className="outline-none w-[70vw] mt-1 mx-auto bg-[#1a1a1a] text-lg p-2 border-2 border-white h-[80vh]"
+            ></textarea>
+            <button className="bg-[#dec544] text-[#1a1a1a] p-1 text-lg w-fit mx-auto">
+              Publish Blog
+            </button>
+          </form>
         ) : (
-          <div>
-            {fileUrl && (
-              <img src={fileUrl} alt={title} className="w-fit h-fit" />
-            )}
-            <Markdown
-              className={`${inter.className} overflow-auto bg-[#1a1a1a] p-3 sm:max-w-[70%] sm:mx-auto md:max-w-[70%]`}
-              remarkPlugins={[remarkGfm, remarkToc]}
-              rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
-              components={{
-                code(props) {
-                  const { children, className, node, ...rest } = props;
-                  const match = /language-(\w+)/.exec(className || "");
-                  return match ? (
-                    <div className="">
-                      <div className="bg-[#1a1a1a]">
-                        <p className="text-white p-1">Example Code</p>
-                      </div>
-                      <SyntaxHighlighter
-                        {...rest}
-                        PreTag="div"
-                        children={String(children).replace(/\n$/, "")}
-                        language={match[1]}
-                        style={atomOneDark}
-                        showInlineLineNumbers={true}
-                        wrapLongLines={true}
-                      />
-                    </div>
-                  ) : (
-                    <code
-                      {...rest}
-                      className="bg-[#2b2a2a] p-3 text-sm text-yellow-200"
-                    >
-                      {children}
-                    </code>
-                  );
-                },
-                a(props) {
-                  const { node, ...rest } = props;
-                  return (
-                    <a
-                      className="no-underline font-bold text-sm text-blue-300 hover:text-yellow-300"
-                      {...rest}
-                    />
-                  );
-                },
-                h1(props) {
-                  const { node, ...rest } = props;
-                  return (
-                    <h1
-                      className="text-white text-start text-3xl font-bold my-3"
-                      {...rest}
-                    />
-                  );
-                },
-                h2(props) {
-                  const { node, ...rest } = props;
-                  return (
-                    <h2
-                      className="text-[#dec544] text-start text-lg my-3 font-bold"
-                      {...rest}
-                    />
-                  );
-                },
-                h3(props) {
-                  const { node, ...rest } = props;
-                  return (
-                    <h3 className="text-[#dec544] font-bold my-2 text-base" {...rest} />
-                  );
-                },
-                h4(props) {
-                  const { node, ...rest } = props;
-                  return (
-                    <h4
-                      className="text-white text-sm p-1 my-6 border-l-4 border-[#dec544]"
-                      {...rest}
-                    />
-                  );
-                },
-                p(props) {
-                  const { node, ...rest } = props;
-                  return <p className="text-gray-200 py-3" {...rest} />;
-                },
-                ul(props) {
-                  const { node, ...rest } = props;
-                  return (
-                    <ul
-                      className="text-white flex flex-col ml-3"
-                      {...rest}
-                    />
-                  );
-                },
-                strong(props) {
-                  const { node, ...rest } = props;
-                  return <strong className="text-white font-bold" {...rest} />;
-                },
-                blockquote(props) {
-                  const { node, ...rest } = props;
-                  return (
-                    <blockquote className="text-white font-bold" {...rest} />
-                  );
-                },
-                em(props) {
-                  const { node, ...rest } = props;
-                  return <em className="text-[#dec544] font-bold" {...rest} />;
-                },
-              }}
-            >
-              {markdown}
-            </Markdown>
-          </div>
+          <Markdown
+            className={`${inter.className} overflow-auto bg-[#1a1a1a] p-3 sm:max-w-[70%] sm:mx-auto md:max-w-[60%]`}
+            remarkPlugins={[remarkGfm, remarkToc]}
+            rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
+            components={{
+              code(props) {
+                const { children, className, node, ...rest } = props;
+                const match = /language-(\w+)/.exec(className || "");
+                return match ? (
+                  <SyntaxHighlighter
+                    {...rest}
+                    PreTag="div"
+                    children={children}
+                    language="javascript"
+                    style={atomOneDark}
+                    showInlineLineNumbers={true}
+                    wrapLongLines={true}
+                    wrapLines={true}
+                  />
+                ) : (
+                  <code
+                    {...rest}
+                    className="bg-[#2b2a2a] text-sm p-1 text-yellow-200"
+                  >
+                    {children}
+                  </code>
+                );
+              },
+              a(props) {
+                const { node, ...rest } = props;
+                return (
+                  <a
+                    className="no-underline font-thin text-sm text-blue-300 hover:text-yellow-300"
+                    {...rest}
+                  />
+                );
+              },
+              h1(props) {
+                const { node, ...rest } = props;
+                return (
+                  <h1
+                    className="text-white text-start text-4xl font-bold my-3"
+                    {...rest}
+                  />
+                );
+              },
+              h2(props) {
+                const { node, ...rest } = props;
+                return (
+                  <h2
+                    className="text-[#dec544] text-start text-xl my-3"
+                    {...rest}
+                  />
+                );
+              },
+              h3(props) {
+                const { node, ...rest } = props;
+                return <h3 className="text-white my-2 text-lg" {...rest} />;
+              },
+              h4(props) {
+                const { node, ...rest } = props;
+                return (
+                  <h4
+                    className="text-white text-sm p-1 my-6 border-l-4 border-[#dec544]"
+                    {...rest}
+                  />
+                );
+              },
+              p(props) {
+                const { node, ...rest } = props;
+                return <p className="text-gray-200 py-3" {...rest} />;
+              },
+              ul(props) {
+                const { node, ...rest } = props;
+                return (
+                  <ul
+                    className="text-white flex flex-col gap-1 ml-3"
+                    {...rest}
+                  />
+                );
+              },
+              strong(props) {
+                const { node, ...rest } = props;
+                return <strong className="text-white font-bold" {...rest} />;
+              },
+              blockquote(props) {
+                const { node, ...rest } = props;
+                return (
+                  <blockquote className="text-white font-bold" {...rest} />
+                );
+              },
+              em(props) {
+                const { node, ...rest } = props;
+                return <em className="text-[#dec544] font-bold" {...rest} />;
+              },
+            }}
+          >
+            {markdown}
+          </Markdown>
         )}
       </section>
     </main>

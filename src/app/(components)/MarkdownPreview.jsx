@@ -16,25 +16,31 @@ export default function MarkdownPreview({ markdown }) {
   return (
     <main>
       <Markdown
-        className={`${inter.className} prose overflow-auto max-w-full p-2 sm:max-w-[90%] sm:mx-auto md:max-w-[70%]`}
+        className={`${inter.className} overflow-auto p-3 sm:max-w-[70%] sm:mx-auto md:max-w-[60%]`}
         remarkPlugins={[remarkGfm, remarkToc]}
         rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
         components={{
           code(props) {
-            const { children, className } = props;
+            const { children, className, node, ...rest } = props;
             const match = /language-(\w+)/.exec(className || "");
             return match ? (
-              <div>
+              <div className="bg-[#353434]">
                 <SyntaxHighlighter
+                  {...rest}
                   PreTag="div"
                   children={children}
-                  language={match[1]}
+                  language="javascript"
                   style={atomOneDark}
+                  showInlineLineNumbers={true}
                   wrapLongLines={true}
+                  wrapLines={true}
                 />
               </div>
             ) : (
-              <code className="bg-[#1a1a1a] p-1 text-[#dec544]">
+              <code
+                {...rest}
+                className="bg-[#2b2a2a] text-sm p-1 text-yellow-200"
+              >
                 {children}
               </code>
             );
@@ -43,34 +49,51 @@ export default function MarkdownPreview({ markdown }) {
             const { node, ...rest } = props;
             return (
               <a
-                className="no-underline text-sm text-blue-300 hover:text-yellow-300"
+                className="no-underline font-thin text-sm text-blue-300 hover:text-yellow-300"
                 {...rest}
               />
             );
           },
           h1(props) {
             const { node, ...rest } = props;
-            return <h1 className="text-[#dec544] text-xl" {...rest} />;
+            return (
+              <h1
+                className="text-white text-start text-4xl font-bold my-3"
+                {...rest}
+              />
+            );
           },
           h2(props) {
             const { node, ...rest } = props;
-            return <h3 className="text-[#dec544]" {...rest} />;
+            return (
+              <h2
+                className="text-[#dec544] text-start text-xl my-3"
+                {...rest}
+              />
+            );
           },
           h3(props) {
             const { node, ...rest } = props;
-            return <h3 className="text-[#dec544]" {...rest} />;
+            return <h3 className="text-white my-2 text-lg" {...rest} />;
           },
           h4(props) {
             const { node, ...rest } = props;
-            return <h4 className="text-[#dec544]" {...rest} />;
+            return (
+              <h4
+                className="text-white text-sm p-1 my-6 border-l-4 border-[#dec544]"
+                {...rest}
+              />
+            );
           },
           p(props) {
             const { node, ...rest } = props;
-            return <p className="text-white" {...rest} />;
+            return <p className="text-gray-200 py-3" {...rest} />;
           },
           ul(props) {
             const { node, ...rest } = props;
-            return <ul className="text-white" {...rest} />;
+            return (
+              <ul className="text-white flex flex-col gap-1 ml-3" {...rest} />
+            );
           },
           strong(props) {
             const { node, ...rest } = props;
@@ -79,6 +102,10 @@ export default function MarkdownPreview({ markdown }) {
           blockquote(props) {
             const { node, ...rest } = props;
             return <blockquote className="text-white font-bold" {...rest} />;
+          },
+          em(props) {
+            const { node, ...rest } = props;
+            return <em className="text-[#dec544] font-bold" {...rest} />;
           },
         }}
       >

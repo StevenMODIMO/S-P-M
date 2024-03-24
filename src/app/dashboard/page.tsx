@@ -38,31 +38,9 @@ const Dashboard: React.FC<DashProps> = () => {
   }, []);
 
   return (
-    <main className="h-screen bg-[#1a1a1a] -mt-28">
+    <main className="bg-[#1a1a1a] -mt-28 text-white">
       <DashNav setTab={setTab} />
-      {tab === 1 ? (
-        <MarkdownEditor />
-      ) : tab === 2 ? (
-        <div>Analytics</div>
-      ) : tab === 3 ? (
-        <div>Manager</div>
-      ) : (
-        <main>
-          <header>
-            <h1>Overview Tab</h1>
-          </header>
-          {blogs.map((blog) => {
-            return (
-              <main key={blog.id}>
-                <img src={blog.imageUrl} alt={blog.title} />
-                <h1 className={`${russoOne.className} text-lg font-bold`}>
-                  {blog.title}
-                </h1>
-              </main>
-            );
-          })}
-        </main>
-      )}
+      <MarkdownEditor />
     </main>
   );
 };
