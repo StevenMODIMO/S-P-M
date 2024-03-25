@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
@@ -9,7 +9,7 @@ import remarkToc from "remark-toc";
 import { Inter, Russo_One } from "next/font/google";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import Image from "next/image";
+import { FaCircle } from "react-icons/fa6";
 
 // Firebase Imports
 import { db } from "@/lib/firebase";
@@ -110,11 +110,12 @@ export default function MarkdownEditor() {
                     showInlineLineNumbers={true}
                     wrapLongLines={true}
                     wrapLines={true}
+                    className="m-1"
                   />
                 ) : (
                   <code
                     {...rest}
-                    className="bg-[#2b2a2a] text-sm p-1 text-yellow-200"
+                    className="bg-[#2b2a2a] text-sm p-1 m-1 text-yellow-200"
                   >
                     {children}
                   </code>
@@ -162,7 +163,7 @@ export default function MarkdownEditor() {
               },
               p(props) {
                 const { node, ...rest } = props;
-                return <p className="text-gray-200 py-3" {...rest} />;
+                return <p className="text-gray-200 py-3 lg:text-lg" {...rest} />;
               },
               ul(props) {
                 const { node, ...rest } = props;
@@ -171,6 +172,15 @@ export default function MarkdownEditor() {
                     className="text-white flex flex-col gap-1 ml-3"
                     {...rest}
                   />
+                );
+              },
+              li(props) {
+                const { node, children, ...rest } = props;
+                return (
+                  <li className="flex gap-1 items-center" {...rest}>
+                    <FaCircle className="text-[6px]" />
+                    {children}
+                  </li>
                 );
               },
               strong(props) {
