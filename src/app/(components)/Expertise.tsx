@@ -25,7 +25,7 @@ export default function Expertise() {
           return (
             <main
               key={expert.id}
-              className="m-3 p-2 my-12 bg-[#1a1a1a] cursor-pointer"
+              className="m-3 p-2 my-12 bg-[#110f0f] cursor-pointer"
             >
               <h1
                 className={`${russoOne.className} text-center text-xl text-white sm:p-3 md:p-2`}

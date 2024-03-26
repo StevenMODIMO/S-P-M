@@ -27,16 +27,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 export default async function ReadBlog({ params }: { params: { id: string } }) {
   const blog = (await getDoc(doc(db, "Blogs", params.id))).data();
   return (
-    <main className="h-fit bg-[#1a1a1a] mx-auto md:-mt-8">
-      <header className="flex flex-col">
-        <Image
-          src={blog?.imageUrl}
-          alt={blog?.title}
-          width={300}
-          height={300}
-          className="w-full md:w-[70%] md:h-64 lg:h-64"
-        />
-      </header>
+    <main className="h-fit bg-[#1a1a1a] mx-auto md:-mt-12">
       <section>
         <MarkdownPreview markdown={blog?.markdown} />
       </section>

@@ -9,6 +9,7 @@ import remarkToc from "remark-toc";
 import { Inter } from "next/font/google";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+import { FaCircle } from "react-icons/fa6"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -93,6 +94,15 @@ export default function MarkdownPreview({ markdown }) {
             const { node, ...rest } = props;
             return (
               <ul className="text-white flex flex-col gap-1 ml-3" {...rest} />
+            );
+          },
+          li(props) {
+            const { node, children, ...rest } = props;
+            return (
+              <li className="flex gap-1 items-center" {...rest}>
+                <FaCircle className="text-[6px]" />
+                {children}
+              </li>
             );
           },
           strong(props) {

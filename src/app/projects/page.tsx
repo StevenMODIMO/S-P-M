@@ -13,7 +13,7 @@ const russoOne = Russo_One({
 
 export default function Projects() {
   return (
-    <main className="bg-black h-screen text-[#DEC544] lg:-mt-8">
+    <main className="bg-[#1a1a1a] h-screen text-[#DEC544] md:-mt-8">
       <header className={`${russoOne.className} flex gap-1 items-center justify-center`}>
         <p>Oops!</p>
         <div className="flex gap-1">

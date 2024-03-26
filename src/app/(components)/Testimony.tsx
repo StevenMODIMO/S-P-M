@@ -10,7 +10,7 @@ export default function Testimony() {
   const [description, setDescription] = useState(false);
   const [feedback, setFeedback] = useState(false);
   return (
-    <main className="bg-[#1a1a1a] p-2 text-white mt-3 text-lg sm:w-[500px] mx-auto md:mt-6">
+    <main className="bg-[#110f0f] p-2 text-white mt-3 text-lg sm:w-[500px] mx-auto md:mt-6">
       <header className="flex items-center gap-1 m-3">
         <BiLogoUpwork className="text-green-500 text-xl" />
         <h1 className="font-bold text-xl">ReactJS Developer</h1>

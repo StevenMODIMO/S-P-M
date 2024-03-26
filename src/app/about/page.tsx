@@ -19,7 +19,7 @@ const russoOne = Russo_One({
 
 export default function About() {
   return (
-    <main className="bg-black -mt-8">
+    <main className="bg-[#1a1a1a] -mt-10">
       <section className="text-start text-xl mt-28 w-60 mx-auto text-white sm:w-80 md:w-96 md:text-2xl">
         <Image
           alt="spm"

@@ -139,22 +139,22 @@ export const mytools: tools[] = [
 export const navlinks: navlinksType[] = [
   {
     id: 1,
-    title: "01. Home",
+    title: "Home",
     path: "/",
   },
   {
     id: 2,
-    title: "02. About",
+    title: "About",
     path: "/about",
   },
   {
     id: 3,
-    title: "03. Projects",
+    title: "Projects",
     path: "/projects",
   },
   {
     id: 4,
-    title: "04. Blog",
+    title: "Blog",
     path: "/blog",
   },
 ];

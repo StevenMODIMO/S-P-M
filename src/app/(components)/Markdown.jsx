@@ -13,7 +13,7 @@ import { FaCircle } from "react-icons/fa6";
 
 // Firebase Imports
 import { db } from "@/lib/firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -44,6 +44,7 @@ export default function MarkdownEditor() {
       title,
       markdown,
       imageUrl,
+      createdAt: serverTimestamp(),
     });
     setTitle("");
     setMarkdown("## Start Editing");
@@ -163,7 +164,9 @@ export default function MarkdownEditor() {
               },
               p(props) {
                 const { node, ...rest } = props;
-                return <p className="text-gray-200 py-3 lg:text-lg" {...rest} />;
+                return (
+                  <p className="text-gray-200 py-3 lg:text-lg" {...rest} />
+                );
               },
               ul(props) {
                 const { node, ...rest } = props;
