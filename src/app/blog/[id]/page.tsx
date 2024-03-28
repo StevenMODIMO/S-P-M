@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 export default async function ReadBlog({ params }: { params: { id: string } }) {
   const blog = (await getDoc(doc(db, "Blogs", params.id))).data();
   return (
-    <main className="h-fit bg-[#1a1a1a] mx-auto md:-mt-12">
+    <main className="h-fit bg-[#141212] mx-auto md:-mt-12">
       <section>
         <MarkdownPreview markdown={blog?.markdown} />
       </section>

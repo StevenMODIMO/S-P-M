@@ -53,7 +53,7 @@ export default function Form() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="John Doe"
-                className="w-72 border-b border-[#dec544] outline-none bg-[#1a1a1a] sm:w-80 md:w-96"
+                className="w-72 border-b border-[#dec544] outline-none bg-[#141212] sm:w-80 md:w-96"
               />
             </div>
             <div className="flex flex-col items-start gap-2 m-2">
@@ -65,7 +65,7 @@ export default function Form() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="johndoe@email.com"
-                className="w-72 border-b border-[#dec544] outline-none bg-[#1a1a1a] sm:w-80 md:w-96"
+                className="w-72 border-b border-[#dec544] outline-none bg-[#141212] sm:w-80 md:w-96"
               />
             </div>
           </section>
@@ -78,7 +78,7 @@ export default function Form() {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Hi Steven, .... ..... .... .... ...."
-              className="w-72 h-32 border-b border-[#dec544] outline-none bg-[#1a1a1a] sm:w-80 md:w-96 lg:w-[820px]"
+              className="w-72 h-32 border-b border-[#dec544] outline-none bg-[#141212] sm:w-80 md:w-96 lg:w-[820px]"
             ></textarea>
           </div>
           <AnimatePresence>

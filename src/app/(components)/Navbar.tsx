@@ -29,10 +29,10 @@ const Navbar: React.FC<NavbarProps> = () => {
       {pathname !== "/dashboard" && (
         <nav
           className={`fixed top-0 left-0 w-full p-3 transition-all duration-75 ease-in-out ${
-            pathname !== "/" ? "bg-[#1a1a1a]" : ""
+            pathname !== "/" ? "bg-[#141212]" : ""
           }`}
         >
-          <header className="p-3 flex justify-between items-center m-1 md:justify-center md:gap-20 md:w-fit md:mx-auto md:rounded-lg md:bg-[#110f0f]">
+          <header className="p-3 flex justify-between items-center m-1 md:justify-center md:gap-20 md:w-fit md:mx-auto md:rounded-lg md:bg-[#0f0d0d]">
             <Link href="/">
               <Image
                 src="/StevenMODIMO.svg"

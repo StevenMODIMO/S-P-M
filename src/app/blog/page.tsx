@@ -37,7 +37,7 @@ export default async function Blog() {
     });
   });
   return (
-    <main className="bg-[#1a1a1a] h-fit md:-mt-10">
+    <main className="bg-[#141212] h-fit md:-mt-10">
       <header className="bg-[#110f0f]">
         <h1 className={`text-2xl w-[80%] mx-auto p-12 ${inter.className} text-white`}>
           Welcome to my thinking Space. Here is Where is write about my
