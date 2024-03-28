@@ -23,6 +23,7 @@ interface BlogResponse {
   title: string;
   imageUrl: string;
   createdAt: string;
+  description: string;
 }
 
 export default async function Blog() {
@@ -33,35 +34,41 @@ export default async function Blog() {
       id: doc.id,
       title: doc.data().title,
       imageUrl: doc.data().imageUrl,
-      createdAt: doc.data().createdAt,
+      description: doc.data().description,
+      createdAt: new Date(
+        doc.data().createdAt.seconds * 1000
+      ).toLocaleDateString("en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+      }),
     });
   });
   return (
-    <main className="bg-[#141212] h-fit md:-mt-10">
-      <header className="bg-[#110f0f]">
-        <h1 className={`text-2xl w-[80%] mx-auto p-12 ${inter.className} text-white`}>
-          Welcome to my thinking Space. Here is Where is write about my
-          thoughts, Expertise and Share it with Other. Join me on this embarking
-          journey of detailed thoughts from me. These blogs vary from a great
-          variance, technology, career, and anything related to the Internet
-        </h1>
-      </header>
-      <section className="p-4 flex flex-col gap-4 sm:grid grid-cols-2 sm:gap-4">
+    <main className="bg-[#141212] h-full md:-mt-10 lg:h-screen lg:mx-auto">
+      <section className="p-4 sm:grid grid-cols-2 gap-2 lg:w-[70%] lg:grid-cols-3">
         {myBlogs.map((blog) => {
           return (
-            <main key={blog.id}>
+            <main
+              key={blog.id}
+              className="bg-[#201d1d] p-1 my-4 rounded sm:w-68 lg:w-80"
+            >
               <Link href={`/blog/${blog.id}`}>
+                <div className={`${russoOne.className} text-xl text-white p-1`}>
+                  {blog.title}
+                </div>
                 <Image
                   src={blog.imageUrl}
                   alt={blog.title}
-                  width={300}
-                  height={300}
-                  className="w-[500px] sm:w-[300px]"
+                  width={10}
+                  height={10}
+                  className="w-24 p-1"
                 />
+                <div className="text-gray-400 p-1">{blog.description}</div>
+                <div className="text-white text-end text-sm p-1">
+                  {blog.createdAt}
+                </div>
               </Link>
-              <div className={`${russoOne.className} text-xl text-white`}>
-                {blog.title}
-              </div>
             </main>
           );
         })}

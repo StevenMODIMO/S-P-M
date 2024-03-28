@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/navigation";
 import type { Metadata } from "next";
 import { Inter, Russo_One } from "next/font/google";
 import MarkdownPreview from "../../(components)/MarkdownPreview";
@@ -27,8 +26,15 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 export default async function ReadBlog({ params }: { params: { id: string } }) {
   const blog = (await getDoc(doc(db, "Blogs", params.id))).data();
   return (
-    <main className="h-fit bg-[#141212] mx-auto md:-mt-12">
+    <main className="h-fit bg-[#141212] md:-mt-8">
       <section>
+        <Image
+          src={blog?.imageUrl}
+          alt={blog?.title}
+          width={10}
+          height={10}
+          className="w-24 p-1 sm:w-28 md:ml-28 lg:ml-72 lg:w-36"
+        />
         <MarkdownPreview markdown={blog?.markdown} />
       </section>
     </main>

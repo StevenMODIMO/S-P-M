@@ -9,7 +9,7 @@ import remarkToc from "remark-toc";
 import { Inter } from "next/font/google";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { FaCircle } from "react-icons/fa6"
+import { GoDiamond } from "react-icons/go";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,7 +17,7 @@ export default function MarkdownPreview({ markdown }) {
   return (
     <main>
       <Markdown
-        className={`${inter.className} overflow-auto p-3 sm:max-w-[70%] sm:mx-auto md:max-w-[60%]`}
+        className={`${inter.className} p-3 sm:max-w-[70%] sm:mx-auto md:max-w-[60%]`}
         remarkPlugins={[remarkGfm, remarkToc]}
         rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
         components={{
@@ -100,7 +100,7 @@ export default function MarkdownPreview({ markdown }) {
             const { node, children, ...rest } = props;
             return (
               <li className="flex gap-1 items-center" {...rest}>
-                <FaCircle className="text-[6px]" />
+                <GoDiamond className="text-[8px] text-white lg:text-[10px]" />
                 {children}
               </li>
             );

@@ -9,7 +9,7 @@ import remarkToc from "remark-toc";
 import { Inter, Russo_One } from "next/font/google";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { FaCircle } from "react-icons/fa6";
+import { GoDiamond } from "react-icons/go";
 
 // Firebase Imports
 import { db } from "@/lib/firebase";
@@ -93,7 +93,9 @@ export default function MarkdownEditor() {
             </button>
           </form>
         ) : (
-          <Markdown
+          <section>
+            {fileUrl && <img src={fileUrl} alt="file"className="w-44 sm:max-w-[70%] sm:mx-auto md:max-w-[60%]" />}
+            <Markdown
             className={`${inter.className} overflow-auto bg-[#1a1a1a] p-3 sm:max-w-[70%] sm:mx-auto md:max-w-[60%]`}
             remarkPlugins={[remarkGfm, remarkToc]}
             rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
@@ -165,7 +167,7 @@ export default function MarkdownEditor() {
               p(props) {
                 const { node, ...rest } = props;
                 return (
-                  <p className="text-gray-200 py-3 lg:text-lg" {...rest} />
+                  <p className="text-gray-200 py-3" {...rest} />
                 );
               },
               ul(props) {
@@ -181,7 +183,7 @@ export default function MarkdownEditor() {
                 const { node, children, ...rest } = props;
                 return (
                   <li className="flex gap-1 items-center" {...rest}>
-                    <FaCircle className="text-[6px]" />
+                    <GoDiamond className="text-[8px] text-white lg:text-[10px]" />
                     {children}
                   </li>
                 );
@@ -204,6 +206,7 @@ export default function MarkdownEditor() {
           >
             {markdown}
           </Markdown>
+          </section>
         )}
       </section>
     </main>
