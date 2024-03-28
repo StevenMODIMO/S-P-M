@@ -45,7 +45,8 @@ export default async function Blog() {
     });
   });
   return (
-    <main className="bg-[#141212] h-full md:-mt-10 lg:h-screen">
+    <main className="bg-[#141212] h-full md:-mt-10">
+      <header className="bg-[#0f0d0d] h-80 w-[90%] p-2 mx-auto text-white rounded-lg">Hello</header>
       <section className="p-4 sm:grid grid-cols-2 gap-2 lg:w-[80%] lg:grid-cols-3 lg:mx-auto">
         {myBlogs.map((blog) => {
           return (
