@@ -46,7 +46,7 @@ export default async function Blog() {
   });
   return (
     <main className="bg-[#141212] h-full md:-mt-10 lg:h-screen">
-      <section className="p-4 sm:grid grid-cols-2 gap-2 lg:w-[70%] lg:grid-cols-3 lg:mx-auto">
+      <section className="p-4 sm:grid grid-cols-2 gap-2 lg:w-[80%] lg:grid-cols-3 lg:mx-auto">
         {myBlogs.map((blog) => {
           return (
             <main
