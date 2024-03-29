@@ -26,6 +26,30 @@ type dashboard = {
   title: string;
 };
 
+type filterTypes = {
+  id: number,
+  option: string
+}
+
+export const filterOptions: filterTypes[] = [
+  {
+    id: 1,
+    option: 'Latest'
+  },
+  {
+    id: 2,
+    option: 'Testing'
+  },
+  {
+    id: 3,
+    option: 'React'
+  },
+  {
+    id: 4,
+    option: 'Node.js'
+  }
+]
+
 export const dashboardLinks: dashboard[] = [
   {
     id: 0,
