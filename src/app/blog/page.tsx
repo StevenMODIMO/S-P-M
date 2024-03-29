@@ -49,7 +49,7 @@ export default async function Blog() {
     <main className="bg-[#141212] h-full md:-mt-10">
       <header className="bg-[#0f0d0d] h-80 p-4 mx-auto text-white sm:w-[90%] sm:rounded-lg lg:w-[80%]">
         <h1
-          className={`${inter.className} text- text-center font-semibold sm:text-xl sm:mt-10 md:w-[500px] md:mt-8 md:mx-auto lg:w-[700px] lg:text-2xl`}
+          className={`${inter.className} text- text-center font-thin sm:text-xl sm:mt-10 md:w-[500px] md:mt-8 md:mx-auto lg:w-[700px] lg:text-2xl`}
         >
           Bienvenidos, web wanderers! In this sanctuary of bytes and browsers, I
           celebrate the art and science of web development. Join me as I explore
