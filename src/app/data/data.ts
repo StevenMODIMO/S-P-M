@@ -38,15 +38,15 @@ export const filterOptions: filterTypes[] = [
   },
   {
     id: 2,
-    option: 'Testing'
+    option: 'Frontend'
   },
   {
     id: 3,
-    option: 'React'
+    option: 'Backend'
   },
   {
     id: 4,
-    option: 'Node.js'
+    option: 'Database'
   }
 ]
 

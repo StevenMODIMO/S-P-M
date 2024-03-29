@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import { Inter, Russo_One } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
-import Filter from "../(components)/Filter";
 
 // Firebase Imports
 import { db } from "@/lib/firebase";
@@ -48,8 +47,8 @@ export default async function Blog() {
   return (
     <main className="bg-[#141212] h-full md:-mt-10">
       <header className="bg-[#0f0d0d] h-80 p-4 mx-auto text-white sm:w-[90%] sm:rounded-lg lg:w-[80%]">
-        <h1
-          className={`${inter.className} text- text-center font-thin sm:text-xl sm:mt-10 md:w-[500px] md:mt-8 md:mx-auto lg:w-[700px] lg:text-2xl`}
+      <h1
+          className={`${inter.className} text- text-center font-thin sm:text-xl sm:mt-10 md:w-[500px] md:mt-20 md:mx-auto lg:w-[700px] lg:text-2xl`}
         >
           Bienvenidos, web wanderers! In this sanctuary of bytes and browsers, I
           celebrate the art and science of web development. Join me as I explore
@@ -59,7 +58,6 @@ export default async function Blog() {
             one line of code at a time.
           </span>
         </h1>
-        <Filter />
       </header>
       <section className="p-4 sm:grid grid-cols-2 gap-2 lg:w-[80%] lg:grid-cols-3 lg:mx-auto">
         {myBlogs.map((blog) => {
