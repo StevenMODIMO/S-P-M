@@ -55,7 +55,9 @@ export default async function Blog() {
           celebrate the art and science of web development. Join me as I explore
           the latest trends, techniques, and tools shaping the digital frontier
           of the web,{" "}
-          <span className="text-[#dec544]">one line of code at a time.</span>
+          <span className={`${russoOne.className} text-[#dec544]`}>
+            one line of code at a time.
+          </span>
         </h1>
         <Filter />
       </header>
