@@ -31,9 +31,9 @@ export default function Projects() {
         Or you can visit my old portfolio to explore some normal but not that
         great projects.
       </p>
-      <header className="bg-[#0f0d0d] h-80 w-[90%] p-2 mx-auto text-white rounded-lg">
+      {/* <header className="bg-[#0f0d0d] h-80 w-[90%] p-2 mx-auto text-white rounded-lg">
         Hello
-      </header>
+      </header> */}
     </main>
   );
 }

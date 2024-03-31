@@ -20,6 +20,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  console.log("MODIMO")
   return (
     <html lang="en">
       <body

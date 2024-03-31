@@ -27,28 +27,80 @@ type dashboard = {
 };
 
 type filterTypes = {
-  id: number,
-  option: string
-}
+  id: number;
+  option: string;
+};
+
+type projects = {
+  id: number;
+  name: string;
+  features: string[];
+};
+
+export const upcomingProjects: projects[] = [
+  {
+    id: 1,
+    name: "Project Management Tool",
+    features: [
+      "Task boards",
+      "Real-time updates",
+      "Reporting and Analytics",
+      "Gantt Charts",
+      "File Sharing and Document Management",
+    ],
+  },
+  {
+    id: 2,
+    name: "E-learning Platform",
+    features: [
+      "Course Management",
+      "Content Creation and Delivery",
+      "Progress Tracking and Reporting",
+      "Discussion Forums and Collaboration Tools",
+      "Gamification and Engagement Features",
+    ],
+  },
+  {
+    id: 3,
+    name: "Video Streaming Application",
+    features: [
+      "Content Library",
+      "Search and Discovery",
+      "Offline Viewing",
+      "Subscription Management",
+      "Cross-Device Syncing",
+    ],
+  },
+  {
+    id: 4,
+    name: "",
+    features: [""],
+  },
+  {
+    id: 5,
+    name: "Video",
+    features: [""],
+  },
+];
 
 export const filterOptions: filterTypes[] = [
   {
     id: 1,
-    option: 'Latest'
+    option: "Latest",
   },
   {
     id: 2,
-    option: 'Frontend'
+    option: "Frontend",
   },
   {
     id: 3,
-    option: 'Backend'
+    option: "Backend",
   },
   {
     id: 4,
-    option: 'Database'
-  }
-]
+    option: "Database",
+  },
+];
 
 export const dashboardLinks: dashboard[] = [
   {
