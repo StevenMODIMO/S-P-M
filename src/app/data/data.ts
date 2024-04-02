@@ -73,14 +73,20 @@ export const upcomingProjects: projects[] = [
   },
   {
     id: 4,
-    name: "",
-    features: [""],
+    name: "A.I Personalized Recipe Generator",
+    features: [
+      "Cooking Instructions and Tips",
+      "Ingredient Substitution",
+      "Meal Planning",
+      "Recipe Sharing",
+      "Custom Recipe Creation",
+    ],
   },
-  {
-    id: 5,
-    name: "Video",
-    features: [""],
-  },
+  // {
+  //   id: 5,
+  //   name: "Interactive 3D Portfolio",
+  //   features: [""],
+  // },
 ];
 
 export const filterOptions: filterTypes[] = [
