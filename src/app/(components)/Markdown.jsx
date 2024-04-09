@@ -149,7 +149,7 @@ export default function MarkdownEditor() {
                   const { node, ...rest } = props;
                   return (
                     <a
-                      className="no-underline font-thin text-sm text-blue-500 hover:text-yellow-300"
+                      className="no-underline text-sm text-blue-500 hover:text-yellow-300"
                       {...rest}
                     />
                   );
