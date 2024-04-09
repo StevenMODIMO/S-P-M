@@ -50,7 +50,7 @@ export default function MarkdownPreview({ markdown }) {
             const { node, ...rest } = props;
             return (
               <a
-                className="no-underline font-thin text-sm text-blue-300 hover:text-yellow-300"
+                className="no-underline font-thin text-sm text-blue-500 hover:text-yellow-300"
                 {...rest}
               />
             );
