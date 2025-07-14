@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -13,16 +13,16 @@
     "@types/validator": "^13.11.9",
     "@vercel/analytics": "^1.2.2",
     "firebase": "^10.8.1",
-    "framer-motion": "^10.18.0",
     "highlight.js": "^11.9.0",
-    "next": "14.0.0",
+    "motion": "^12.23.3",
+    "next": "15.3.5",
     "next-pwa": "^5.6.0",
     "nodemailer": "^6.9.10",
-    "react": "^18",
-    "react-dom": "^18",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "react-icons": "^4.11.0",
     "react-markdown": "^9.0.1",
-    "react-syntax-highlighter": "^15.5.0",
+    "react-syntax-highlighter": "^15.6.1",
     "rehype-highlight": "^7.0.0",
     "rehype-raw": "^7.0.0",
     "rehype-sanitize": "^6.0.0",
@@ -34,12 +34,16 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6",
     "@types/react-syntax-highlighter": "^15.5.11",
     "autoprefixer": "^10",
     "postcss": "^8",
     "tailwindcss": "^3",
     "typescript": "^5"
+  },
+  "overrides": {
+    "@types/react": "19.1.8",
+    "@types/react-dom": "19.1.6"
   }
 }

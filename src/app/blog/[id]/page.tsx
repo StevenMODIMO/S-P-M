@@ -14,7 +14,8 @@ const russoOne = Russo_One({
 
 const inter = Inter({ subsets: ["latin"] });
 
-export async function generateMetadata({ params }: { params: { id: string } }) {
+export async function generateMetadata(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const id = params.id;
   const blog = (await getDoc(doc(db, "Blogs", id))).data();
 
@@ -23,7 +24,8 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default async function ReadBlog({ params }: { params: { id: string } }) {
+export default async function ReadBlog(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const blog = (await getDoc(doc(db, "Blogs", params.id))).data();
   return (
     <main className="h-fit bg-[#141212] md:-mt-8">
