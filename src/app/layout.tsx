@@ -1,17 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "./(components)/Navbar";
 import { Analytics } from "@vercel/analytics/react";
 
-const inter = Inter({ subsets: ["latin"] });
+const rubik = Rubik({
+  subsets: ["latin"],
+  variable: "--font-rubik",
+});
 
 export const metadata: Metadata = {
   title: {
-    default: "Steven Modimo",
-    template: "%s - Steven Modimo",
+    default: "Steven Modimo | Developer",
+    template: "%s | StevenMODIMO",
   },
-  description: "Portfolio",
+  description: "Steven Modimo's Personal Portfoli Website.",
   manifest: "/manifest.json",
 };
 
@@ -20,14 +23,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  console.log("MODIMO")
   return (
     <html lang="en">
       <body
-        className={inter.className + "w-fit h-fit bg-[url('/blob-haikei.svg')]"}
+        className={rubik.className + "w-fit h-fit bg-[#333333]"}
       >
         <Navbar />
-        <div className="mt-20 md:mt-28">
+        <div className="mt-20 md:mt-28 font-medium ">
           {children}
           <Analytics />
         </div>

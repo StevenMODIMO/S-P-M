@@ -5,18 +5,13 @@ import Image from "next/image";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
 import NavLinks from "./NavLinks";
 import { navlinks } from "../data/data";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
-import { Russo_One } from "next/font/google";
 import { CiHome } from "react-icons/ci";
 import { FaRegLightbulb } from "react-icons/fa6";
 import { MdDashboard } from "react-icons/md";
 import { FaSearch } from "react-icons/fa";
 
-const russoOne = Russo_One({
-  subsets: ["cyrillic", "latin", "latin-ext"],
-  weight: "400",
-});
 
 interface NavbarProps {}
 
@@ -51,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = () => {
                 <Link
                   href={link.path}
                   key={link.id}
-                  className={`${russoOne.className} ${
+                  className={`${
                     pathname === link.path && "text-white"
                   } flex items-center justify-center gap-2 hover:text-white transition-all duration-75 ease-in-out`}
                 >

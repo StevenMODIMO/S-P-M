@@ -1,18 +1,11 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import { Inter, Russo_One } from "next/font/google";
 import MarkdownPreview from "../../(components)/MarkdownPreview";
 
 // Fireabse Imports
 import { db } from "@/lib/firebase";
 import { doc, getDoc } from "firebase/firestore";
 
-const russoOne = Russo_One({
-  subsets: ["cyrillic", "latin", "latin-ext"],
-  weight: "400",
-});
-
-const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
