@@ -1,6 +1,5 @@
 "use client";
-import { useState } from "react";
-import { filterOptions } from "../data/data";
+import { filterOptions } from "@/lib/data";
 
 interface CategoryProps {
   category: string;

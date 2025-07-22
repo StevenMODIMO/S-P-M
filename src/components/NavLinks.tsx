@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "motion/react";
 import { FaTimes } from "react-icons/fa";
-import { navlinks } from "../data/data";
+import { navlinks } from "../lib/data";
 import { usePathname } from "next/navigation";
 
 const container = {
@@ -11,7 +11,7 @@ const container = {
   visible: {
     x: 0,
     transition: {
-      ease: "easeInOut",
+      ease: easeInOut,
       delayChildren: 0.3,
       staggerChildren: 0.2,
     },

@@ -25,7 +25,7 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { BsFiletypeSql } from "react-icons/bs";
 import { GrGraphQl } from "react-icons/gr";
-import { mytools } from "../data/data";
+import { mytools } from "../lib/data";
 
 
 export default function Tools() {

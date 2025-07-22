@@ -1,5 +1,5 @@
-import Icons from "./(components)/Icons";
-import Footer from "./(components)/Footer";
+import Icons from "@/components/Icons";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (

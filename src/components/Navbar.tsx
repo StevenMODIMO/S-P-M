@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
 import NavLinks from "./NavLinks";
-import { navlinks } from "../data/data";
+import { navlinks } from "@/lib/data";
 import { AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
 import { CiHome } from "react-icons/ci";

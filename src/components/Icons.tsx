@@ -2,14 +2,14 @@
 import React from "react";
 import { FaCode, FaCodeBranch, FaLaptopCode } from "react-icons/fa";
 import { PiBracketsCurlyBold } from "react-icons/pi";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "motion/react";
 
 const container = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      ease: "easeInOut",
+      ease: easeInOut,
       delayChildren: 0.3,
       staggerChildren: 0.2,
     },

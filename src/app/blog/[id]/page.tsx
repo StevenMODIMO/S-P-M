@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { Metadata } from "next";
-import MarkdownPreview from "../../(components)/MarkdownPreview";
+import MarkdownPreview from "@/components/MarkdownPreview";
 
 // Fireabse Imports
 import { db } from "@/lib/firebase";

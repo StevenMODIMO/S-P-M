@@ -6,10 +6,10 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa6";
 import Link from "next/link";
-import { socialLinks } from "../data/data";
-import { motion } from "framer-motion";
+import { socialLinks } from "@/lib/data";
+import { motion } from "motion/react";
 
-const container = {
+const container: any = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -68,6 +68,7 @@ const Footer = () => {
       >
         &copy; Copyright {year}, StevenMODIMO
       </motion.p>
+      <Link href="/dashboard">Dashboard View</Link>
     </motion.div>
   );
 };

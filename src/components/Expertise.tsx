@@ -8,7 +8,7 @@ import {
 import { SiNextdotjs } from "react-icons/si";
 import { AiOutlineApi } from "react-icons/ai";
 import { BsDatabaseFillAdd, BsGlobe } from "react-icons/bs";
-import { myexpertise } from "../data/data";
+import { myexpertise } from "@/lib/data";
 
 import { Russo_One } from "next/font/google";
 

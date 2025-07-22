@@ -1,9 +1,9 @@
-import Expertise from "../(components)/Expertise";
+import Expertise from "@/components/Expertise";
 import Image from "next/image";
-import Tools from "../(components)/Tools";
-import Form from "../(components)/Form";
-import Footer from "../(components)/Footer";
-import Testimony from "../(components)/Testimony";
+import Tools from "@/components/Tools";
+import Form from "@/components/Form";
+import Footer from "@/components/Footer";
+import Testimony from "@/components/Testimony";
 import { Metadata } from "next";
 import { Russo_One } from "next/font/google";
 

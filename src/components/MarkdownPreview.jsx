@@ -1,23 +1,19 @@
 "use client";
-import { useState, useRef } from "react";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import rehypeSanitize from "rehype-sanitize";
 import rehypeSlug from "rehype-slug";
 import remarkToc from "remark-toc";
-import { Inter } from "next/font/google";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { atomOneDark } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { GoDiamond } from "react-icons/go";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function MarkdownPreview({ markdown }) {
   return (
     <main>
       <Markdown
-        className={`${inter.className} p-3 sm:max-w-[70%] sm:mx-auto md:max-w-[60%]`}
+        className="p-3 sm:max-w-[70%] sm:mx-auto md:max-w-[60%]"
         remarkPlugins={[remarkGfm, remarkToc]}
         rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeSlug]}
         components={{
