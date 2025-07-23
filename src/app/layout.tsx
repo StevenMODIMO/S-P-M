@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: "Steven Modimo | Developer",
     template: "%s | StevenMODIMO",
   },
-  description: "Steven Modimo's Personal Portfoli Website.",
+  description: "Steven Modimo's Personal Portfolio Website.",
   manifest: "/manifest.json",
 };
 
