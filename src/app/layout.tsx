@@ -22,12 +22,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + "w-fit h-fit bg-[#333333]"}>
-        <Navbar />
+      <body className={inter.className + "w-fit h-fit bg-[#1E1E1E]"}>
+        {/* <Navbar />
         <div className="mt-20 md:mt-28 font-medium ">
           {children}
           <Analytics />
-        </div>
+        </div> */}
+        {children}
       </body>
     </html>
   );

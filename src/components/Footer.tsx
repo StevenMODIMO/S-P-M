@@ -68,7 +68,6 @@ const Footer = () => {
       >
         &copy; Copyright {year}, StevenMODIMO
       </motion.p>
-      <Link href="/dashboard">Dashboard View</Link>
     </motion.div>
   );
 };
