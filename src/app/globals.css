@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 1px;
 }
 
@@ -17,4 +17,14 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #555;
-} 
+}
+
+@media (prefers-color-scheme: dark) {
+  .test {
+    background-image: radial-gradient(
+      circle at 10% 50%,
+      rgba(231, 238, 26, 0.1),
+      rgba(38, 38, 38, 0.8)
+    );
+  }
+}

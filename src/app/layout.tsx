@@ -1,18 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Rubik } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/react";
+import Navbar from "@/components/Navbar";
+import { AppContextProvider } from "@/context/AppContext";
 
-const inter = Inter({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Steven Modimo | Developer",
-    template: "%s | StevenMODIMO",
-  },
+  title: "Steven Modimo | Developer",
   description: "Steven Modimo's Personal Portfolio Website.",
-  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -22,13 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + "w-fit h-fit bg-[#1E1E1E]"}>
-        {/* <Navbar />
-        <div className="mt-20 md:mt-28 font-medium ">
+      <body className={`${rubik.className} dark:bg-[#262626]`}>
+        <AppContextProvider>
+          {" "}
+          <Navbar />
           {children}
-          <Analytics />
-        </div> */}
-        {children}
+        </AppContextProvider>
       </body>
     </html>
   );
