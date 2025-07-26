@@ -16,7 +16,6 @@ import {
   SiMongodb,
   SiMysql,
   SiRedis,
-  SiVisualstudiocode,
   SiFirebase,
   SiTypescript,
   SiJest,
@@ -27,13 +26,10 @@ import { BsFiletypeSql } from "react-icons/bs";
 import { GrGraphQl } from "react-icons/gr";
 import { mytools } from "../lib/data";
 
-
 export default function Tools() {
   return (
     <main className="text-white p-6">
-      <div
-        className="grid grid-cols-3 gap-8 sm:grid-cols-5 sm:gap-5 md:gap-3 lg:grid-cols-11"
-      >
+      <div className="grid grid-cols-3 gap-8 sm:grid-cols-5 sm:gap-5 md:gap-3 lg:grid-cols-11">
         {mytools.map((tool) => {
           return (
             <main
@@ -81,8 +77,6 @@ export default function Tools() {
                   <BiLogoPostgresql className="text-blue-400" />
                 ) : tool.name === "Redis" ? (
                   <SiRedis className="text-red-500" />
-                ) : tool.name === "VsCode" ? (
-                  <SiVisualstudiocode className="text-blue-600" />
                 ) : tool.name === "Windows" ? (
                   <FaWindows className="text-blue-400" />
                 ) : (
