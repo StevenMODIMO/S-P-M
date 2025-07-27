@@ -6,7 +6,6 @@ import Container from "./Container";
 
 export default function Navbar() {
   const { theme } = useApp();
-  console.log("From Navbar"+theme);
   return (
     <Container>
       <nav className="">

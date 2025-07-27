@@ -7,7 +7,7 @@ import { SiCodewars } from "react-icons/si";
 
 export default function Hero() {
   return (
-    <div className="text-[#333333] dark:text-white test">
+    <div className="text-[#333333] dark:text-white">
       <Container>
         <header className="flex flex-col gap-8">
           <h1 className="bg-clip-text text-transparent bg-gradient-to-b font-bold text-4xl from-[#E7EE1A] to-[#666666]">
