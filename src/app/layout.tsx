@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${rubik.className} dark:bg-[#262626] test`}>
+      <body className={`${rubik.className} dark:bg-[#262626] h-screen test`}>
         <AppContextProvider>
           {" "}
           <Navbar />
