@@ -22,7 +22,7 @@ export default function RootLayout({
       <body className={`${rubik.className} dark:bg-[#262626] h-screen test`}>
         <AppContextProvider>
           {" "}
-          <Navbar />
+          {/* <Navbar /> */}
           {children}
         </AppContextProvider>
       </body>
