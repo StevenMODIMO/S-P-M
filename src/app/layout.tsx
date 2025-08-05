@@ -8,7 +8,7 @@ import { AppContextProvider } from "@/context/AppContext";
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
-  title: "Smodimo | Developer",
+  title: "Smodimo | Web Developer",
   description: "Steven Modimo's personal portfolio website.",
 };
 
