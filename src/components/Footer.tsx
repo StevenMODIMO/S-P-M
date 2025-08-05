@@ -14,7 +14,10 @@ const Footer = () => {
       <p>
         Made with <span className="text-red-500">❤</span> by Steven Modimo
       </p>
-      <p>&copy; 2025. Steven Modimo - Full Stack Web Developer</p>
+      <p>
+        &copy; {new Date().getFullYear()}. Steven Modimo - Full Stack Web
+        Developer
+      </p>
     </div>
   );
 };

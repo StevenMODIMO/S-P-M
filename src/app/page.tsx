@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="h-full">
+    <main className="h-full flex flex-col gap-12">
       <Hero />
       <About />
       <Footer />

@@ -39,7 +39,7 @@ export default function Hero() {
         </header>
 
         {/* Social Links */}
-        <section className="flex items-center justify-center sm:justify-start gap-5 mt-4">
+        <section className="flex items-center gap-5 mt-4">
           <Link href="https://github.com/StevenMODIMO" target="_blank">
             <FaGithub className="text-xl sm:text-2xl" />
           </Link>

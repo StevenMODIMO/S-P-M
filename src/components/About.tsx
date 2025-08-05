@@ -17,7 +17,7 @@ export default function About() {
             </p>
           </header>
           <section className="dark:text-white flex flex-col gap-3">
-            <h1 className="font-semibold text-2xl text-[#E7EE1A]">
+            <h1 className="font-semibold text-2xl text-[#393a1f] dark:text-[#E7EE1A]">
               Why the Web?
             </h1>
             <p>
