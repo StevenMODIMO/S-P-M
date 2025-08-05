@@ -8,8 +8,8 @@ import { AppContextProvider } from "@/context/AppContext";
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
-  title: "Steven Modimo | Developer",
-  description: "Steven Modimo's Personal Portfolio Website.",
+  title: "Smodimo | Developer",
+  description: "Steven Modimo's personal portfolio website.",
 };
 
 export default function RootLayout({
@@ -19,10 +19,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${rubik.className} dark:bg-[#262626] h-screen test`}>
+      <body className={`${rubik.className} dark:bg-[#262626] h-screen`}>
         <AppContextProvider>
           {" "}
-          {/* <Navbar /> */}
+          <Navbar />
           {children}
         </AppContextProvider>
       </body>
