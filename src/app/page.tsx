@@ -1,15 +1,17 @@
-import Icons from "@/components/Icons";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
     <main className="h-full">
       <Hero />
+      <About />
+      <Footer />
       {/* <section className="flex gap-4 items-center">
-        <div className="h-44 w-44 rounded-md bg-[rgb(51,51,51)]"></div>
-        <div className="h-44 w-44 rounded-md bg-[rgb(42,41,41)]"></div>
-        <div className="h-44 w-44 rounded-md bg-[rgb(38,38,38)]"></div>
+        <div className="h-44 w-44 rounded-md bg-[#333333]"></div>
+        <div className="h-44 w-44 rounded-md bg-[#2a2929]"></div>
+        <div className="h-44 w-44 rounded-md bg-[#262626]"></div>
       </section> */}
     </main>
   );
