@@ -71,7 +71,7 @@ const NavLinks: React.FC<NavLinksProps> = ({ setOpenLinks }) => {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="backdrop-blur-md bg-[rgb(38,38,38,0.5)] dark:bg-[rgb(42,41,41,0.5)] fixed top-0 left-0 w-screen h-screen md:hidden md:bg-none"
+      className="backdrop-blur-md bg-[rgb(38,38,38,0.5)] dark:bg-[rgb(42,41,41,0.5)] fixed top-0 left-0 w-screen h-screen md:hidden md:bg-none z-10"
     >
       <nav className="text-white">
         <motion.div

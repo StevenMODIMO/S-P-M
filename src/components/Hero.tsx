@@ -1,13 +1,28 @@
 "use client";
 import Link from "next/link";
 import Container from "./Container";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaUpwork, FaXTwitter } from "react-icons/fa6";
-import { SiCodewars, SiUpwork } from "react-icons/si";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaReact,
+  FaHtml5,
+  FaCss3,
+  FaNodeJs,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import {
+  SiCodewars,
+  SiUpwork,
+  SiTypescript,
+  SiPostgresql,
+} from "react-icons/si";
+import { IoLogoJavascript } from "react-icons/io5";
+import { DiMongodb } from "react-icons/di";
+import { RiSupabaseFill, RiNextjsFill } from "react-icons/ri";
 
 export default function Hero() {
   return (
-    <div className="text-[#333333] dark:text-white">
+    <div className="text-[#333333] dark:text-white overflow-hidden">
       <Container>
         <header className="flex flex-col gap-8">
           <h1 className="bg-clip-text text-transparent bg-gradient-to-b font-bold text-5xl from-[#E7EE1A] to-[#666666] sm:text-6xl md:text-7xl lg:text-8xl">
@@ -22,7 +37,9 @@ export default function Hero() {
             Join me on a journey of innovation and problem solving.
           </p>
         </header>
-        <section className="flex items-center gap-5 mt-4">
+
+        {/* Social Links */}
+        <section className="flex items-center justify-center gap-5 mt-4">
           <Link href="https://github.com/StevenMODIMO" target="_blank">
             <FaGithub className="text-xl sm:text-2xl" />
           </Link>
@@ -47,6 +64,37 @@ export default function Hero() {
           >
             <SiUpwork className="text-xl sm:text-2xl" />
           </Link>
+        </section>
+        {/* Marquee Section */}
+        <section className="mt-6 overflow-hidden h-12 w-full">
+          <div className="flex animate-marquee-loop whitespace-nowrap gap-8 text-4xl sm:text-3xl text-[#666666] dark:text-gray-300">
+            {/* Group 1 */}
+            <div className="flex gap-8">
+              <FaReact />
+              <RiNextjsFill />
+              <SiTypescript />
+              <IoLogoJavascript />
+              <FaHtml5 />
+              <FaCss3 />
+              <FaNodeJs />
+              <DiMongodb />
+              <SiPostgresql />
+              <RiSupabaseFill />
+            </div>
+            {/* Group 2 (duplicate) */}
+            <div className="flex gap-8">
+              <FaReact />
+              <RiNextjsFill />
+              <SiTypescript />
+              <IoLogoJavascript />
+              <FaHtml5 />
+              <FaCss3 />
+              <FaNodeJs />
+              <DiMongodb />
+              <SiPostgresql />
+              <RiSupabaseFill />
+            </div>
+          </div>
         </section>
       </Container>
     </div>
