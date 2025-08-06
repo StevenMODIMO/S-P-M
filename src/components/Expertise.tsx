@@ -1,65 +1,21 @@
 "use client";
-import {
-  FaDatabase,
-  FaReact,
-  FaServer,
-  FaArrowRightLong,
-} from "react-icons/fa6";
-import { SiNextdotjs } from "react-icons/si";
-import { AiOutlineApi } from "react-icons/ai";
-import { BsDatabaseFillAdd, BsGlobe } from "react-icons/bs";
-import { myexpertise } from "@/lib/data";
-
-import { Russo_One } from "next/font/google";
-
-const russoOne = Russo_One({
-  subsets: ["cyrillic", "latin", "latin-ext"],
-  weight: "400",
-});
+import Container from "./Container";
 
 export default function Expertise() {
   return (
-    <main className="text-[#DEC544]">
-      <div className="sm:grid grid-cols-2 lg:mx-auto lg:grid-cols-4 lg:w-full">
-        {myexpertise.map((expert) => {
-          return (
-            <main
-              key={expert.id}
-              className="m-3 p-2 my-12 bg-[#110f0f] cursor-pointer"
-            >
-              <h1
-                className={`${russoOne.className} text-center text-xl text-white sm:p-3 md:p-2`}
-              >
-                {expert.role}
-              </h1>
-              <p className="text-center p-2">{expert.description}</p>
-              {expert.role === "Frontend Developement" ? (
-                <div className="flex justify-center gap-3">
-                  <FaReact className="text-blue-500 text-3xl m-1" />
-                  <SiNextdotjs className="text-purple-500 text-3xl m-1" />
-                </div>
-              ) : expert.role === "Backend Developement" ? (
-                <div className="flex justify-center gap-3">
-                  <FaDatabase className="text-green-500 text-3xl m-1" />
-                  <AiOutlineApi className="text-yellow-500 text-3xl m-1" />
-                </div>
-              ) : expert.role === "Database Management" ? (
-                <div className="flex justify-center gap-3">
-                  <BsDatabaseFillAdd className="text-red-500 text-3xl m-1" />
-                </div>
-              ) : expert.role === "FullStack Developement" ? (
-                <div className="flex justify-center gap-3">
-                  <FaServer className="text-purple-300 text-3xl m-1" />
-                  <FaArrowRightLong className="text-yellow-400 text-3xl m-1" />
-                  <BsGlobe className="text-white text-3xl m-1" />
-                </div>
-              ) : (
-                ""
-              )}
-            </main>
-          );
-        })}
-      </div>
-    </main>
+    <div>
+      <Container>
+        <section className="dark:text-white flex flex-col gap-3">
+          <h1 className="font-semibold text-2xl text-[#393a1f] dark:text-[#E7EE1A]">
+            My Expertise
+          </h1>
+          <p>
+            I <span className="text-[#E7EE1A]">build</span> with purpose,{" "}
+            <span className="text-[#E7EE1A]">design</span> with intent, and{" "}
+            <span className="text-[#E7EE1A]">code</span> with clarity.
+          </p>
+        </section>
+      </Container>
+    </div>
   );
 }

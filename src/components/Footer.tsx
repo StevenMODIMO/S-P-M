@@ -10,7 +10,7 @@ import Link from "next/link";
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <div className="bg-[#333333] text-white text-center text-sm my-6 p-4 flex flex-col gap-2">
+    <div className="bg-[#333333] text-white text-center text-sm my-6 p-4 flex flex-col gap-2 lg:w-[70%] lg:mx-auto">
       <p>
         Made with <span className="text-red-500">❤</span> by Steven Modimo
       </p>

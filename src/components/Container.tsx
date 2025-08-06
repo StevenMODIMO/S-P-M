@@ -10,7 +10,7 @@ export default function Container({
   children: ReactNode;
 }) {
   return (
-    <div className={`w-[90%] sm:w-[80%] lg:w-[90%] mx-auto py-2 ${className}`}>
+    <div className={`w-[90%] sm:w-[80%] lg:w-[70%] mx-auto py-2 ${className}`}>
       {children}
     </div>
   );

@@ -5,10 +5,10 @@ import Header from "./ui/Header";
 export default function About() {
   return (
     <div>
-      <Container className="">
+      <Container>
         <div id="about" className="flex flex-col gap-4">
           <header className="flex flex-col gap-5">
-            <Header>About me</Header>
+            <Header className="text-[#393a1f] dark:text-white">About me</Header>
             <p className="dark:text-white text-xl">
               Hello, I'm <span className="text-[#E7EE1A]">Steven Modimo</span>,
               a passionate, driven and determined web developer. I thrive on
@@ -30,7 +30,7 @@ export default function About() {
           </section>
         </div>
       </Container>
-      <div className="mt-5 text-white bg-[#333333]">
+      <div className="mt-5 text-white bg-[#333333] lg:w-[70%] lg:mx-auto">
         <Container className="text-sm py-6 flex flex-col gap-3 sm:text-lg md:text-center">
           <p>
             Building solutions for the web offers unparalleled accessibility to

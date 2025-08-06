@@ -1,93 +1,30 @@
 "use client";
-import {
-  FaCss3,
-  FaHtml5,
-  FaReact,
-  FaPython,
-  FaNodeJs,
-  FaWindows,
-  FaGitAlt,
-} from "react-icons/fa";
-import { IoLogoJavascript } from "react-icons/io5";
-import {
-  SiTailwindcss,
-  SiDjango,
-  SiExpress,
-  SiMongodb,
-  SiMysql,
-  SiRedis,
-  SiFirebase,
-  SiTypescript,
-  SiJest,
-} from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
-import { BiLogoPostgresql } from "react-icons/bi";
-import { BsFiletypeSql } from "react-icons/bs";
-import { GrGraphQl } from "react-icons/gr";
-import { mytools } from "../lib/data";
+import Container from "./Container";
+import Link from "next/link";
 
 export default function Tools() {
   return (
-    <main className="text-white p-6">
-      <div className="grid grid-cols-3 gap-8 sm:grid-cols-5 sm:gap-5 md:gap-3 lg:grid-cols-11">
-        {mytools.map((tool) => {
-          return (
-            <main
-              key={tool.id}
-              className="flex items-center gap-1 bg-[#110f0f] w-20 p-1 rounded-lg cursor-pointer sm:rounded-none sm:p-2 sm:w-[100px] md:w-28"
-            >
-              <div className="text-lg sm:text-2xl md:text-3xl">
-                {tool.name === "HTML" ? (
-                  <FaHtml5 className="text-red-400" />
-                ) : tool.name === "CSS" ? (
-                  <FaCss3 className="text-blue-400" />
-                ) : tool.name === "JavaScript" ? (
-                  <IoLogoJavascript className="text-yellow-400" />
-                ) : tool.name === "TypeScript" ? (
-                  <SiTypescript className="text-blue-400" />
-                ) : tool.name === "React" ? (
-                  <FaReact className="text-blue-400" />
-                ) : tool.name === "Graphql" ? (
-                  <GrGraphQl className="text-purple-600" />
-                ) : tool.name === "NodeJS" ? (
-                  <FaNodeJs className="text-green-400" />
-                ) : tool.name === "NextJS" ? (
-                  <TbBrandNextjs />
-                ) : tool.name === "SQL" ? (
-                  <BsFiletypeSql />
-                ) : tool.name === "Firebase" ? (
-                  <SiFirebase className="text-yellow-400" />
-                ) : tool.name === "Tailwind" ? (
-                  <SiTailwindcss className="text-blue-400" />
-                ) : tool.name === "Python" ? (
-                  <FaPython className="text-yellow-400" />
-                ) : tool.name === "Django" ? (
-                  <SiDjango className="text-green-400" />
-                ) : tool.name === "Express" ? (
-                  <SiExpress />
-                ) : tool.name === "Git" ? (
-                  <FaGitAlt className="text-red-400" />
-                ) : tool.name === "Jest" ? (
-                  <SiJest className="text-purple-400" />
-                ) : tool.name === "MongoDB" ? (
-                  <SiMongodb className="text-green-500" />
-                ) : tool.name === "MySql" ? (
-                  <SiMysql className="text-blue-400" />
-                ) : tool.name === "Postgres" ? (
-                  <BiLogoPostgresql className="text-blue-400" />
-                ) : tool.name === "Redis" ? (
-                  <SiRedis className="text-red-500" />
-                ) : tool.name === "Windows" ? (
-                  <FaWindows className="text-blue-400" />
-                ) : (
-                  ""
-                )}
-              </div>
-              <p className="text-sm">{tool.name}</p>
-            </main>
-          );
-        })}
-      </div>
-    </main>
+    <div className="mt-5 text-white bg-[#333333] lg:w-[70%] lg:mx-auto">
+      <Container className="text-sm py-6 flex flex-col gap-3 sm:text-lg md:text-center">
+        <p>
+          Behind every great experience and scalable system is a well-curated
+          set of <span className="text-[#E7EE1A]">[tools]</span>. From{" "}
+          <span className="text-[#E7EE1A]">frontend</span> design to{" "}
+          <span className="text-[#E7EE1A]">backend</span> logic — and everything
+          in between.
+        </p>
+        <p>
+          I leverage proven technologies that help me build efficiently, iterate
+          fast, and deliver high-quality results. Want a closer look? Here's
+          what's in my toolbox. 👇
+        </p>
+        <Link
+          href="/projects"
+          className="bg-[#262626] text-[#E7EE1A] p-4 w-fit mx-auto rounded hover:bg-[#393a1f] transition-colors duration-300 mt-4 text-center text-sm md:text-base lg:text-lg"
+        >
+          See the Stack in Action
+        </Link>
+      </Container>
+    </div>
   );
 }
