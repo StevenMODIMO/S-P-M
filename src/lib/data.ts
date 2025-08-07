@@ -227,12 +227,12 @@ export const navlinks: navlinksType[] = [
   {
     id: 2,
     title: "02. About",
-    path: "#about",
+    path: "/#about",
   },
   {
     id: 3,
     title: "03. Testimonials",
-    path: "#testimonials",
+    path: "/#testimonials",
   },
   {
     id: 4,

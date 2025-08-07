@@ -43,3 +43,7 @@
 .animate-marquee-loop {
   animation: marquee-loop 20s linear infinite;
 }
+
+html {
+  scroll-behavior: smooth;
+}

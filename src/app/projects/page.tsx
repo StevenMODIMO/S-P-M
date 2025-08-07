@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "My Projects",
+  title: "Projects",
   description: "Explore my projects and contributions to the tech community.",
 };
 

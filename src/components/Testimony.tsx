@@ -5,7 +5,10 @@ import Link from "next/link";
 
 export default function Testimony() {
   return (
-    <div id="testimonials" className="bg-[#333333] mt-5 text-white lg:w-[70%] lg:mx-auto">
+    <div
+      id="testimonials"
+      className="bg-[#F5F5F5] dark:bg-[#333333] mt-5 text-[#393a1f] dark:text-white lg:w-[70%] lg:mx-auto"
+    >
       <Container className="py-6">
         <header className="flex flex-col gap-2 items-center">
           <p>

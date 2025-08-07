@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div>
       <Container>
-        <div id="about" className="flex flex-col gap-4">
+        <div id="about" className="scroll-mt-20 flex flex-col gap-4">
           <header className="flex flex-col gap-5">
             <Header className="text-[#393a1f] dark:text-white">About me</Header>
             <p className="dark:text-white text-xl">
@@ -22,7 +22,7 @@ export default function About() {
             </h1>
             <p>
               This is what makes <span>web development</span> more than just{" "}
-              <span className="text-[#E7EE1A]">
+              <span className="text-[#9CA600] dark:text-[#E7EE1A]">
                 {"{"}code{"}"}
               </span>{" "}
               for me
@@ -30,14 +30,14 @@ export default function About() {
           </section>
         </div>
       </Container>
-      <div className="mt-5 text-white bg-[#333333] lg:w-[70%] lg:mx-auto">
+      <div className="mt-5 text-[#393a1f] dark:text-white bg-[#F5F5F5] dark:bg-[#333333] lg:w-[70%] lg:mx-auto">
         <Container className="text-sm py-6 flex flex-col gap-3 sm:text-lg md:text-center">
           <p>
-            Building solutions for the web offers unparalleled accessibility to
+            Building  solutions for the web offers unparalleled accessibility to
             a wide audience, setting it apart from native apps that often demand
             intricate installation and configuration procedures. With web-based
             applications, all it takes is a simple{" "}
-            <span className="text-[#E7EE1A]">URL</span> entry, and the service
+            <span className="text-[#9CA600] dark:text-[#E7EE1A]">URL</span> entry, and the service
             is instantly available at your fingertips.
           </p>
           <p>
