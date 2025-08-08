@@ -4,7 +4,7 @@ import Header from "./ui/Header";
 
 export default function Expertise() {
   return (
-    <div>
+    <div className="flex flex-col gap-6">
       <Container>
         <section className="text-[#393a1f] dark:text-white flex flex-col gap-3">
           <h1 className="font-semibold text-2xl text-[#393a1f] dark:text-[#E7EE1A]">
@@ -19,7 +19,9 @@ export default function Expertise() {
             with clarity.
           </p>
         </section>
-        <section className="md:flex md:flex-col md:gap-12">
+      </Container>
+      <section className="g-[#fafafa] dark:bg-[#333333] py-6 px-4">
+        <Container className="md:flex md:flex-col md:gap-12 b">
           <div className="flex flex-col gap-4 md:w-[50%]">
             <Header className="text-[#393a1f] dark:text-white text-4xl">
               Frontend development
@@ -73,8 +75,8 @@ export default function Expertise() {
               needs.
             </p>
           </div>
-        </section>
-      </Container>
+        </Container>
+      </section>
     </div>
   );
 }

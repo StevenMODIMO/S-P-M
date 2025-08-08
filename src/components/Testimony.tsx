@@ -7,7 +7,7 @@ export default function Testimony() {
   return (
     <div
       id="testimonials"
-      className="bg-[#F5F5F5] dark:bg-[#333333] mt-5 text-[#393a1f] dark:text-white lg:w-[70%] lg:mx-auto"
+      className="bg-[#fafafa] dark:bg-[#333333] mt-5 text-[#393a1f] dark:text-white lg:w-[70%] lg:mx-auto"
     >
       <Container className="py-6">
         <header className="flex flex-col gap-2 items-center">
@@ -15,7 +15,7 @@ export default function Testimony() {
             Let’s switch perspectives.Time to hear from the people I’ve worked
             with.
           </p>
-          <Header className="text-center">Testimonials</Header>
+          <Header className="text-center text-5xl">Testimonials</Header>
         </header>
       </Container>
     </div>
