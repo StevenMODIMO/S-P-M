@@ -20,11 +20,11 @@ export default function Expertise() {
           </p>
         </section>
         <section className="md:flex md:flex-col md:gap-12">
-          <div className="flex flex-col gap-3 md:w-[50%]">
+          <div className="flex flex-col gap-4 md:w-[50%]">
             <Header className="text-[#393a1f] dark:text-white text-4xl">
               Frontend development
             </Header>
-            <p className="text-sm lg:text-base">
+            <p className="text-sm lg:text-base dark:text-white">
               I love creating visually compelling interfaces, user experience
               and landing pages optimized for conversions. I combine design
               systems, performance best practices, and scalable component
@@ -33,11 +33,11 @@ export default function Expertise() {
               end user in mind.
             </p>
           </div>
-          <div className="flex flex-col gap-3 md:w-[50%] md:ml-auto">
+          <div className="flex flex-col gap-4 md:w-[50%] md:ml-auto">
             <Header className="text-[#393a1f] dark:text-white text-4xl">
               Backend development
             </Header>
-            <p className="text-sm lg:text-base">
+            <p className="text-sm lg:text-base dark:text-white">
               I design and implement server-side logic with a strong focus on
               API performance, code re-usability, and clean architectural
               patterns. From authentication and authorization workflows to
@@ -46,11 +46,11 @@ export default function Expertise() {
               efficient, and maintainable.
             </p>
           </div>
-          <div className="flex flex-col gap-3 md:w-[50%]">
+          <div className="flex flex-col gap-4 md:w-[50%]">
             <Header className="text-[#393a1f] dark:text-white text-4xl">
               Database management
             </Header>
-            <p className="text-sm lg:text-base">
+            <p className="text-sm lg:text-base dark:text-white">
               I develop robust data management for storage, retrieval, creation,
               and action-triggered processes. I specialize in designing and
               managing both SQL and NoSQL databases—such as PostgreSQL and
@@ -60,11 +60,11 @@ export default function Expertise() {
               performance.
             </p>
           </div>
-          <div className="flex flex-col gap-3 md:w-[50%] md:ml-auto">
+          <div className="flex flex-col gap-4 md:w-[50%] md:ml-auto">
             <Header className="text-[#393a1f] dark:text-white text-4xl">
               Fullstack development
             </Header>
-            <p className="text-sm lg:text-base">
+            <p className="text-sm lg:text-base dark:text-white">
               I bridge the gap between client-side interfaces and server-side
               logic, ensuring efficient data flow and consistent functionality
               throughout the product. By focusing on clean code architecture,
