@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Tools() {
   return (
     <div className="mt-5 text-[#393a1f] dark:text-white bg-[#F5F5F5] dark:bg-[#333333] lg:w-[70%] lg:mx-auto">
-      <Container className="text-sm py-6 flex flex-col gap-3 sm:text-lg md:text-center">
+      <Container className="text-sm py-6 flex flex-col gap-3 sm:text-lg md:text-center lg:text-base">
         <p>
           Behind every great experience and scalable system is a well-curated
           set of <span className="text-[#E7EE1A]">[tools]</span>. From{" "}

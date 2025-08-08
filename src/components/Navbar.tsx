@@ -53,7 +53,7 @@ export default function Navbar() {
                     <SquareArrowOutUpRight
                       className={`w-4 text-[#9CA600] dark:text-[#E7EE1A] ${
                         link.title === "06. Get in touch" &&
-                        "dark:text-[#9CA600]"
+                        "dark:text-[#242514]"
                       }`}
                     />
                   )}

@@ -8,6 +8,8 @@ import {
   FaHtml5,
   FaCss3,
   FaNodeJs,
+  FaDatabase,
+  FaServer,
 } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import {
@@ -16,9 +18,10 @@ import {
   SiTypescript,
   SiPostgresql,
 } from "react-icons/si";
-import { IoLogoJavascript } from "react-icons/io5";
+import { IoLogoJavascript, IoTerminalSharp } from "react-icons/io5";
 import { DiMongodb } from "react-icons/di";
 import { RiSupabaseFill, RiNextjsFill } from "react-icons/ri";
+import { MdWebAsset } from "react-icons/md";
 
 export default function Hero() {
   return (
@@ -80,6 +83,10 @@ export default function Hero() {
               <DiMongodb />
               <SiPostgresql />
               <RiSupabaseFill />
+              <FaDatabase />
+              <FaServer />
+              <IoTerminalSharp />
+              <MdWebAsset />
             </div>
             {/* Group 2 (duplicate) */}
             <div className="flex gap-8">
@@ -93,6 +100,10 @@ export default function Hero() {
               <DiMongodb />
               <SiPostgresql />
               <RiSupabaseFill />
+              <FaDatabase />
+              <FaServer />
+              <IoTerminalSharp />
+              <MdWebAsset />
             </div>
           </div>
         </section>

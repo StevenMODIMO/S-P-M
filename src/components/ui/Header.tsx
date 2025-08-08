@@ -7,7 +7,7 @@ export default function Header({
   className?: string;
 }) {
   return (
-    <div className={`py-2 font-semibold text-5xl dark:text-white ${className}`}>
+    <div className={`py-2 font-semibold dark:text-white ${className}`}>
       {children}
     </div>
   );
