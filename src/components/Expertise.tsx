@@ -1,6 +1,7 @@
 "use client";
 import Container from "./Container";
 import Header from "./ui/Header";
+import { motion } from "motion/react";
 
 export default function Expertise() {
   return (
@@ -22,7 +23,15 @@ export default function Expertise() {
       </Container>
       <section className="g-[#fafafa] dark:bg-[#333333] py-6 px-4">
         <Container className="md:flex md:flex-col md:gap-12 b">
-          <div className="flex flex-col gap-4 md:w-[50%]">
+          <motion.div
+            initial={{ y: 50 }}
+            whileInView={{ y: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.2,
+            }}
+            className="flex flex-col gap-4 md:w-[50%]"
+          >
             <Header className="text-[#393a1f] dark:text-white text-4xl">
               Frontend development
             </Header>
@@ -34,8 +43,16 @@ export default function Expertise() {
               detail—from typography to micro-interactions—is shaped with the
               end user in mind.
             </p>
-          </div>
-          <div className="flex flex-col gap-4 md:w-[50%] md:ml-auto">
+          </motion.div>
+          <motion.div
+            initial={{ y: 50 }}
+            whileInView={{ y: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.2,
+            }}
+            className="flex flex-col gap-4 md:w-[50%] md:ml-auto"
+          >
             <Header className="text-[#393a1f] dark:text-white text-4xl">
               Backend development
             </Header>
@@ -47,8 +64,16 @@ export default function Expertise() {
               third-party services, I ensure backend systems are secure,
               efficient, and maintainable.
             </p>
-          </div>
-          <div className="flex flex-col gap-4 md:w-[50%]">
+          </motion.div>
+          <motion.div
+            initial={{ y: 50 }}
+            whileInView={{ y: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.2,
+            }}
+            className="flex flex-col gap-4 md:w-[50%]"
+          >
             <Header className="text-[#393a1f] dark:text-white text-4xl">
               Database management
             </Header>
@@ -61,8 +86,16 @@ export default function Expertise() {
               and maintaining data integrity for seamless application
               performance.
             </p>
-          </div>
-          <div className="flex flex-col gap-4 md:w-[50%] md:ml-auto">
+          </motion.div>
+          <motion.div
+            initial={{ y: 50 }}
+            whileInView={{ y: 0 }}
+            transition={{
+              duration: 0.4,
+              delay: 0.2,
+            }}
+            className="flex flex-col gap-4 md:w-[50%] md:ml-auto"
+          >
             <Header className="text-[#393a1f] dark:text-white text-4xl">
               Fullstack development
             </Header>
@@ -74,7 +107,7 @@ export default function Expertise() {
               smooth, reliable experiences that meet both user and business
               needs.
             </p>
-          </div>
+          </motion.div>
         </Container>
       </section>
     </div>

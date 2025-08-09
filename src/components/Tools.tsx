@@ -20,7 +20,7 @@ export default function Tools() {
         </p>
         <Link
           href="/projects"
-          className="bg-[#c2c1c1] dark:bg-[#262626] dark:text-[#E7EE1A] p-4 w-fit mx-auto rounded hover:bg-[#e0e0e0] dark:hover:bg-[#393a1f] transition-colors duration-300 mt-4 text-center text-sm md:text-base lg:text-lg"
+          className="bg-[#c2c1c1] dark:bg-[#262626] dark:text-[#E7EE1A] p-4 w-fit mx-auto rounded hover:bg-[#e0e0e0] dark:hover:bg-[#E7EE1A] dark:hover:text-[#393a1f] transition-colors duration-300 mt-4 text-center text-sm md:text-base lg:text-lg"
         >
           See the Stack in Action
         </Link>
