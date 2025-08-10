@@ -26,7 +26,7 @@ export default function RootLayout({
       <head>
         <meta
           name="google-site-verification"
-          content="K5wNJTy_6LEM4Id38kMsnVzM_FRqmM7oyINYcgqR4hQ"
+          content="Vvsl0yxnWZr_i4JwsMa7DsdUu7Wi0gwbgVhbLqhDFz0"
         />
       </head>
       <body className={`${rubik.className} dark:bg-[#262626] h-screen`}>
