@@ -9,10 +9,11 @@ const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Steven Modimo | Web Developer",
+    default: "Steven Modimo | Full Stack Developer",
     template: "%s | Steven Modimo",
   },
-  description: "Steven Modimo's personal portfolio website.",
+  description:
+    "Portfolio of Steven Modimo, a creative and detail-oriented web developer crafting interactive, responsive, and user-friendly digital experiences.",
 };
 
 export default function RootLayout({
