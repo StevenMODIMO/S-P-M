@@ -23,6 +23,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="K5wNJTy_6LEM4Id38kMsnVzM_FRqmM7oyINYcgqR4hQ"
+        />
+      </head>
       <body className={`${rubik.className} dark:bg-[#262626] h-screen`}>
         <AppContextProvider>
           {" "}
