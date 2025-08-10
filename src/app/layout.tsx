@@ -8,7 +8,10 @@ import { AppContextProvider } from "@/context/AppContext";
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
-  title: "Steven Modimo | Web Developer",
+  title: {
+    default: "Steven Modimo | Web Developer",
+    template: "%s | Steven Modimo",
+  },
   description: "Steven Modimo's personal portfolio website.",
 };
 
@@ -23,9 +26,7 @@ export default function RootLayout({
         <AppContextProvider>
           {" "}
           <Navbar />
-          <main className="pt-20">
-            {children}
-          </main>
+          <main className="pt-20">{children}</main>
         </AppContextProvider>
       </body>
     </html>
