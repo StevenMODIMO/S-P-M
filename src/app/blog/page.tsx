@@ -1,4 +1,7 @@
 import { Metadata } from "next";
+import Header from "@/components/ui/Header";
+import Container from "@/components/Container";
+import BlogListing from "@/components/BlogListing";
 
 export const metadata: Metadata = {
   title: "Blogs",
@@ -7,6 +10,11 @@ export const metadata: Metadata = {
 
 export default function Blog() {
   return (
-    <main></main>
-  )
+    <div>
+      <Container>
+        <Header className="text-5xl">Welcome to my blog</Header>
+      </Container>
+      <BlogListing />
+    </div>
+  );
 }

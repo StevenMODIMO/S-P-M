@@ -4,6 +4,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
 import { AppContextProvider } from "@/context/AppContext";
+import Footer from "@/components/Footer";
 
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
@@ -33,7 +34,10 @@ export default function RootLayout({
         <AppContextProvider>
           {" "}
           <Navbar />
-          <main className="pt-20">{children}</main>
+          <main className="pt-20">
+            {children}
+            <Footer />
+          </main>
         </AppContextProvider>
       </body>
     </html>

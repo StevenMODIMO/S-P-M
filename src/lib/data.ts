@@ -37,6 +37,41 @@ type projects = {
   features: string[];
 };
 
+interface BlogPlaceholdersTypes {
+  id: number;
+  title: string;
+  description: string;
+  createdAt: string;
+  image: string;
+}
+
+export const blogPlaceholders: BlogPlaceholdersTypes[] = [
+  {
+    id: 1,
+    title: "Understanding React Hooks",
+    description:
+      "A deep dive into the world of React Hooks, exploring their benefits and how to use them effectively.",
+    createdAt: "2023-10-01",
+    image: "/images/blog/react-hooks.jpg",
+  },
+  {
+    id: 2,
+    title: "Building Scalable Node.js Applications",
+    description:
+      "Learn how to build scalable applications using Node.js, focusing on best practices and performance optimization.",
+    createdAt: "2023-10-05",
+    image: "/images/blog/nodejs-scalable.jpg",
+  },
+  {
+    id: 3,
+    title: "CSS Grid vs Flexbox",
+    description:
+      "A comprehensive comparison between CSS Grid and Flexbox, helping you choose the right layout technique for your projects.",
+    createdAt: "2023-10-10",
+    image: "/images/blog/css-grid-flexbox.jpg",
+  },
+];
+
 export const upcomingProjects: projects[] = [
   {
     id: 1,
