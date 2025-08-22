@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion, easeInOut } from "motion/react";
 import { navlinks } from "../lib/data";
 import { usePathname } from "next/navigation";
-import { X, SquareArrowOutUpRight, Link2 } from "lucide-react";
+import { X, SquareArrowOutUpRight } from "lucide-react";
 import Container from "./Container";
 
 const container = {
@@ -108,17 +108,9 @@ const NavLinks: React.FC<NavLinksProps> = ({ setOpenLinks }) => {
                   {link.title}
                   {(link.title === "04. Blog" ||
                     link.title === "05. Projects" ||
-                    link.title === "06. Get in touch" ||
-                    link.title === "02 About" ||
-                    link.title === "04. Testimonials") && (
+                    link.title === "06. Get in touch") && (
                     <SquareArrowOutUpRight className="w-4 text-[#E7EE1A]" />
                   )}
-                  {link.title === "02. About" ||
-                    (link.title === "03. Testimonials" && (
-                      <Link2
-                        className={`w-4 text-[#9CA600] dark:text-[#E7EE1A]`}
-                      />
-                    ))}
                 </motion.div>
               </Link>
             ))}
