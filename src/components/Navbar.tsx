@@ -8,7 +8,7 @@ import NavLinks from "./NavLinks";
 import { AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { navlinks } from "@/lib/data";
-import { X, SquareArrowOutUpRight } from "lucide-react";
+import { X, SquareArrowOutUpRight, Link2 } from "lucide-react";
 
 export default function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
@@ -39,7 +39,9 @@ export default function Navbar() {
                   className={`${
                     (link.title === "04. Blog" ||
                       link.title === "05. Projects" ||
-                      link.title === "06. Get in touch") &&
+                      link.title === "06. Get in touch" ||
+                      link.title === "02 About" ||
+                      link.title === "04. Testimonials") &&
                     "flex items-center gap-4"
                   } text-xs lg:text-sm p-2 dark:text-white text-[#393a1f] ${
                     link.title === "06. Get in touch" &&
@@ -57,6 +59,12 @@ export default function Navbar() {
                       }`}
                     />
                   )}
+                  {link.title === "02. About" ||
+                    (link.title === "03. Testimonials" && (
+                      <Link2
+                        className={`w-4 text-[#9CA600] dark:text-[#E7EE1A]`}
+                      />
+                    ))}
                 </Link>
               </li>
             ))}
