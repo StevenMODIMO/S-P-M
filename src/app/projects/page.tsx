@@ -8,5 +8,9 @@ export const metadata: Metadata = {
 };
 
 export default function Projects() {
-  return <main className="h-full"></main>;
+  return (
+    <main className="h-full">
+      <ProjectsFilter />
+    </main>
+  );
 }
