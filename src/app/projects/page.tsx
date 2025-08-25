@@ -16,12 +16,7 @@ export default function Projects({
   const sort = searchParams.sort || "No query provided";
   return (
     <main className="h-full">
-      <Container>
-        <header>
-          Query from server component <span className="font-mono">{query} {sort}</span>
-        </header>
-        <ProjectsFilter />
-      </Container>
+     
     </main>
   );
 }

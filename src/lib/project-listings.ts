@@ -5,6 +5,6 @@ interface ProjectListingsTypes {
   demoLink: string;
   githubLink: string;
   skill: string;
-  stack: string;
-  category: string;
+  stack: string[];
+  category: string[];
 }

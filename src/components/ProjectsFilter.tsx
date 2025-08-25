@@ -6,10 +6,6 @@ export default function ProjectsFilter() {
   const sort = searchParams.get("sort") || "No query provided";
   return (
     <div>
-      <p>
-        Query Value from client component{" "}
-        <span className="font-mono"> {query} {sort}</span>
-      </p>
     </div>
   );
 }
