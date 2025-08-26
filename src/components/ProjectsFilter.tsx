@@ -9,7 +9,7 @@ import { FolderGit2, Figma, BookOpenText, Globe, Github } from "lucide-react";
 export default function ProjectsFilter() {
   return (
     <div className="text-[#393a1f] dark:text-white">
-      <header className="mx-3 flex flex-col gap-3 dark:bg-[#2a2929] dark:shadow-md p-4">
+      <header className="flex flex-col gap-3 dark:bg-[#2a2929] dark:shadow-md p-4">
         <div className="flex items-center justify-center gap-2">
           <FolderGit2 className="" />
           <Header className="text-4xl text-[#E7EE1A]">My Projects</Header>
@@ -25,7 +25,7 @@ export default function ProjectsFilter() {
         </p>
       </header>
       <Container>
-        <div>
+        <div className="flex">
           {projectsListings.map((project) => (
             <div
               key={project.id}
@@ -34,7 +34,6 @@ export default function ProjectsFilter() {
               {" "}
               <div className="relative w-72 h-44">
                 <Image
-                  className="rounded-t-md"
                   src={project.thumbnail}
                   alt={project.title}
                   fill={true}
@@ -42,13 +41,13 @@ export default function ProjectsFilter() {
               </div>
               <div className="flex flex-col gap-2">
                 <h1 className="text-lg font-medium">{project.title}</h1>
-                <p className="text-xs italic">{project.description}</p>
+                {/* <p className="text-xs xs:italic xm:not-italic">{project.description}</p> */}
                 <div className="flex flex-col gap-2">
                   <p className="flex items-center gap-1 text-xs text-[#393a1f] dark:text-[#E7EE1A]">
                     {project.stack.join(" - ")}
                   </p>
                 </div>
-                <footer className="flex items-center gap-4">
+                <footer className="flex items-center justify-center gap-4">
                   <button className="flex items-center gap-2 text-sm bg-[#333333] w-fit py-2 px-4 dark:text-white">
                     <BookOpenText className="w-4 h-4" />
                     <span>Details</span>

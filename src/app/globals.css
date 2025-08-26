@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-xs: 23.4375rem;
+  --breakpoint-xm: 26.5625rem;
+}
 
 ::-webkit-scrollbar {
   width: 1px;
