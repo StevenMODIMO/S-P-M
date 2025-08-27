@@ -5,6 +5,7 @@ import Link from "next/link";
 import Container from "./Container";
 import Header from "./ui/Header";
 import { FolderGit2, Figma, BookOpenText, Globe, Github } from "lucide-react";
+import ProjectDetails from "./ProjectDetails";
 
 export default function ProjectsFilter() {
   return (
@@ -24,15 +25,16 @@ export default function ProjectsFilter() {
           applications.
         </p>
       </header>
+      <ProjectDetails />
       <Container>
-        <div className="flex">
+        <div className="flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-4">
           {projectsListings.map((project) => (
             <div
               key={project.id}
-              className="dark:bg-[#2a2929] dark:shadow-xl py-2"
+              className="dark:bg-[#2a2929] dark:shadow-xl p-4"
             >
               {" "}
-              <div className="relative w-72 h-44">
+              <div className="relative w-60 h-32">
                 <Image
                   src={project.thumbnail}
                   alt={project.title}
@@ -47,7 +49,7 @@ export default function ProjectsFilter() {
                     {project.stack.join(" - ")}
                   </p>
                 </div>
-                <footer className="flex items-center justify-center gap-4">
+                <footer className="flex items-center gap-4">
                   <button className="flex items-center gap-2 text-sm bg-[#333333] w-fit py-2 px-4 dark:text-white">
                     <BookOpenText className="w-4 h-4" />
                     <span>Details</span>
@@ -56,7 +58,7 @@ export default function ProjectsFilter() {
                     <Link
                       href={project.figmaLink}
                       target="_blank"
-                      className="text-xs flex items-center gap-2"
+                      className="text-xs flex items-center gap-2 bg-[#333333] w-fit py-2 px-4"
                     >
                       <Figma className="w-4 h-4" />
                       <span>Open in figma</span>
