@@ -3,9 +3,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 
-export default function ProjectDetails() {
+interface ProjectDetailsProps {
+  setOpenDetails: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function ProjectDetails({ setOpenDetails }: ProjectDetailsProps) {
   return (
-    <div className="absolute top-0 right-0 w-[50%] h-screen bg-black z-50">
+    <div
+      onClick={() => setOpenDetails(false)}
+      className="absolute top-0 w-full h-screen backdrop-blur-sm bg-[rgb(38,38,38,0.5)] dark:bg-[rgb(42,41,41,0.5)] z-50"
+    >
       ProjectDetails
     </div>
   );

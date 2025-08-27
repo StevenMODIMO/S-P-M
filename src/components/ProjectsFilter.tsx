@@ -6,8 +6,10 @@ import Container from "./Container";
 import Header from "./ui/Header";
 import { FolderGit2, Figma, BookOpenText, Globe, Github } from "lucide-react";
 import ProjectDetails from "./ProjectDetails";
+import { useState } from "react";
 
 export default function ProjectsFilter() {
+  const [openDetails, setOpenDetails] = useState(false);
   return (
     <div className="text-[#393a1f] dark:text-white">
       <header className="flex flex-col gap-3 dark:bg-[#2a2929] dark:shadow-md p-4">
@@ -25,7 +27,7 @@ export default function ProjectsFilter() {
           applications.
         </p>
       </header>
-      <ProjectDetails />
+      {openDetails && <ProjectDetails setOpenDetails={setOpenDetails} />}
       <Container>
         <div className="flex flex-col gap-4 lg:grid lg:grid-cols-3 lg:gap-4">
           {projectsListings.map((project) => (
@@ -50,7 +52,10 @@ export default function ProjectsFilter() {
                   </p>
                 </div>
                 <footer className="flex items-center gap-4">
-                  <button className="flex items-center gap-2 text-sm bg-[#333333] w-fit py-2 px-4 dark:text-white">
+                  <button
+                    onClick={() => setOpenDetails(true)}
+                    className="flex items-center gap-2 text-sm bg-[#333333] w-fit py-2 px-4 dark:text-white"
+                  >
                     <BookOpenText className="w-4 h-4" />
                     <span>Details</span>
                   </button>
