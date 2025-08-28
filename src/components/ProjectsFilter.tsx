@@ -17,7 +17,7 @@ export default function ProjectsFilter() {
           <FolderGit2 className="" />
           <Header className="text-4xl text-[#E7EE1A]">My Projects</Header>
         </div>
-        <p className="text-xs text-center text-[#E7EE1A] italic font-bold">
+        <p className="text-xs text-center text-[#393a1f] dark:text-[#E7EE1A] italic font-bold">
           <span>CODE.</span> <span className="dark:text-white">CREATE.</span>{" "}
           <span>INNOVATE</span>
         </p>
@@ -54,7 +54,7 @@ export default function ProjectsFilter() {
                 <footer className="flex items-center gap-4">
                   <button
                     onClick={() => setOpenDetails(true)}
-                    className="flex items-center gap-2 text-sm bg-[#333333] w-fit py-2 px-4 dark:text-white"
+                    className="flex items-center gap-2 text-sm dark:bg-[#333333] w-fit py-2 px-4 dark:text-white"
                   >
                     <BookOpenText className="w-4 h-4" />
                     <span>Details</span>
@@ -63,7 +63,7 @@ export default function ProjectsFilter() {
                     <Link
                       href={project.figmaLink}
                       target="_blank"
-                      className="text-xs flex items-center gap-2 bg-[#333333] w-fit py-2 px-4"
+                      className="text-xs flex items-center gap-2 dark:bg-[#333333] w-fit py-2 px-4"
                     >
                       <Figma className="w-4 h-4" />
                       <span>Open in figma</span>
