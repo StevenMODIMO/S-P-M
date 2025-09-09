@@ -8,7 +8,13 @@ import NavLinks from "./NavLinks";
 import { AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { navlinks } from "@/lib/data";
-import { X, SquareArrowOutUpRight } from "lucide-react";
+import {
+  House,
+  ChartNoAxesGantt,
+  Info,
+  FolderDot,
+  SquareArrowOutUpRight,
+} from "lucide-react";
 
 export default function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
@@ -36,16 +42,20 @@ export default function Navbar() {
               <li key={link.id} className="flex items-center">
                 <Link
                   href={link.path}
-                  className={`${
-                    (link.title === "04. Blog" ||
-                      link.title === "05. Projects" ||
-                      link.title === "06. Get in touch") &&
-                    "flex items-center gap-4"
-                  } text-xs lg:text-sm p-2 dark:text-white text-[#393a1f] ${
-                    link.title === "06. Get in touch" &&
-                    "rounded-full bg-[#E7EE1A]"
-                  }`}
+                  className={`flex items-center gap-2 text-xs lg:text-[16px] p-2 dark:text-white text-[#393a1f] hover:text-[#bdc060f6] dark:hover:text-[#E7EE1A] transition-colors duration-150 ease-in-out`}
                 >
+                  {link.title === "Home" && (
+                    <House className="w-4 h-4 text-[#393a1f] dark:text-white" />
+                  )}
+                  {link.title === "About" && (
+                    <Info className="w-4 h-4 text-[#393a1f] dark:text-white" />
+                  )}
+                  {link.title === "Testimonials" && (
+                    <ChartNoAxesGantt className="w-4 h-4 text-[#393a1f] dark:text-white" />
+                  )}
+                  {link.title === "Projects" && (
+                    <FolderDot className="w-4 h-4 text-[#393a1f] dark:text-white" />
+                  )}
                   {link.title}
                   {(link.title === "04. Blog" ||
                     link.title === "05. Projects" ||

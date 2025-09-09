@@ -256,34 +256,34 @@ export const mytools: tools[] = [
 export const navlinks: navlinksType[] = [
   {
     id: 1,
-    title: "01. Home",
+    title: "Home",
     path: "/",
   },
   {
     id: 2,
-    title: "02. About",
+    title: "About",
     path: "/#about",
   },
   {
     id: 3,
-    title: "03. Testimonials",
+    title: "Testimonials",
     path: "/#testimonials",
   },
+  // {
+  //   id: 4,
+  //   title: "04. Blog",
+  //   path: "/blog",
+  // },
   {
     id: 4,
-    title: "04. Blog",
-    path: "/blog",
-  },
-  {
-    id: 5,
-    title: "05. Projects",
+    title: "Projects",
     path: "/projects",
   },
-  {
-    id: 6,
-    title: "06. Get in touch",
-    path: "/contact",
-  },
+  // {
+  //   id: 6,
+  //   title: "06. Get in touch",
+  //   path: "/contact",
+  // },
 ];
 
 export const socialLinks: socialType[] = [

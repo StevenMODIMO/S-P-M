@@ -4,8 +4,15 @@ import Link from "next/link";
 import { motion, easeInOut } from "motion/react";
 import { navlinks } from "../lib/data";
 import { usePathname } from "next/navigation";
-import { X, SquareArrowOutUpRight } from "lucide-react";
 import Container from "./Container";
+import {
+  House,
+  ChartNoAxesGantt,
+  Info,
+  FolderDot,
+  X,
+  SquareArrowOutUpRight,
+} from "lucide-react";
 
 const container = {
   hidden: { x: -1200 },
@@ -98,19 +105,21 @@ const NavLinks: React.FC<NavLinksProps> = ({ setOpenLinks }) => {
               >
                 <motion.div
                   variants={item}
-                  className={`${
-                    (link.title === "04. Blog" ||
-                      link.title === "05. Projects" ||
-                      link.title === "06. Get in touch") &&
-                    "flex items-center gap-2"
-                  } text-base p-2`}
+                  className={`flex items-center gap-2 text-base p-2`}
                 >
-                  {link.title}
-                  {(link.title === "04. Blog" ||
-                    link.title === "05. Projects" ||
-                    link.title === "06. Get in touch") && (
-                    <SquareArrowOutUpRight className="w-4 text-[#E7EE1A]" />
+                  {link.title === "Home" && (
+                    <House className="w-4 h-4 text-[#E7EE1A] dark:text-white" />
                   )}
+                  {link.title === "About" && (
+                    <Info className="w-4 h-4 text-[#E7EE1A] dark:text-white" />
+                  )}
+                  {link.title === "Testimonials" && (
+                    <ChartNoAxesGantt className="w-4 h-4 text-[#E7EE1A] dark:text-white" />
+                  )}
+                  {link.title === "Projects" && (
+                    <FolderDot className="w-4 h-4 text-[#E7EE1A] dark:text-white" />
+                  )}
+                  {link.title}
                 </motion.div>
               </Link>
             ))}
