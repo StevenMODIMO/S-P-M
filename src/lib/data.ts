@@ -45,6 +45,32 @@ interface BlogPlaceholdersTypes {
   image: string;
 }
 
+interface TestimonyTyes {
+  id: number;
+  title: string;
+  feedback: string;
+  stars: number;
+}
+
+export const testimonials: TestimonyTyes[] = [
+  {
+    id: 1,
+    title: "NextJS Developer - Perfomance Optimization and API intergration",
+    feedback: `Exceptional NextJS Developer – Highly Recommended!
+    I had the pleasure of working with Steven on a project that required expertise in Next.js, performance optimization, and API integration. Despite being new to Upwork, Steven demonstrated an impressive level of professionalism, technical skill, and problem-solving abilities throughout the project.
+    He quickly identified and addressed performance bottlenecks, significantly improving our website’s speed and efficiency. His integration of Google and Facebook social logins with the backend was flawless, and his attention to detail ensured seamless functionality. Communication was always prompt, and he provided valuable insights and suggestions that went beyond the scope of the project.
+    If you're looking for a dedicated, talented NextJS developer who can deliver quality work on time, Steven is the right person for the job. I highly recommend him and look forward to working with him again!`,
+    stars: 5,
+  },
+  {
+    id: 2,
+    title: "React js developer",
+    feedback:
+      "Awesome guy to work with Completed works in less than expected time and beyond expectations",
+    stars: 5,
+  },
+];
+
 export const blogPlaceholders: BlogPlaceholdersTypes[] = [
   {
     id: 1,
