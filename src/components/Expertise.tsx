@@ -24,7 +24,7 @@ export default function Expertise() {
       </Container>
       <section className="g-[#fafafa] dark:bg-[#333333] py-6 px-4">
         <Container className="md:flex md:flex-col md:gap-12 b">
-          <div className="flex items-center">
+          <div className="flex flex-col lg:flex-row items-center">
             <motion.div
               initial={{ y: 50 }}
               whileInView={{ y: 0 }}
@@ -33,7 +33,7 @@ export default function Expertise() {
                 delay: 0.2,
               }}
               viewport={{ once: true }}
-              className="flex flex-col gap-4 md:w-[50%]"
+              className="flex flex-col gap-4 md:w-[80%]"
             >
               <Header className="text-[#393a1f] dark:text-white text-4xl">
                 Frontend development
@@ -51,15 +51,15 @@ export default function Expertise() {
               src="/frontend.lottie"
               loop
               autoplay
-              className="w-[50%]"
+              className="lg:w-[70%] lg:h-[70%]"
             />
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-col-reverse lg:flex-row items-center">
             <DotLottieReact
-              src="/frontend.lottie"
+              src="/backend.lottie"
               loop
               autoplay
-              className="w-[50%]"
+              className="lg:w-[50%]"
             />
             <motion.div
               initial={{ y: 50 }}
@@ -69,7 +69,7 @@ export default function Expertise() {
                 delay: 0.2,
               }}
               viewport={{ once: true }}
-              className="flex flex-col gap-4 md:w-[50%] md:ml-auto"
+              className="flex flex-col gap-4 md:w-[80%]"
             >
               <Header className="text-[#393a1f] dark:text-white text-4xl">
                 Backend development
@@ -84,7 +84,7 @@ export default function Expertise() {
               </p>
             </motion.div>
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-col lg:flex-row items-center">
             <motion.div
               initial={{ y: 50 }}
               whileInView={{ y: 0 }}
@@ -93,7 +93,7 @@ export default function Expertise() {
                 delay: 0.2,
               }}
               viewport={{ once: true }}
-              className="flex flex-col gap-4 md:w-[50%]"
+              className="flex flex-col gap-4 md:w-[80%]"
             >
               <Header className="text-[#393a1f] dark:text-white text-4xl">
                 Database management
@@ -109,18 +109,18 @@ export default function Expertise() {
               </p>
             </motion.div>
             <DotLottieReact
-              src="/frontend.lottie"
+              src="/database.lottie"
               loop
               autoplay
-              className="w-[50%]"
+              className="lg:w-[50%]"
             />
           </div>
-          <div className="flex items-center">
+          <div className="flex flex-col-reverse lg:flex-row items-center">
             <DotLottieReact
-              src="/frontend.lottie"
+              src="/fullstack.lottie"
               loop
               autoplay
-              className="w-[50%]"
+              className="lg:w-[50%]"
             />
             <motion.div
               initial={{ y: 50 }}
@@ -130,7 +130,7 @@ export default function Expertise() {
                 delay: 0.2,
               }}
               viewport={{ once: true }}
-              className="flex flex-col gap-4 md:w-[50%] md:ml-auto"
+              className="flex flex-col gap-4 md:w-[80%]"
             >
               <Header className="text-[#393a1f] dark:text-white text-4xl">
                 Fullstack development
