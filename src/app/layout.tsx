@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
 import { AppContextProvider } from "@/context/AppContext";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
         <AppContextProvider>
           {" "}
           <Navbar />
+          <ScrollToTop />
           <main className="pt-20">
             {children}
             <Footer />
