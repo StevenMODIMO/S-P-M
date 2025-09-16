@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { useApp } from "@/hooks/useApp";
 import { LayoutDashboard } from "lucide-react";
@@ -19,6 +19,36 @@ import {
 export default function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
   const { theme } = useApp();
+
+  // ✅ Dynamic title update
+  useEffect(() => {
+    const handleScroll = () => {
+      const aboutSection = document.querySelector("#about");
+      const testimonialsSection = document.querySelector("#testimonials");
+
+      if (aboutSection) {
+        const rect = aboutSection.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          document.title = "About | Steven Modimo";
+          return;
+        }
+      }
+
+      if (testimonialsSection) {
+        const rect = testimonialsSection.getBoundingClientRect();
+        if (rect.top <= 100 && rect.bottom >= 100) {
+          document.title = "Testimonials | Steven Modimo";
+          return;
+        }
+      }
+
+      // default
+      document.title = "Steven Modimo | Full Stack Developer";
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
@@ -64,7 +94,8 @@ export default function Navbar() {
                       className={`w-4 text-[#9CA600] dark:text-[#E7EE1A] ${
                         link.title === "06. Get in touch" &&
                         "dark:text-[#242514]"
-                      }`}
+                      }
+                      `}
                     />
                   )}
                 </Link>
