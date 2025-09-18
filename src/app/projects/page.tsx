@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import ProjectsFilter from "@/components/ProjectsFilter";
+import ProjectsListings from "@/components/ProjectsListings";
 import Container from "@/components/Container";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <main className="h-full">
-      <ProjectsFilter />
+      <ProjectsListings />
     </main>
   );
 }

@@ -17,7 +17,7 @@ import {
 import ProjectDetails from "./ProjectDetails";
 import { useState } from "react";
 
-export default function ProjectsFilter() {
+export default function ProjectsListings() {
   const [openDetails, setOpenDetails] = useState(false);
   return (
     <div className="text-[#393a1f] dark:text-white">
@@ -28,15 +28,15 @@ export default function ProjectsFilter() {
             <Header className="text-4xl text-[#E7EE1A]">My Projects</Header>
           </div>
           <p className="text-xs text-[#393a1f] dark:text-[#E7EE1A] font-medium flex items-center gap-4">
-            <span className="flex items-center gap-2">
+            <span className="cursor-pointer flex items-center gap-2">
               <Code className="w-4 h-4" />
               <span>CODE.</span>
             </span>
-            <span className="dark:text-white flex items-center gap-2">
+            <span className="cursor-pointer dark:text-white flex items-center gap-2">
               <BadgePlus className="w-4 h-4" />
               <span>CREATE.</span>
             </span>{" "}
-            <span className="flex items-center gap-2">
+            <span className="cursor-pointer flex items-center gap-2">
               <Recycle className="w-4 h-4" />
               <span>INNOVATE</span>
             </span>
