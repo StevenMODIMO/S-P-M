@@ -22,7 +22,7 @@ export default function ProjectsFilter() {
   return (
     <div className="text-[#393a1f] dark:text-white">
       <Container>
-        <header className="flex flex-col gap-3 dark:bg-[#2a2929] dark:shadow-md p-4">
+        <header className="flex flex-col gap-3 bg-[#fafafa] dark:bg-[#2a2929] shadow p-4">
           <div className="flex items-center gap-2">
             <FolderGit2 className="" />
             <Header className="text-4xl text-[#E7EE1A]">My Projects</Header>

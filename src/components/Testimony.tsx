@@ -12,7 +12,7 @@ export default function Testimony() {
   return (
     <div
       id="testimonials"
-      className="bg-[#fafafa] dark:bg-[#333333] mt-5 text-[#393a1f] dark:text-white lg:w-[70%] lg:mx-auto"
+      className="bg-[#fafafa] shadow dark:bg-[#333333] mt-5 text-[#393a1f] dark:text-white lg:w-[70%] lg:mx-auto"
     >
       <Container className="py-6">
         <header className="flex flex-col gap-2 items-center scroll-mt-20">

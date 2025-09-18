@@ -50,7 +50,7 @@ export default function About() {
           </section>
         </div>
       </Container>
-      <div className="mt-5 text-[#393a1f] dark:text-white bg-[#fafafa] dark:bg-[#333333] lg:w-[70%] lg:mx-auto">
+      <div className="mt-5 text-[#393a1f] dark:text-white shadow bg-[#fafafa] dark:bg-[#333333] lg:w-[70%] lg:mx-auto">
         <Container className="text-sm py-6 flex flex-col gap-3 sm:text-lg md:text-center lg:text-base">
           <p>
             Building solutions for the web offers unparalleled accessibility to
