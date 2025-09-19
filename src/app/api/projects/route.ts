@@ -5,7 +5,7 @@ import { put } from "@vercel/blob";
 
 export async function GET(req: NextRequest) {
   try {
-    const result = await query("SELECT inet_server_port()");
+    const result = await query("SELECT * FROM project_listings");
     return NextResponse.json(result.rows[0], { status: 200 });
   } catch (error) {
     return NextResponse.json(error, { status: 404 });
