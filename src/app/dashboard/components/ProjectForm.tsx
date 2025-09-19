@@ -363,7 +363,7 @@ export default function ProjectForm() {
 
             <button
               type="submit"
-              className="bg-[#393a1f] text-white p-2 rounded w-fit mx-auto flex items-center gap-2"
+              className="my-4 bg-[#393a1f] text-white p-2 rounded w-fit mx-auto flex items-center gap-2"
             >
               <CirclePlus size={20} />
               <span>Add Project</span>
