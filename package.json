@@ -13,9 +13,12 @@
     "@tailwindcss/postcss": "^4.1.12",
     "@types/nodemailer": "^6.4.14",
     "@vercel/analytics": "^1.2.2",
+    "@vercel/blob": "^2.0.0",
+    "i": "^0.3.7",
     "lucide-react": "^0.525.0",
     "motion": "^12.23.3",
     "next": "15.3.5",
+    "npm": "^11.6.0",
     "pg": "^8.16.3",
     "postcss": "^8.5.6",
     "react": "19.1.0",
@@ -29,7 +32,8 @@
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
     "autoprefixer": "^10",
-    "typescript": "^5"
+    "typescript": "^5",
+    "uuid": "^13.0.0"
   },
   "overrides": {
     "@types/react": "19.1.8",

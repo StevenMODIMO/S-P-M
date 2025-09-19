@@ -6,7 +6,7 @@ export default function Dashboard() {
     <div>
       <Container>
         <header>
-          <Header>Modimo's Project Content Management System</Header>
+          <Header className="text-2xl">Modimo's Content Management System</Header>
         </header>
       </Container>
     </div>
