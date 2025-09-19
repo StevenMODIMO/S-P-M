@@ -22,10 +22,10 @@ export default function Dashboard() {
             />
           </div>
           <Header className="text-xl text-[#393a1f]">
-            Modimo's Content Management System
+            MODIMO'S CONTENT MANAGEMENT SYSTEM
           </Header>
         </header>
-        <MainContainer />
+        <MainContainer /> 
       </Container>
     </div>
   );

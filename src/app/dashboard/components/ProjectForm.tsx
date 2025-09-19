@@ -7,7 +7,7 @@ export default function ProjectForm() {
     <div>
       <header className="flex items-center justify-center gap-2 cursor-pointer">
         <File size={20} />
-        <Header className="text- text-[#393a1f]">Add New Project</Header>
+        <Header className="text-[#393a1f]">Add New Project</Header>
       </header>
     </div>
   );
