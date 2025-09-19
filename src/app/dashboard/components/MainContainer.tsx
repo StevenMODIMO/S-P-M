@@ -11,16 +11,20 @@ import {
   Users,
   Columns3Cog,
   ChartPie,
+  ReceiptText,
+  Mail,
+  Film,
+  Banknote,
 } from "lucide-react";
 
 export default function MainContainer() {
-  const [tab, setTab] = useState("viewProjects");
+  const [tab, setTab] = useState<string | null>("viewProjects");
   return (
     <div className="text-[#393a1f] bg-[#fafafa] rounded shadow my-4 flex gap-3 h-[85vh]">
-      <header className="flex flex-col gap-3 bg-[#393a1f] text-[#dfdfdf] rounded-bl rounded-tl shadow- w-[20%]">
+      <header className="flex flex-col gap-1 bg-[#393a1f] text-[#dfdfdf] rounded-bl rounded-tl shadow- w-[20%]">
         <button
           onClick={() => setTab("viewProjects")}
-          className={`cursor-pointer flex items-center gap-2 p-2 ${
+          className={`cursor-pointer flex items-center gap-1 p-2 ${
             tab === "viewProjects" ? "text-[#E7EE1A]" : ""
           }`}
         >
@@ -37,7 +41,7 @@ export default function MainContainer() {
           <span>New</span>
         </button>
         <button
-          onClick={() => setTab("addProject")}
+          onClick={() => setTab(null)}
           className={`cursor-pointer flex items-center gap-2 p-2 ${
             tab === "" ? "text-[#E7EE1A]" : ""
           }`}
@@ -46,7 +50,7 @@ export default function MainContainer() {
           <span>Manage</span>
         </button>
         <button
-          onClick={() => setTab("addProject")}
+          onClick={() => setTab(null)}
           className={`cursor-pointer flex items-center gap-2 p-2 ${
             tab === "" ? "text-[#E7EE1A]" : ""
           }`}
@@ -55,7 +59,7 @@ export default function MainContainer() {
           <span>Profile</span>
         </button>
         <button
-          onClick={() => setTab("addProject")}
+          onClick={() => setTab(null)}
           className={`cursor-pointer flex items-center gap-2 p-2 ${
             tab === "" ? "text-[#E7EE1A]" : ""
           }`}
@@ -64,7 +68,7 @@ export default function MainContainer() {
           <span>Settings</span>
         </button>
         <button
-          onClick={() => setTab("addProject")}
+          onClick={() => setTab(null)}
           className={`cursor-pointer flex items-center gap-2 p-2 ${
             tab === "" ? "text-[#E7EE1A]" : ""
           }`}
@@ -73,7 +77,7 @@ export default function MainContainer() {
           <span>Analytics</span>
         </button>
         <button
-          onClick={() => setTab("addProject")}
+          onClick={() => setTab(null)}
           className={`cursor-pointer flex items-center gap-2 p-2 ${
             tab === "" ? "text-[#E7EE1A]" : ""
           }`}
@@ -82,13 +86,49 @@ export default function MainContainer() {
           <span>Visitors</span>
         </button>
         <button
-          onClick={() => setTab("addProject")}
+          onClick={() => setTab(null)}
           className={`cursor-pointer flex items-center gap-2 p-2 ${
             tab === "" ? "text-[#E7EE1A]" : ""
           }`}
         >
           <Columns3Cog size={20} />
           <span>Config</span>
+        </button>
+        <button
+          onClick={() => setTab(null)}
+          className={`cursor-pointer flex items-center gap-2 p-2 ${
+            tab === "" ? "text-[#E7EE1A]" : ""
+          }`}
+        >
+          <ReceiptText size={20} />
+          <span>Contracts</span>
+        </button>
+        <button
+          onClick={() => setTab(null)}
+          className={`cursor-pointer flex items-center gap-2 p-2 ${
+            tab === "" ? "text-[#E7EE1A]" : ""
+          }`}
+        >
+          <Banknote size={20} />
+          <span>Expenses</span>
+        </button>
+        <button
+          onClick={() => setTab(null)}
+          className={`cursor-pointer flex items-center gap-2 p-2 ${
+            tab === "" ? "text-[#E7EE1A]" : ""
+          }`}
+        >
+          <Mail size={20} />
+          <span>E-mails</span>
+        </button>
+        <button
+          onClick={() => setTab(null)}
+          className={`cursor-pointer flex items-center gap-2 p-2 ${
+            tab === "" ? "text-[#E7EE1A]" : ""
+          }`}
+        >
+          <Film size={20} />
+          <span>Media</span>
         </button>
       </header>
       <section className="overflow-y-auto w-full">
