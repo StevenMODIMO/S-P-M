@@ -21,7 +21,7 @@ export default function Dashboard() {
               className="rounded-full shadow-md"
             />
           </div>
-          <Header className="text-xl">
+          <Header className="text-xl text-[#393a1f]">
             Modimo's Content Management System
           </Header>
         </header>

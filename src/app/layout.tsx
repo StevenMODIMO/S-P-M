@@ -6,6 +6,7 @@ import Navbar from "@/components/Navbar";
 import { AppContextProvider } from "@/context/AppContext";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { headers } from "next/headers";
 
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
@@ -18,11 +19,22 @@ export const metadata: Metadata = {
     "Portfolio of Steven Modimo, a creative and detail-oriented web developer crafting interactive, responsive, and user-friendly digital experiences.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headersList = await headers();
+  const referer = headersList.get("referer") || "";
+
+  let route = "";
+  try {
+    const url = new URL(referer);
+    route = url.pathname; // e.g., "/dashboard"
+  } catch (err) {
+    route = "";
+  }
+  console.log(route);
   return (
     <html lang="en">
       <head>
@@ -36,7 +48,7 @@ export default function RootLayout({
           {" "}
           <Navbar />
           <ScrollToTop />
-          <main className="pt-20">
+          <main className={`${route === "/dashboard" ? "" : "pt-20"}`}>
             {children}
             <Footer />
           </main>

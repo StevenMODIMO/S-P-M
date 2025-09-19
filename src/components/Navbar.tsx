@@ -15,10 +15,12 @@ import {
   FolderDot,
   SquareArrowOutUpRight,
 } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
   const { theme } = useApp();
+  const pathname = usePathname();
 
   // ✅ Dynamic title update
   useEffect(() => {
@@ -52,7 +54,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 ${!openLinks && "backdrop-blur-sm"}`}
+      className={`fixed top-0 w-full z-50 ${!openLinks && "backdrop-blur-sm"} ${
+        pathname === "/dashboard" && "hidden"
+      }`}
     >
       <Container>
         <header className="flex items-center justify-between">
