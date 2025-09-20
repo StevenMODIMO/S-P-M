@@ -45,13 +45,13 @@ export default function About() {
               <span className="text-[#9CA600] dark:text-[#E7EE1A]">
                 {"{"}code{"}"}
               </span>{" "}
-              for me
+              for me.
             </p>
           </section>
         </div>
       </Container>
       <div className="mt-5 text-[#393a1f] dark:text-white shadow bg-[#fafafa] dark:bg-[#333333] lg:w-[70%] lg:mx-auto">
-        <Container className="text-sm py-6 flex flex-col gap-3 sm:text-lg md:text-center lg:text-base">
+        <Container className="text-sm py-6 flex flex-col gap-3 sm:text-lg lg:text-base">
           <p>
             Building solutions for the web offers unparalleled accessibility to
             a wide audience, setting it apart from native apps that often demand
