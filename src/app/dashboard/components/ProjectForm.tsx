@@ -205,7 +205,7 @@ export default function ProjectForm() {
                   type="text"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  className="rounded p-1 border border-[#393a1f] outline-none"
+                  className="rounded p-1 border border-white outline-none"
                 />
               </label>
 
@@ -217,7 +217,7 @@ export default function ProjectForm() {
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="rounded p-1 border border-[#393a1f] outline-none"
+                  className="rounded p-1 border border-white outline-none"
                 />
               </label>
 
@@ -231,7 +231,7 @@ export default function ProjectForm() {
                   type="file"
                   accept="image/*"
                   onChange={handleThumbnailChange}
-                  className="rounded p-1 border border-[#393a1f] outline-none"
+                  className="rounded p-1 border border-white outline-none"
                 />
                 {errors.thumbnail && (
                   <small className="text-red-600">{errors.thumbnail}</small>
@@ -264,7 +264,7 @@ export default function ProjectForm() {
                   type="file"
                   accept="image/*"
                   onChange={handleIconChange}
-                  className="rounded p-1 border border-[#393a1f] outline-none"
+                  className="rounded p-1 border border-white outline-none"
                 />
                 {errors.icon && (
                   <small className="text-red-600">{errors.icon}</small>
@@ -296,7 +296,7 @@ export default function ProjectForm() {
                   type="text"
                   value={demoLink}
                   onChange={(e) => setDemoLink(e.target.value)}
-                  className="rounded p-1 border border-[#393a1f] outline-none"
+                  className="rounded p-1 border border-white outline-none"
                 />
               </label>
 
@@ -309,7 +309,7 @@ export default function ProjectForm() {
                   value={githubLink}
                   onChange={(e) => setGithubLink(e.target.value)}
                   type="text"
-                  className="rounded p-1 border border-[#393a1f] outline-none"
+                  className="rounded p-1 border border-white outline-none"
                 />
               </label>
 
@@ -322,7 +322,7 @@ export default function ProjectForm() {
                   value={figmaLink}
                   onChange={(e) => setFigmaLink(e.target.value)}
                   type="text"
-                  className="rounded p-1 border border-[#393a1f] outline-none"
+                  className="rounded p-1 border border-white outline-none"
                 />
               </label>
 
@@ -336,7 +336,7 @@ export default function ProjectForm() {
                   value={stackInput}
                   onChange={(e) => setStackInput(e.target.value)}
                   placeholder="e.g. React, TypeScript, Tailwind"
-                  className="rounded p-1 border border-[#393a1f] outline-none"
+                  className="rounded p-1 border border-white outline-none"
                 />
               </label>
 
@@ -350,7 +350,7 @@ export default function ProjectForm() {
                   value={categoryInput}
                   onChange={(e) => setCategoryInput(e.target.value)}
                   placeholder="e.g. web, mobile, ui"
-                  className="rounded p-1 border border-[#393a1f] outline-none"
+                  className="rounded p-1 border border-white outline-none"
                 />
               </label>
             </section>
