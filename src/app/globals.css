@@ -50,3 +50,13 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* globals.css */
+#nprogress .bar {
+  background: #e7ee1a; /* purple-500 */
+  height: 3px;
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px #e7ee1a, 0 0 5px #e7ee1a;
+}

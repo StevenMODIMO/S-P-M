@@ -21,6 +21,7 @@ export default function Navbar() {
   const [openLinks, setOpenLinks] = useState(false);
   const { theme } = useApp();
   const pathname = usePathname();
+  const isDashboardRoute = pathname.startsWith("/dashboard");
 
   // ✅ Dynamic title update
   useEffect(() => {
@@ -55,7 +56,7 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 w-full z-50 ${!openLinks && "backdrop-blur-sm"} ${
-        pathname === "/dashboard" && "hidden"
+        isDashboardRoute && "hidden"
       }`}
     >
       <Container>

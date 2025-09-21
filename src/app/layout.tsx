@@ -7,6 +7,7 @@ import { AppContextProvider } from "@/context/AppContext";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { headers } from "next/headers";
+import MainWrapper from "@/components/MainWrapper";
 
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
@@ -48,10 +49,10 @@ export default async function RootLayout({
           {" "}
           <Navbar />
           <ScrollToTop />
-          <main className={`${route === "/dashboard" ? "" : "pt-20"}`}>
+          <MainWrapper>
             {children}
             <Footer />
-          </main>
+          </MainWrapper>
         </AppContextProvider>
       </body>
     </html>

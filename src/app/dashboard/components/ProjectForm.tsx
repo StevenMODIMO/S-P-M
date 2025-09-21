@@ -1,5 +1,4 @@
 "use client";
-import Header from "@/components/ui/Header";
 import {
   File,
   CirclePlus,
@@ -135,11 +134,6 @@ export default function ProjectForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Basic client-side validation example
-    if (!title.trim()) {
-      alert("Title is required");
-      return;
-    }
 
     const formData = new FormData();
     formData.append("title", title);
@@ -189,9 +183,9 @@ export default function ProjectForm() {
 
   return (
     <div className="flex flex-col gap-4">
-      <header className="flex items-center justify-center gap-2 cursor-pointer">
+      <header className="flex items-center justify-center gap-2 cursor-pointer py-3">
         <File size={20} />
-        <Header className="text-[#393a1f]">Add New Project</Header>
+        <h1 className="font-semibold text-[#393a1f]">Add New Project</h1>
       </header>
 
       <section className="flex gap-2">

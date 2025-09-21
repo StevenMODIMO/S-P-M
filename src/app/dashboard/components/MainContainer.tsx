@@ -20,7 +20,7 @@ import {
 export default function MainContainer() {
   const [tab, setTab] = useState<string | null>("viewProjects");
   return (
-    <div className="text-[#393a1f] bg-[#fafafa] rounded shadow my-4 flex gap-3 h-[85vh]">
+    <div className="text-[#393a1f] bg-[#fafafa] rounded shadow flex gap-3">
       <header className="flex flex-col gap-1 bg-[#393a1f] text-[#dfdfdf] rounded-bl rounded-tl shadow- w-[20%]">
         <button
           onClick={() => setTab("viewProjects")}
