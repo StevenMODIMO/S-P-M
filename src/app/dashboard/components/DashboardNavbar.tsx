@@ -25,7 +25,7 @@ export default function DashboardNavbar() {
   const [collapsed, setIsCollapsed] = useState(false);
   const pathname = usePathname();
 
-  const iconMap: Record<string, JSX.Element> = {
+  const iconMap: Record<string, React.ReactNode> = {
     Projects: <FolderKanban size={20} />,
     New: <FolderPlus size={20} />,
     Manage: <MonitorCog size={20} />,
