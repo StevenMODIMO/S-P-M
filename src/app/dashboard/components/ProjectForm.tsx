@@ -14,6 +14,7 @@ import {
   FolderPlus,
 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { marked } from "marked";
 
 export default function ProjectForm() {
   const [title, setTitle] = useState<string>("");
@@ -222,7 +223,7 @@ export default function ProjectForm() {
               <label className="rounded p-2 border border-dashed border-[#e7ee1a] outline-none flex items-center">
                 {thumbnailPreview ? (
                   <div className="flex items-center gap-2">
-                    <span>Remove</span>
+                    <span>Remove Thumbnail</span>
                     <Trash size={18} onClick={removeThumbnail} />
                   </div>
                 ) : (
@@ -246,7 +247,7 @@ export default function ProjectForm() {
               <label className="rounded p-2 border border-dashed border-[#e7ee1a] outline-none flex items-center">
                 {iconPreview ? (
                   <div className="flex items-center gap-2">
-                    <span>Remove</span>
+                    <span>Remove Icon</span>
                     <Trash size={18} onClick={removeIcon} />
                   </div>
                 ) : (
@@ -344,15 +345,26 @@ export default function ProjectForm() {
         </div>
         <div className="w-[50%] pl-4">
           <div className="space-y-3">
+            {thumbnailPreview ? (
+              <img
+                src={thumbnailPreview}
+                alt="Thumbnail Preview"
+                className="w-full max-w-xs h-40 object-cover rounded shadow"
+              />
+            ) : (
+              <div className="w-full max-w-xs h-40 rounded bg-gray-50 border flex items-center justify-center text-sm text-gray-500">
+                Thumbnail preview
+              </div>
+            )}
             <div className="flex items-center gap-3">
               {iconPreview ? (
                 <img
                   src={iconPreview}
                   alt="icon preview"
-                  className="w-12 h-12 object-cover rounded border"
+                  className="w-12 h-12 object-cover rounded-full"
                 />
               ) : (
-                <div className="w-12 h-12 rounded bg-gray-100 flex items-center justify-center border">
+                <div className="w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
                   <ImageIcon size={18} />
                 </div>
               )}
@@ -360,20 +372,10 @@ export default function ProjectForm() {
                 {title || "Project Title"}
               </h1>
             </div>
-            <p className="text-sm text-gray-700">
-              {description || "Project description will appear here..."}
-            </p>
-            {thumbnailPreview ? (
-              <img
-                src={thumbnailPreview}
-                alt="Thumbnail Preview"
-                className="w-full max-w-xs h-40 object-cover rounded border"
-              />
-            ) : (
-              <div className="w-full max-w-xs h-40 rounded bg-gray-50 border flex items-center justify-center text-sm text-gray-500">
-                Thumbnail preview
-              </div>
-            )}
+            <div
+              className="prose"
+              dangerouslySetInnerHTML={{ __html: marked(description) }}
+            />
             <div className="space-y-1">
               {demoLink && (
                 <a
@@ -400,28 +402,33 @@ export default function ProjectForm() {
                   href={figmaLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="block text-blue-600 underline"
+                  className="flex items-center gap-2 text-[#e7ee1a] underline"
                 >
-                  Figma
+                  <Figma size={18} className="text[#393a1f]" />
+                  <span>Figma</span>
                 </a>
               )}
             </div>
             {stack.length > 0 && (
-              <div>
+              <div className="flex gap-2 items-center">
                 <h2 className="font-semibold">Stack:</h2>
-                <ul className="list-disc list-inside">
+                <ul className="flex items-center gap-2 bg-gray-200">
                   {stack.map((tech, i) => (
-                    <li key={i}>{tech}</li>
+                    <li key={i} className="p-1 rounded skew-x-4">
+                      {tech}
+                    </li>
                   ))}
                 </ul>
               </div>
             )}
             {category.length > 0 && (
-              <div>
+              <div className="flex gap-2 items-center">
                 <h2 className="font-semibold">Category:</h2>
-                <ul className="list-disc list-inside">
+                <ul className="flex gap-2 items-center bg-gray-200">
                   {category.map((cat, i) => (
-                    <li key={i}>{cat}</li>
+                    <li key={i} className="p-1 rounded skew-x-4">
+                      {cat}
+                    </li>
                   ))}
                 </ul>
               </div>
