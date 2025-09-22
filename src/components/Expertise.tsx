@@ -22,8 +22,8 @@ export default function Expertise() {
           </p>
         </section>
       </Container>
-      <section className="g-[#fafafa] dark:bg-[#333333] py-6 px-4">
-        <Container className="md:flex md:flex-col md:gap-12 b">
+      <section className="dark:bg-[#333333] py-6 px-4">
+        <Container className="md:flex md:flex-col md:gap-20">
           <div className="flex flex-col lg:flex-row items-center">
             <motion.div
               initial={{ y: 50 }}

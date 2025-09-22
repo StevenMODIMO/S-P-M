@@ -42,7 +42,7 @@ export default function DashboardNavbar() {
     <div
       className={`${
         collapsed ? "w-[4rem]" : "w-[12rem]"
-      } h-screen bg-[#fafafa] shadow-md dark:bg-[#393a1fa6] dark:text-white p-4 flex flex-col justify-between transition-all duration-300`}
+      } h-screen bg-[#fafafa] shadow-md dark:bg-inherit dark:text-white p-4 flex flex-col justify-between transition-all duration-300`}
     >
       {/* Header with toggle button */}
       <header className="flex items-center justify-between gap-3">
@@ -63,9 +63,13 @@ export default function DashboardNavbar() {
         )}
         <button
           onClick={() => setIsCollapsed(!collapsed)}
-          className="p-2 rounded hover:bg-gray-200 dark:hover:bg-gray-700"
+          className="p-2 rounded hover:bg-gray-200 dark:hover:bg-[#4d5000]"
         >
-          {collapsed ? <Menu size={20} /> : <ChevronLeft size={20} />}
+          {collapsed ? (
+            <Menu size={20} className="text-[#4d5000] dark:text-[#e7ee1a]" />
+          ) : (
+            <ChevronLeft size={24} className="text-[#4d5000] dark:text-[#e7ee1a]" />
+          )}
         </button>
       </header>
 
@@ -79,8 +83,8 @@ export default function DashboardNavbar() {
               href={`/dashboard${path}`}
               className={`flex items-center gap-2 p-2 rounded-md transition-colors ${
                 isActive
-                  ? "bg-blue-500 text-white"
-                  : "hover:bg-gray-200 dark:hover:bg-gray-700"
+                  ? "bg-[#e7ee1a] text-[#393a1f]"
+                  : "hover:bg-gray-200 dark:hover:bg-[#4d5000]"
               }`}
             >
               {iconMap[title]}
