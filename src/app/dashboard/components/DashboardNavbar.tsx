@@ -42,7 +42,7 @@ export default function DashboardNavbar() {
     <div
       className={`${
         collapsed ? "w-[4rem]" : "w-[12rem]"
-      } h-screen bg-[#fafafa] shadow-md dark:bg-inherit dark:text-white p-4 flex flex-col justify-between transition-all duration-300`}
+      } h-screen bg-[#fafafa] shadow-md dark:border-r dark:border-[#393a1f] dark:bg-inherit dark:text-white p-4 flex flex-col justify-between transition-all duration-300`}
     >
       {/* Header with toggle button */}
       <header className="flex items-center justify-between gap-3">
