@@ -10,15 +10,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "avatars.githubusercontent.com",
+        hostname: "t0mrrn6uzcxdc7gp.public.blob.vercel-storage.com",
         port: "",
-        pathname: "/u/**",
-      },
-      {
-        protocol: "https",
-        hostname: "firebasestorage.googleapis.com",
-        port: "",
-        pathname: "/v0/b/modimo-s-portfolio.appspot.com/o/images%2F**",
+        pathname: "/modimo-projects/**",
+        search: "",
       },
     ],
   },
