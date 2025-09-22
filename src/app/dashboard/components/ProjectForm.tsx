@@ -1,6 +1,5 @@
 "use client";
 import {
-  File,
   CirclePlus,
   Heading,
   Library,
@@ -11,6 +10,8 @@ import {
   Figma,
   Layers,
   ListFilter,
+  Trash,
+  FolderPlus,
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -134,7 +135,6 @@ export default function ProjectForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-
     const formData = new FormData();
     formData.append("title", title);
     formData.append("description", description);
@@ -182,191 +182,167 @@ export default function ProjectForm() {
   };
 
   return (
-    <div className="flex flex-col gap-4">
-      <header className="flex items-center justify-center gap-2 cursor-pointer py-3">
-        <File size={20} />
-        <h1 className="font-semibold text-[#393a1f]">Add New Project</h1>
+    <div className="flex flex-col gap-4 text-[#393a1f]">
+      <header className="flex items-center gap-2 cursor-pointer">
+        <FolderPlus size={20} />
+        <h1 className="font-semibold text-[#393a1f] text-xl">New Project</h1>
       </header>
-
       <section className="flex gap-2">
-        {/* Left Form */}
-        <div className="w-[50%]">
+        <div className="w-[80%]">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col gap-3 mx-4 font-medium"
+            className="shadow-md p-4 rounded bg-[#fafafa] text-sm"
           >
-            <section className="grid grid-cols-1 gap-3">
+            <section className="grid grid-cols-2 gap-6">
               <label className="flex flex-col gap-2">
                 <span className="flex items-center gap-1">
-                  <Heading size={20} />
+                  <Heading size={18} />
                   <span>Title</span>
                 </span>
                 <input
                   type="text"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  className="rounded p-1 border border-white outline-none"
+                  className="rounded p-2 border border-[#e7ee1a] outline-none"
+                  placeholder="Project Title"
                 />
               </label>
-
               <label className="flex flex-col gap-2">
                 <span className="flex items-center gap-1">
-                  <Library size={20} />
+                  <Library size={18} />
                   <span>Description</span>
                 </span>
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
-                  className="rounded p-1 border border-white outline-none"
+                  className="rounded p-2 border border-[#e7ee1a] outline-none"
+                  placeholder="Project Description"
                 />
               </label>
-
-              {/* Thumbnail file input */}
-              <label className="flex flex-col gap-2">
-                <span className="flex items-center gap-1">
-                  <Wallpaper size={20} />
-                  <span>Thumbnail (image file)</span>
-                </span>
+              <label className="rounded p-2 border border-dashed border-[#e7ee1a] outline-none flex items-center">
+                {thumbnailPreview ? (
+                  <div className="flex items-center gap-2">
+                    <span>Remove</span>
+                    <Trash size={18} onClick={removeThumbnail} />
+                  </div>
+                ) : (
+                  <span className="flex items-center gap-1">
+                    <Wallpaper size={18} />
+                    <span className="underline">
+                      Click to upload or drag and drop
+                    </span>
+                  </span>
+                )}
                 <input
                   type="file"
                   accept="image/*"
                   onChange={handleThumbnailChange}
-                  className="rounded p-1 border border-white outline-none"
+                  className="hidden"
                 />
                 {errors.thumbnail && (
                   <small className="text-red-600">{errors.thumbnail}</small>
                 )}
-                {thumbnailPreview && (
-                  <div className="flex items-center gap-2 mt-2">
-                    <img
-                      src={thumbnailPreview}
-                      alt="thumbnail preview"
-                      className="w-40 h-24 object-cover rounded border"
-                    />
-                    <button
-                      type="button"
-                      onClick={removeThumbnail}
-                      className="text-sm px-2 py-1 rounded border"
-                    >
-                      Remove
-                    </button>
-                  </div>
-                )}
               </label>
-
-              {/* Icon / favicon file input */}
-              <label className="flex flex-col gap-2">
-                <span className="flex items-center gap-1">
-                  <ImageIcon size={20} />
-                  <span>Favicon / Icon (image file)</span>
-                </span>
+              <label className="rounded p-2 border border-dashed border-[#e7ee1a] outline-none flex items-center">
+                {iconPreview ? (
+                  <div className="flex items-center gap-2">
+                    <span>Remove</span>
+                    <Trash size={18} onClick={removeIcon} />
+                  </div>
+                ) : (
+                  <span className="flex items-center gap-1">
+                    <ImageIcon size={18} />
+                    <span className="underline">
+                      Click to upload or drag and drop
+                    </span>
+                  </span>
+                )}
                 <input
                   type="file"
                   accept="image/*"
                   onChange={handleIconChange}
-                  className="rounded p-1 border border-white outline-none"
+                  className="hidden"
                 />
                 {errors.icon && (
                   <small className="text-red-600">{errors.icon}</small>
                 )}
-                {iconPreview && (
-                  <div className="flex items-center gap-2 mt-2">
-                    <img
-                      src={iconPreview}
-                      alt="icon preview"
-                      className="w-12 h-12 object-cover rounded border"
-                    />
-                    <button
-                      type="button"
-                      onClick={removeIcon}
-                      className="text-sm px-2 py-1 rounded border"
-                    >
-                      Remove
-                    </button>
-                  </div>
-                )}
               </label>
-
               <label className="flex flex-col gap-2">
                 <span className="flex items-center gap-1">
-                  <Link size={20} />
+                  <Link size={18} />
                   <span>Demo Link</span>
                 </span>
                 <input
                   type="text"
                   value={demoLink}
                   onChange={(e) => setDemoLink(e.target.value)}
-                  className="rounded p-1 border border-white outline-none"
+                  className="rounded p-2 border border-[#e7ee1a] outline-none"
+                  placeholder="Live/Demo url"
                 />
               </label>
-
               <label className="flex flex-col gap-2">
                 <span className="flex items-center gap-1">
-                  <Github size={20} />
+                  <Github size={18} />
                   <span>Github Link</span>
                 </span>
                 <input
                   value={githubLink}
                   onChange={(e) => setGithubLink(e.target.value)}
                   type="text"
-                  className="rounded p-1 border border-white outline-none"
+                  className="rounded p-2 border border-[#e7ee1a] outline-none"
+                  placeholder="Repository url"
                 />
               </label>
-
               <label className="flex flex-col gap-2">
                 <span className="flex items-center gap-1">
-                  <Figma size={20} />
+                  <Figma size={18} />
                   <span>Figma Link</span>
                 </span>
                 <input
                   value={figmaLink}
                   onChange={(e) => setFigmaLink(e.target.value)}
                   type="text"
-                  className="rounded p-1 border border-white outline-none"
+                  className="rounded p-2 border border-[#e7ee1a] outline-none"
+                  placeholder="Figma url"
                 />
               </label>
-
               <label className="flex flex-col gap-2">
                 <span className="flex items-center gap-1">
-                  <Layers size={20} />
+                  <Layers size={18} />
                   <span>Stack (comma separated)</span>
                 </span>
                 <input
                   type="text"
                   value={stackInput}
                   onChange={(e) => setStackInput(e.target.value)}
-                  placeholder="e.g. React, TypeScript, Tailwind"
-                  className="rounded p-1 border border-white outline-none"
+                  placeholder="Tech stack e.g. React, TypeScript, Tailwind"
+                  className="rounded p-2 border border-[#e7ee1a] outline-none"
                 />
               </label>
-
               <label className="flex flex-col gap-2">
                 <span className="flex items-center gap-1">
-                  <ListFilter size={20} />
+                  <ListFilter size={18} />
                   <span>Category (comma separated)</span>
                 </span>
                 <input
                   type="text"
                   value={categoryInput}
                   onChange={(e) => setCategoryInput(e.target.value)}
-                  placeholder="e.g. web, mobile, ui"
-                  className="rounded p-1 border border-white outline-none"
+                  placeholder="Category e.g. web, mobile, ui"
+                  className="rounded p-2 border border-[#e7ee1a] outline-none"
                 />
               </label>
             </section>
-
             <button
               type="submit"
-              className="my-4 bg-[#393a1f] text-white p-2 rounded w-fit mx-auto flex items-center gap-2"
+              className="my-4 bg-[#e7ee1a] hover:bg-[#e7ee1ac9] transition-colors duration-100 ease-in-out text-[#393a1f] p-2 rounded w-fit mx-auto flex items-center gap-2"
             >
-              <CirclePlus size={20} />
+              <CirclePlus size={18} />
               <span>Add Project</span>
             </button>
           </form>
         </div>
-
-        {/* Right Preview */}
-        <div className="w-[50%] border-l pl-4">
+        <div className="w-[50%] pl-4">
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               {iconPreview ? (
@@ -380,16 +356,13 @@ export default function ProjectForm() {
                   <ImageIcon size={18} />
                 </div>
               )}
-
               <h1 className="text-2xl font-medium">
                 {title || "Project Title"}
               </h1>
             </div>
-
             <p className="text-sm text-gray-700">
               {description || "Project description will appear here..."}
             </p>
-
             {thumbnailPreview ? (
               <img
                 src={thumbnailPreview}
@@ -401,7 +374,6 @@ export default function ProjectForm() {
                 Thumbnail preview
               </div>
             )}
-
             <div className="space-y-1">
               {demoLink && (
                 <a
@@ -434,7 +406,6 @@ export default function ProjectForm() {
                 </a>
               )}
             </div>
-
             {stack.length > 0 && (
               <div>
                 <h2 className="font-semibold">Stack:</h2>
@@ -445,7 +416,6 @@ export default function ProjectForm() {
                 </ul>
               </div>
             )}
-
             {category.length > 0 && (
               <div>
                 <h2 className="font-semibold">Category:</h2>
