@@ -349,11 +349,11 @@ export default function ProjectForm() {
               <img
                 src={thumbnailPreview}
                 alt="Thumbnail Preview"
-                className="w-full max-w-xs h-40 object-cover rounded shadow"
+                className="w-full h-40 object-cover rounded shadow"
               />
             ) : (
-              <div className="w-full max-w-xs h-40 rounded bg-gray-50 border flex items-center justify-center text-sm text-gray-500">
-                Thumbnail preview
+              <div className="w-full h-40 rounded bg-gray-50 flex items-center justify-center">
+                <ImageIcon size={100} />
               </div>
             )}
             <div className="flex items-center gap-3">
