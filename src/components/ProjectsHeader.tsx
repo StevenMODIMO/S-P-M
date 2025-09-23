@@ -34,7 +34,7 @@ export default function ProjectsHeader() {
             <Header className="text-4xl text-[#E7EE1A]">My Projects</Header>
           </div>
           <p className="text-sm">
-            Highlist of tools, skills and projects that reflect my
+            Highlight of tools, skills and projects that reflect my
             problem-solving approach and ability to deliver functional,
             user-focused solutions.
           </p>
