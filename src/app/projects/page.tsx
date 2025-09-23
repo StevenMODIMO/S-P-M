@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Projects() {
-  const response = await fetch("http://localhost:3000/api/projects");
+  const response = await fetch(`${process.env.BASE_URL}/api/projects`);
   const projects: ProjectsListingTypes[] = await response.json();
   return (
     <main className="h-full">

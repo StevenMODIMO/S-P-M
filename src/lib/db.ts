@@ -1,36 +1,31 @@
+// db.ts
 import { Pool } from "pg";
 
-const connectionString = "";
-
 const pool = new Pool({
-  user: "postgres",
-  host: "localhost",
-  database: "modimo",
-  password: "Biko.2022!!",
-  port: 5432,
+  connectionString: process.env.DATABASE_URL,
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? { rejectUnauthorized: false }
+      : false,
 });
 
 export const query = async (text: string, params?: any[]) => {
   const client = await pool.connect();
-
   try {
     const res = await client.query(text, params);
     return res;
-  } catch (error) {
-    console.error(error);
-    throw new Error("Database query failed");
   } finally {
     client.release();
   }
 };
 
-const initDB = async () => {
-  try {
-    await query(`CREATE EXTENSION IF NOT EXISTS "pgcrypto";`);
+let dbReady: Promise<void> | null = null;
 
-    await query(`
-    CREATE TABLE IF NOT EXISTS project_listings (
-      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+const initDB = async () => {
+  await query(`CREATE EXTENSION IF NOT EXISTS "uuid-ossp";`);
+  await query(`
+    CREATE TABLE IF NOT EXISTS public.project_listings (
+      id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
       title VARCHAR(255) NOT NULL,
       thumbnail TEXT NOT NULL,
       icon TEXT NOT NULL,
@@ -43,10 +38,13 @@ const initDB = async () => {
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
   `);
-    console.log("✅ ProjectListings table is ready");
-  } catch (error) {
-    console.error(error);
-  }
+  console.log("✅ ProjectListings table is ready");
 };
 
-initDB();
+// ensure init only runs once per cold start
+export const ensureDB = async () => {
+  if (!dbReady) {
+    dbReady = initDB();
+  }
+  await dbReady;
+};

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 export default async function DashboardProjects() {
-  const response = await fetch("http://localhost:3000/api/projects");
+  const response = await fetch(`${process.env.BASE_URL}/api/projects`);
   const projects: ProjectsListingTypes[] = await response.json();
   return (
     <div className="text-[#393a1f] flex flex-col gap-4">

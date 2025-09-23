@@ -18,7 +18,7 @@ interface ProjectType {
 }
 
 export async function generateStaticParams() {
-  const response = await fetch("http://localhost:3000/api/projects");
+  const response = await fetch(`${process.env.BASE_URL}/api/projects`);
   const projects = await response.json();
 
   return projects.map(({ id }: { id: string }) => ({ slug: id }));
@@ -30,7 +30,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const response = await fetch(`http://localhost:3000/api/projects/${slug}`);
+  const response = await fetch(`${process.env.BASE_URL}/api/projects/${slug}`);
   const project = await response.json();
 
   return {
@@ -46,7 +46,7 @@ export default async function Project({
 }) {
   const { slug } = await params;
 
-  const response = await fetch(`http://localhost:3000/api/projects/${slug}`);
+  const response = await fetch(`${process.env.BASE_URL}/api/projects/${slug}`);
   const project = await response.json();
   return (
     <div>
