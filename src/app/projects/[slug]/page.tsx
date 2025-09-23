@@ -1,0 +1,63 @@
+import Container from "@/components/Container";
+import ProjectsHeader from "@/components/ProjectsHeader";
+import { Metadata } from "next";
+import Description from "./components/Description";
+
+interface ProjectType {
+  thumbnail: string;
+  icon: string;
+  title: string;
+  description: string;
+  created_at: string;
+  demo_link?: string;
+  github_link?: string;
+  figma_link?: string;
+  category: string[];
+  stack: string[];
+}
+
+export async function generateStaticParams() {
+  const response = await fetch("http://localhost:3000/api/projects");
+  const projects = await response.json();
+
+  return projects.map(({ id }: { id: string }) => ({ slug: id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const response = await fetch(`http://localhost:3000/api/projects/${slug}`);
+  const project = await response.json();
+
+  return {
+    title: project.title,
+    description: project.description,
+  };
+}
+
+export default async function Project({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
+  const response = await fetch(`http://localhost:3000/api/projects/${slug}`);
+  const project = await response.json();
+  return (
+    <div>
+      <ProjectsHeader />
+      <Container className="text-[#393a1f] dark:text-white">
+        <div>
+          <header>
+            <h1 className="text-xl font-medium ">{project.title}</h1>
+          </header>
+          <Description description={project.description} />
+        </div>
+      </Container>
+    </div>
+  );
+}

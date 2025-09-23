@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { Figma, Github, LinkIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -17,20 +18,31 @@ export default function ProjectLinks({
   category,
   stack,
 }: ProjectLinksProps) {
+  const [openDetails, setOpenDetails] = useState(false);
   return (
     <div className="flex flex-col gap-2">
       <div>
         {category && (
           <div className="flex gap-2">
             {category.map((cat, i) => (
-              <span className="text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] skew-y-2 sm:p-1 lg:text-sm" key={i}>{cat}</span>
+              <span
+                className="text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] skew-y-2 sm:p-1 lg:text-sm"
+                key={i}
+              >
+                {cat}
+              </span>
             ))}
           </div>
         )}
         {stack && (
           <div className="flex gap-2">
             {stack.map((st, i) => (
-              <span className="text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] skew-y-2 sm:p-1 lg:text-sm" key={i}>{st}</span>
+              <span
+                className="text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] skew-y-2 sm:p-1 lg:text-sm"
+                key={i}
+              >
+                {st}
+              </span>
             ))}
           </div>
         )}

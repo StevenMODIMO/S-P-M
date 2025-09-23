@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import ProjectsHeader from "@/components/ProjectsHeader";
 import Container from "@/components/Container";
 import ProjectLinks from "./components/ProjectLinks";
+import ProjectDetails from "@/components/ProjectDetails";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -30,6 +31,7 @@ export default async function Projects() {
   const projects: ProjectsListingTypes[] = await response.json();
   return (
     <main className="h-full">
+      {/* <ProjectDetails /> */}
       <ProjectsHeader />
       <Container>
         <section className="bg-[#fafafa] text-[#393a1f] dark:text-[#fafafa] p-2 w-full rounded grid sm:grid-cols-2 lg:grid-cols-3 gap-4 dark:bg-[#2a2929] shadow">
@@ -77,7 +79,12 @@ export default async function Projects() {
                     </div>
                     <div className="flex flex-col gap-2">
                       <div>
-                        <h1 className="text-sm font-medium">{title}</h1>
+                        <Link
+                          href={`/projects/${id}`}
+                          className="text-sm font-medium hover:underline"
+                        >
+                          {title}
+                        </Link>
                         <p className="text-xs">{formatDateTime(created_at)}</p>
                       </div>
                     </div>
