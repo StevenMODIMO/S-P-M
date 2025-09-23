@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import ProjectsHeader from "@/components/ProjectsHeader";
+import ProjectLinks from "../components/ProjectLinks";
 import { Metadata } from "next";
 import Description from "./components/Description";
 
@@ -54,6 +55,13 @@ export default async function Project({
         <div>
           <header>
             <h1 className="text-xl font-medium ">{project.title}</h1>
+            <ProjectLinks
+              github_link={project.github_link}
+              demo_link={project.demo_link}
+              figma_link={project.figma_link}
+              category={project.category}
+              stack={project.stack}
+            />
           </header>
           <Description description={project.description} />
         </div>
