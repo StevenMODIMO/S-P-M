@@ -50,7 +50,6 @@ export default async function Project({
   const project = await response.json();
   return (
     <div>
-      <ProjectsHeader />
       <Container className="text-[#393a1f] dark:text-white">
         <div>
           <header>
