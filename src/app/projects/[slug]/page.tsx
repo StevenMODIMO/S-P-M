@@ -17,12 +17,12 @@ interface ProjectType {
   id: string;
 }
 
-// export async function generateStaticParams() {
-//   const response = await fetch(`${process.env.BASE_URL}/api/projects`);
-//   const projects: ProjectType[] = await response.json();
+export async function generateStaticParams() {
+  const response = await fetch(`${process.env.BASE_URL}/api/projects`);
+  const projects: ProjectType[] = await response.json();
 
-//   return projects.map(({ id }: { id: string }) => ({ slug: id }));
-// }
+  return projects.map(({ id }: { id: string }) => ({ slug: id }));
+}
 
 export async function generateMetadata({
   params,

@@ -1,29 +1,10 @@
 "use client";
 
-interface ProjectsListingTypes {
-  id?: string;
-  title: string;
-  thumbnail: string;
-  icon: string;
-  description?: string;
-  demo_link?: string;
-  github_link?: string;
-  figma_link?: string;
-  category?: string[];
-  stack?: string[];
-  created_at: string;
-}
-
-import Image from "next/image";
-import Link from "next/link";
 import Container from "./Container";
 import Header from "./ui/Header";
 import { Code, BadgePlus, Recycle, FolderGit2 } from "lucide-react";
-import { useState } from "react";
 
 export default function ProjectsHeader() {
-  const [openDetails, setOpenDetails] = useState(false);
-  const [projects, setProject] = useState<ProjectsListingTypes[]>([]);
   return (
     <div className="text-[#393a1f] dark:text-white">
       <Container className="flex flex-col gap-2">
