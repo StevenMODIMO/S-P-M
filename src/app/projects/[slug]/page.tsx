@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import ProjectLinks from "../components/ProjectLinks";
 import { Metadata } from "next";
 import Description from "./components/Description";
+import Image from "next/image";
 
 interface ProjectType {
   thumbnail: string;
@@ -53,6 +54,9 @@ export default async function Project({
       <Container className="text-[#393a1f] dark:text-white">
         <div>
           <header>
+            {/* <div className="relative w-96 h-96">
+              <Image src={project.thumbnail || ""} alt={project.title} fill={true} />
+            </div> */}
             <h1 className="text-xl font-medium ">{project.title}</h1>
             <ProjectLinks
               github_link={project.github_link}
