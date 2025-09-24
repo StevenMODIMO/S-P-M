@@ -19,7 +19,6 @@ import Link from "next/link";
 import Container from "./Container";
 import Header from "./ui/Header";
 import { Code, BadgePlus, Recycle, FolderGit2 } from "lucide-react";
-import ProjectDetails from "./ProjectDetails";
 import { useState } from "react";
 
 export default function ProjectsHeader() {

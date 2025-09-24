@@ -1,5 +1,4 @@
 import Container from "@/components/Container";
-import ProjectsHeader from "@/components/ProjectsHeader";
 import ProjectLinks from "../components/ProjectLinks";
 import { Metadata } from "next";
 import Description from "./components/Description";
@@ -15,14 +14,15 @@ interface ProjectType {
   figma_link?: string;
   category: string[];
   stack: string[];
+  id: string;
 }
 
-export async function generateStaticParams() {
-  const response = await fetch(`${process.env.BASE_URL}/api/projects`);
-  const projects = await response.json();
+// export async function generateStaticParams() {
+//   const response = await fetch(`${process.env.BASE_URL}/api/projects`);
+//   const projects: ProjectType[] = await response.json();
 
-  return projects.map(({ id }: { id: string }) => ({ slug: id }));
-}
+//   return projects.map(({ id }: { id: string }) => ({ slug: id }));
+// }
 
 export async function generateMetadata({
   params,
