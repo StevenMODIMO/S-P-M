@@ -72,7 +72,7 @@ export default async function Projects() {
                         src={icon}
                         alt={title}
                         fill={true}
-                        className="rounded object-cover"
+                        className="object-cover"
                       />
                     </div>
                     <div className="flex flex-col gap-2">

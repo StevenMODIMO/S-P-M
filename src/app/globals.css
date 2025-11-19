@@ -52,9 +52,9 @@ html {
   scroll-behavior: smooth;
 }
 
-/* globals.css */
+
 #nprogress .bar {
-  background: #e7ee1a; /* purple-500 */
+  background: #e7ee1a;
   height: 3px;
 }
 

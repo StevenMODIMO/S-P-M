@@ -20,13 +20,13 @@ export default function ProjectLinks({
 }: ProjectLinksProps) {
   const [openDetails, setOpenDetails] = useState(false);
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-2 dark:bg-[#333333] p-3">
       <div>
         {category && (
-          <div className="flex gap-2">
+          <div className="flex gap-2 my-2">
             {category.map((cat, i) => (
               <span
-                className="text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] skew-y-2 sm:p-1 lg:text-sm"
+                className="p-1 text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] sm:p-1 lg:text-sm"
                 key={i}
               >
                 {cat}
@@ -35,10 +35,10 @@ export default function ProjectLinks({
           </div>
         )}
         {stack && (
-          <div className="flex gap-2">
+          <div className="flex gap-2 my-2">
             {stack.map((st, i) => (
               <span
-                className="text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] skew-y-2 sm:p-1 lg:text-sm"
+                className="p-1 text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] sm:p-1 lg:text-sm"
                 key={i}
               >
                 {st}
@@ -47,7 +47,7 @@ export default function ProjectLinks({
           </div>
         )}
       </div>
-      <div className="flex gap-2 items-center">
+      <div className="flex gap-2 items-center justify-end">
         {demo_link && (
           <Link
             href={demo_link || "/"}
