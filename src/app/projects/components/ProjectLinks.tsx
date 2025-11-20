@@ -20,7 +20,7 @@ export default function ProjectLinks({
 }: ProjectLinksProps) {
   const [openDetails, setOpenDetails] = useState(false);
   return (
-    <div className="flex flex-col gap-2 dark:bg-[#333333] p-3">
+    <div className="flex flex-col gap-2 bg-[#fafafa] dark:bg-[#333333] p-3">
       <div>
         {category && (
           <div className="flex gap-2 my-2">
