@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react";
+//import { Analytics } from "@vercel/analytics/react";
 import Navbar from "@/components/Navbar";
 import { AppContextProvider } from "@/context/AppContext";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { headers } from "next/headers";
 import MainWrapper from "@/components/MainWrapper";
+import ProgressBarProvider from "@/components/ProgressBar";
 
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
@@ -39,20 +40,22 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta
+        {/* <meta
           name="google-site-verification"
           content="Vvsl0yxnWZr_i4JwsMa7DsdUu7Wi0gwbgVhbLqhDFz0"
-        />
+        /> */}
       </head>
       <body className={`${rubik.className} dark:bg-[#262626] h-screen`}>
         <AppContextProvider>
           {" "}
           <Navbar />
           <ScrollToTop />
-          <MainWrapper>
-            {children}
-            <Footer />
-          </MainWrapper>
+          <ProgressBarProvider>
+            <MainWrapper>
+              {children}
+              <Footer />
+            </MainWrapper>
+          </ProgressBarProvider>
         </AppContextProvider>
       </body>
     </html>
