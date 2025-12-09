@@ -25,7 +25,11 @@ export const metadata: Metadata = {
   description: "Explore my projects and contributions to the tech community.",
   alternates: {
     canonical: `${process.env.BASE_URL}/projects`
-  }
+  },
+  robots: {
+    index: true,    // allow indexing
+    follow: true,   // allow following links
+  },
 };
 
 export default async function Projects() {

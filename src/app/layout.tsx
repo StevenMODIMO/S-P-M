@@ -19,6 +19,17 @@ export const metadata: Metadata = {
   },
   description:
     "Portfolio of Steven Modimo, a creative and detail-oriented web developer crafting interactive, responsive, and user-friendly digital experiences.",
+  metadataBase: new URL(process.env.BASE_URL as string),
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://s-p-m.vercel.app/",
+  },
+  other: {
+    sitemap: `${process.env.BASE_URL}/sitemap.xml`,
+  },
 };
 
 export default async function RootLayout({
