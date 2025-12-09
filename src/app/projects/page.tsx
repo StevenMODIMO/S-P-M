@@ -23,6 +23,9 @@ interface ProjectsListingTypes {
 export const metadata: Metadata = {
   title: "Projects",
   description: "Explore my projects and contributions to the tech community.",
+  alternates: {
+    canonical: `${process.env.BASE_URL}/projects`
+  }
 };
 
 export default async function Projects() {
