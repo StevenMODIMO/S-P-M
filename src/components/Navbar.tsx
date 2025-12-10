@@ -113,7 +113,7 @@ export default function Navbar() {
                     <Info className="w-4 h-4 text-[#393a1f] dark:text-white" />
                   )}
                   {link.title === "Skills and Stack" && (
-                    <Layers className="w-4 h-4 text-[#E7EE1A] dark:text-white" />
+                    <Layers className="w-4 h-4 text-[#393a1f] dark:text-white" />
                   )}
                   {link.title === "Testimonials" && (
                     <ChartNoAxesGantt className="w-4 h-4 text-[#393a1f] dark:text-white" />
@@ -122,7 +122,7 @@ export default function Navbar() {
                     <FolderDot className="w-4 h-4 text-[#393a1f] dark:text-white" />
                   )}
                   {link.title}
-                  {(link.title === "04. Blog" ||
+                  {/* {(link.title === "04. Blog" ||
                     link.title === "05. Projects" ||
                     link.title === "06. Get in touch") && (
                     <SquareArrowOutUpRight
@@ -132,7 +132,7 @@ export default function Navbar() {
                       }
                       `}
                     />
-                  )}
+                  )} */}
                 </Link>
               </li>
             ))}
