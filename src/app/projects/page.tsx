@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   title: "Projects",
   description: "Explore my projects and contributions to the tech community.",
   alternates: {
-    canonical: `${process.env.BASE_URL}/projects`
+    canonical: `${process.env.BASE_URL}/projects`,
   },
   robots: {
-    index: true,    // allow indexing
-    follow: true,   // allow following links
+    index: true,
+    follow: true,
   },
 };
 
@@ -39,11 +39,12 @@ export default async function Projects() {
     <main className="h-full">
       <ProjectsHeader />
       <Container>
-        <section className="bg-[#fafafa] text-[#393a1f] dark:text-[#fafafa] p-2 w-full rounded grid sm:grid-cols-2 lg:grid-cols-3 gap-4 dark:bg-[#2a2929] shadow">
+        <section className="bg-[#fafafa] text-[#393a1f] dark:text-[#fafafa] p-2 md:p-4 w-full rounded grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 dark:bg-[#2a2929] shadow">
           {projects.map(
             ({
               id,
               title,
+              description,
               icon,
               github_link,
               figma_link,
@@ -52,46 +53,22 @@ export default async function Projects() {
               stack,
               created_at,
             }) => {
-              function formatDateTime(isoString: string) {
-                const date = new Date(isoString);
-                return (
-                  date.toLocaleDateString("en-US", {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric",
-                  }) +
-                  " at " +
-                  date.toLocaleTimeString("en-US", {
-                    hour: "numeric",
-                    minute: "2-digit",
-                    hour12: true,
-                  })
-                );
-              }
               return (
                 <div
                   key={id}
-                  className="flex flex-col gap-2 shadow rounded p-4 bg-white hover:bg-[#fafafa] transition-all duration-150 ease-in-out cursor-pointer dark:bg-[#3a3838] dark:hover:bg-[#2e2c2c]"
+                  className="-skew-y-2 flex flex-col gap-2 shadow rounded p-4 bg-white hover:bg-[#fafafa] transition-all duration-150 ease-in-out cursor-pointer dark:bg-[#3a3838] dark:hover:bg-[#2e2c2c]"
                 >
                   <header className="flex gap-2">
-                    <div className="relative w-8 h-8">
-                      <Image
-                        src={icon}
-                        alt={title}
-                        fill={true}
-                        className="object-cover"
-                      />
-                    </div>
                     <div className="flex flex-col gap-2">
-                      <div>
-                        <Link
-                          href={`/projects/${id}`}
-                          className="text-sm font-medium hover:underline"
-                        >
-                          {title}
-                        </Link>
-                        <p className="text-xs">{formatDateTime(created_at)}</p>
-                      </div>
+                      <Link
+                        href={`/projects/${id}`}
+                        className="font-medium hover:underline flex items-center gap-2"
+                      >
+                        <div className="relative w-8 h-8 lg:w-10 lg:h-10 lg:p-2">
+                          <Image src={icon} alt={title} fill={true} />
+                        </div>
+                        <span className="text-lg">{title}</span>
+                      </Link>
                     </div>
                   </header>
                   <ProjectLinks
@@ -100,6 +77,7 @@ export default async function Projects() {
                     demo_link={demo_link}
                     category={category}
                     stack={stack}
+                    created_at={created_at}
                   />
                 </div>
               );

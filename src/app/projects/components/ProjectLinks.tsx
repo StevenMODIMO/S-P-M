@@ -9,6 +9,7 @@ interface ProjectLinksProps {
   demo_link?: string;
   category?: string[];
   stack?: string[];
+  created_at: string;
 }
 
 export default function ProjectLinks({
@@ -17,37 +18,48 @@ export default function ProjectLinks({
   demo_link,
   category,
   stack,
+  created_at,
 }: ProjectLinksProps) {
-  const [openDetails, setOpenDetails] = useState(false);
+  function formatDate(isoString: string) {
+    const date = new Date(isoString);
+    return date
+      .toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "numeric",
+        day: "2-digit",
+      })
+      .replace(/, /g, "-")
+      .replace(" ", "-");
+  }
   return (
-    <div className="flex flex-col gap-2 bg-[#fafafa] dark:bg-[#333333] p-3">
-      <div>
+    <div className="flex flex-col gap-2 bg-[#fafafa] dark:bg-inherit p-2">
+      <div className="flex flex-col gap-2">
         {category && (
-          <div className="flex gap-2 my-2">
+          <div className="flex gap-1">
             {category.map((cat, i) => (
               <span
-                className="p-1 text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] sm:p-1 lg:text-sm"
+                className="text-[10px] p-1 rounded bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11]"
                 key={i}
               >
-                {cat}
+                #{cat}
               </span>
             ))}
           </div>
         )}
         {stack && (
-          <div className="flex gap-2 my-2">
+          <div className="flex gap-1">
             {stack.map((st, i) => (
               <span
-                className="p-1 text-xs bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11] sm:p-1 lg:text-sm"
+                className="text-[10px] p-1 w-fit rounded bg-[#fafafa] dark:bg-[#2a2929] dark:text-white text-[#6d6e11]"
                 key={i}
               >
-                {st}
+                #{st}
               </span>
             ))}
           </div>
         )}
       </div>
-      <div className="flex gap-2 items-center justify-end">
+      <div className="flex gap-2 items-center">
         {demo_link && (
           <Link
             href={demo_link || "/"}
@@ -75,6 +87,8 @@ export default function ProjectLinks({
             {github_link && <Github size={18} />}
           </Link>
         )}
+
+        <p className="text-xs text-end">{formatDate(created_at)}</p>
       </div>
     </div>
   );

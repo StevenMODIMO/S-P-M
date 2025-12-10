@@ -69,6 +69,7 @@ export default async function Project({
               figma_link={project.figma_link}
               category={project.category}
               stack={project.stack}
+              created_at={project.created_at}
             />
           </header>
           <Description description={project.description} />
