@@ -11,7 +11,7 @@ import {
   Info,
   FolderDot,
   X,
-  SquareArrowOutUpRight,
+  Layers,
 } from "lucide-react";
 
 const container = {
@@ -112,6 +112,9 @@ const NavLinks: React.FC<NavLinksProps> = ({ setOpenLinks }) => {
                   )}
                   {link.title === "About" && (
                     <Info className="w-4 h-4 text-[#E7EE1A] dark:text-white" />
+                  )}
+                  {link.title === "Skills and Stack" && (
+                    <Layers className="w-4 h-4 text-[#E7EE1A] dark:text-white" />
                   )}
                   {link.title === "Testimonials" && (
                     <ChartNoAxesGantt className="w-4 h-4 text-[#E7EE1A] dark:text-white" />

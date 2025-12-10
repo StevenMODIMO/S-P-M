@@ -6,7 +6,7 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Expertise() {
   return (
-    <div className="flex flex-col gap-6">
+    <div id="skills" className="flex flex-col gap-6">
       <Container>
         <section className="text-[#393a1f] dark:text-white flex flex-col gap-3">
           <h1 className="font-semibold text-2xl text-[#393a1f] dark:text-[#E7EE1A]">

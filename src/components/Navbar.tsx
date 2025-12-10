@@ -14,6 +14,7 @@ import {
   Info,
   FolderDot,
   SquareArrowOutUpRight,
+  Layers,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -53,6 +54,32 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const section = document.querySelector("#skills");
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            document.title = "Skills and Stack | Steven Modimo";
+          } else {
+            // Reset title when leaving view
+            document.title = "Steven Modimo | Full Stack Developer";
+          }
+        });
+      },
+      {
+        root: null,
+        threshold: 0.25, // triggers when 25% of the section is visible
+      }
+    );
+
+    observer.observe(section);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <nav
       className={`fixed top-0 w-full z-50 ${!openLinks && "backdrop-blur-sm"} ${
@@ -84,6 +111,9 @@ export default function Navbar() {
                   )}
                   {link.title === "About" && (
                     <Info className="w-4 h-4 text-[#393a1f] dark:text-white" />
+                  )}
+                  {link.title === "Skills and Stack" && (
+                    <Layers className="w-4 h-4 text-[#E7EE1A] dark:text-white" />
                   )}
                   {link.title === "Testimonials" && (
                     <ChartNoAxesGantt className="w-4 h-4 text-[#393a1f] dark:text-white" />
