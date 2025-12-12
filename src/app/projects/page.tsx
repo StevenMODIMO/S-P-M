@@ -41,22 +41,32 @@ export default async function Projects() {
       <Container>
         <section className="bg-[#fafafa] text-[#393a1f] dark:text-[#fafafa] p-2 md:p-4 w-full rounded grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 dark:bg-[#2a2929] shadow">
           {projects.map(
-            ({
-              id,
-              title,
-              description,
-              icon,
-              github_link,
-              figma_link,
-              demo_link,
-              category,
-              stack,
-              created_at,
-            }) => {
+            (
+              {
+                id,
+                title,
+                description,
+                icon,
+                github_link,
+                figma_link,
+                demo_link,
+                category,
+                stack,
+                created_at,
+              },
+              index
+            ) => {
+              console.log(`Index: ${index}`);
+              const oddIndex = index % 2 !== 0;
+              console.log(`Odd Index: ${oddIndex}`);
               return (
                 <div
                   key={id}
-                  className="-skew-y-2 flex flex-col gap-2 shadow rounded p-4 bg-white hover:bg-[#fafafa] transition-all duration-150 ease-in-out cursor-pointer dark:bg-[#3a3838] dark:hover:bg-[#2e2c2c]"
+                  className={`${
+                    !oddIndex
+                      ? "-skew-y-2 hover:skew-0"
+                      : "skew-y-2 hover:skew-0"
+                  } flex flex-col gap-2 shadow rounded p-4 bg-white hover:bg-[#fafafa] transition-all duration-150 ease-in-out cursor-pointer dark:bg-[#3a3838] dark:hover:bg-[#2e2c2c]`}
                 >
                   <header className="flex gap-2">
                     <div className="flex flex-col gap-2">
