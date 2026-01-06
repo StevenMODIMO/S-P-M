@@ -59,7 +59,7 @@ export default async function Projects() {
               return (
                 <div
                   key={id}
-                  className="flex flex-col gap-2 shadow rounded p-4 bg-white hover:bg-[#fafafa] transition-all duration-150 ease-in-out cursor-pointer dark:bg-[#3a3838] dark:hover:bg-[#2e2c2c]"
+                  className="flex flex-col gap-2 shadow rounded p-4 bg-white hover:bg-[#fafafa] transition-all duration-150 ease-in-out cursor-pointer dark:bg-[#2e2c2c] dark:hover:bg-[#3a3838]"
                 >
                   <header className="flex gap-2">
                     <div className="flex flex-col gap-2">
