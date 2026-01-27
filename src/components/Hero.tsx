@@ -25,10 +25,10 @@ import { MdWebAsset } from "react-icons/md";
 
 export default function Hero() {
   return (
-    <div className="text-[#333333] dark:text-white overflow-hidden">
+    <div className="text-[#333333] dark:text-white overflow-hidden bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-size-[14px_24px] mask-[radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%)]">
       <Container>
-        <header className="flex flex-col gap-8">
-          <h1 className="bg-clip-text text-transparent bg-gradient-to-b font-bold text-5xl from-[#E7EE1A] to-[#666666] sm:text-6xl md:text-7xl lg:text-8xl">
+        <header className="flex flex-col gap-8 ">
+          <h1 className="bg-clip-text text-transparent bg-linear-to-b font-bold text-5xl from-[#E7EE1A] to-[#666666] sm:text-6xl md:text-7xl lg:text-8xl">
             Unlocking possibilities through{" "}
             <span className="text-[#333333] dark:text-white">
               {"{"}code{"}"}
