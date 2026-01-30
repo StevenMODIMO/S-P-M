@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "StevenMODIMO",
     short_name: "SPM",
     description: "Steven Modimo's personal portfolio website - PWA Version",
-    start_url: "/",
+    start_url: "/dashboard",
     display: "standalone",
     background_color: "#ffffff",
     theme_color: "#000000",
