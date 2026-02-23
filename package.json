@@ -37,6 +37,7 @@
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
     "autoprefixer": "^10",
+    "baseline-browser-mapping": "^2.10.0",
     "typescript": "^5",
     "uuid": "^13.0.0"
   },
