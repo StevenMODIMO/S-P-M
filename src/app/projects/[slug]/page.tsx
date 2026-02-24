@@ -3,6 +3,7 @@ import ProjectLinks from "../components/ProjectLinks";
 import { Metadata } from "next";
 import Description from "./components/Description";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 interface ProjectType {
   thumbnail: string;
@@ -32,11 +33,46 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const response = await fetch(`${process.env.BASE_URL}/api/projects/${slug}`);
+
+  if (!response.ok) {
+    return {
+      title: "Project Not Found",
+      robots: {
+        index: false,
+        follow: false,
+      },
+    };
+  }
+
   const project = await response.json();
+  const projectUrl = `${process.env.BASE_URL}/projects/${slug}`;
 
   return {
     title: project.title,
     description: project.description,
+    alternates: {
+      canonical: projectUrl,
+    },
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: projectUrl,
+      type: "article",
+      images: project.thumbnail
+        ? [
+            {
+              url: project.thumbnail,
+              alt: `${project.title} preview image`,
+            },
+          ]
+        : [],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description: project.description,
+      images: project.thumbnail ? [project.thumbnail] : [],
+    },
   };
 }
 
@@ -48,9 +84,29 @@ export default async function Project({
   const { slug } = await params;
 
   const response = await fetch(`${process.env.BASE_URL}/api/projects/${slug}`);
+
+  if (!response.ok) {
+    notFound();
+  }
+
   const project = await response.json();
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    name: project.title,
+    description: project.description,
+    image: project.thumbnail,
+    datePublished: project.created_at,
+    url: `${process.env.BASE_URL}/projects/${slug}`,
+    keywords: [...(project.category ?? []), ...(project.stack ?? [])],
+  };
+
   return (
     <div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
       <Container className="text-[#393a1f] dark:text-white">
         <div>
           <header>
