@@ -9,6 +9,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { headers } from "next/headers";
 import MainWrapper from "@/components/MainWrapper";
 import ProgressBarProvider from "@/components/ProgressBar";
+import ServiceWorkerRegistration from "@/components/ServiceWorkerRegistration";
+import InstallPrompt from "@/components/InstallPrompt";
 
 const rubik = Rubik({ subsets: ["latin", "latin-ext"] });
 
@@ -68,6 +70,8 @@ export default async function RootLayout({
             </MainWrapper>
           </ProgressBarProvider>
         </AppContextProvider>
+        <ServiceWorkerRegistration />
+        <InstallPrompt />
       </body>
     </html>
   );
