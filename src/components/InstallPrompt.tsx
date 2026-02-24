@@ -36,8 +36,8 @@
 
    if (!isVisible) return null;
 
-   return (
-     <div className="fixed bottom-4 right-4 z-50">
+  return (
+    <div className="fixed bottom-20 right-6 z-40">
        <button
          type="button"
          onClick={onInstallClick}
