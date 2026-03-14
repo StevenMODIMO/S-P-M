@@ -88,11 +88,11 @@ export default function Navbar() {
     >
       <Container>
         <header className="flex items-center justify-between">
-          <Link href="/" className="relative w-12 h-12">
+          <Link href="/" className="relative w-12 md:w-14 h-12 md:h-14">
             {theme === "light" ? (
-              <Image src="/light-logo.svg" alt="Steven Modimo" fill />
+              <Image src="/modimo.png" alt="Steven Modimo" fill className="rounded-full" />
             ) : (
-              <Image src="/dark-logo.svg" alt="Steven Modimo" fill />
+              <Image src="/modimo.png" alt="Steven Modimo" fill className="rounded-full" />
             )}
           </Link>
           <LayoutDashboard
