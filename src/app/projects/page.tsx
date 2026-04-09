@@ -38,8 +38,8 @@ export default async function Projects() {
   return (
     <main className="h-full">
       <ProjectsHeader />
-      <Container>
-        <section className="bg-[#fafafa] text-[#393a1f] dark:text-[#fafafa] p-2 md:p-4 w-full rounded grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 dark:bg-[#2a2929] shadow">
+      <Container className="lg:w-[85%]">
+        <section className="bg-[#fafafa] text-[#393a1f] dark:text-[#fafafa] p-2 md:p-4 w-full rounded grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 dark:bg-[#2a2929] shadow">
           {projects && projects.map(
             (
               {

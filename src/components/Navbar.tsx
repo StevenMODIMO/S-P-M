@@ -84,7 +84,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 w-full z-50 ${!openLinks && "backdrop-blur-sm"} ${
         isDashboardRoute && "hidden"
-      }`}
+      } ${pathname.startsWith("/projects") && "hidden"}`}
     >
       <Container>
         <header className="flex items-center justify-between">

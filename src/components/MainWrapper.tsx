@@ -9,5 +9,13 @@ export default function MainWrapper({
 }) {
   const pathname = usePathname();
   const isDashboardRoute = pathname.startsWith("/dashboard");
-  return <main className={isDashboardRoute ? "" : "pt-20"}>{children}</main>;
+  return (
+    <main
+      className={
+        isDashboardRoute || pathname.startsWith("/projects") ? "" : "pt-20"
+      }
+    >
+      {children}
+    </main>
+  );
 }

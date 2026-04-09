@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import Description from "./components/Description";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import Header from "./components/Header";
 
 interface ProjectType {
   thumbnail: string;
@@ -108,6 +109,7 @@ export default async function Project({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
       <Container className="text-[#393a1f] dark:text-white">
+        <Header />
         <div>
           <header>
             <div className="relative w-72 h-44 xs:w-80 xm:w-96 xm:h-52 sm:w-[500px] sm:h-54 md:w-[600px] lg:w-full lg:h-40">

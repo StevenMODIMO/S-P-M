@@ -2,12 +2,21 @@
 
 import Container from "./Container";
 import Header from "./ui/Header";
-import { Code, BadgePlus, Recycle, FolderGit2 } from "lucide-react";
+import { Code, BadgePlus, Recycle, FolderGit2, ArrowLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function ProjectsHeader() {
+  const router = useRouter();
   return (
     <div className="text-[#393a1f] dark:text-white">
-      <Container className="flex flex-col gap-2">
+      <Container className="flex flex-col gap-2 lg:w-[85%]">
+        <span
+          className="flex items-center gap-2 cursor-pointer"
+          onClick={() => router.back()}
+        >
+          <ArrowLeft />
+          <p>Go Back</p>
+        </span>
         <header className="flex flex-col gap-3 bg-[#fafafa] dark:bg-[#2a2929] shadow p-4">
           <div className="flex items-center gap-2">
             <FolderGit2 className="" />

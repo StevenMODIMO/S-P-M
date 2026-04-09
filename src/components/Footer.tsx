@@ -14,7 +14,7 @@ const Footer = () => {
   const isDashboardRoute = pathname.startsWith("/dashboard");
   return (
     <div
-      className={`shadow bg-[#fafafa] dark:shadow-md dark:bg-[#333333] text-[#393a1f] dark:text-white text-center text-sm my-6 p-4 flex flex-col gap-2 lg:w-[70%] lg:mx-auto ${
+      className={`${pathname.startsWith("/projects") && "hidden"} shadow bg-[#fafafa] dark:shadow-md dark:bg-[#333333] text-[#393a1f] dark:text-white text-center text-sm my-6 p-4 flex flex-col gap-2 lg:w-[70%] lg:mx-auto ${
         isDashboardRoute && "hidden"
       }`}
     >
